@@ -1,0 +1,24 @@
+{
+  "name": "London Climate Systems",
+  "short_name": "LCS",
+  "description": "Heating, cooling, plumbing, gas, and boiler engineers across Greater London.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon1.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

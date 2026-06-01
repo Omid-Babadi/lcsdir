@@ -1,0 +1,34 @@
+Complete services generate pages : 
+81 image here{done}
+
+generate 12 images for gallery and update its text there {remove gallery}
+
+4 images for our work on hero page. {done}
+
+image for our services component hero page, update it's text.{done}
+
+change image for need help componenet home page. add this to all details page. {done}
+
+update certificates {done}
+
+add blog system for website {done}
+
+update links in the footer {done}
+
+text for about us page fixed {done}
+
+update contacts form. send data to a discord server {done}
+
+fix all F&Q {done}
+
+add Brand logo on detials pages navabr style {done}
+
+connect all links together. {done}
+
+add perfect SEO settings {done}
+
+security checks 
+
+terms and policy rules {done}
+
+typescript bug check
