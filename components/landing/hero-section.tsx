@@ -80,7 +80,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background mt-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
