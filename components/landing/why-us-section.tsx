@@ -125,7 +125,7 @@ export function WhyUsSection() {
 
         {/* Certifications bar */}
         <div className="mt-16 pt-12 border-t border-primary-foreground/10 flex flex-wrap items-center justify-center gap-8 lg:gap-16">
-          {["Gas Safe Registered", "NICEIC Approved", "CIPHE Member", "TrustMark", "Which? Trusted Trader"].map(
+          {["Gas Safe Registered", "NICEIC Approved", "Valuable Member", "TrustMark", "Which? Trusted Trader"].map(
             (cert) => (
               <span
                 key={cert}

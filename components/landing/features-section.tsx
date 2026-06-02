@@ -11,7 +11,7 @@ const services = [
     title: "Plumbing",
     description:
       "Burst pipes, blocked drains, leak repairs, bathroom installations and full plumbing system overhauls. Gas Safe registered engineers.",
-    highlights: ["Emergency leak repair", "Bathroom fitting", "Drain unblocking", "Pipe replacement"],
+    highlights: ["Emergency leak repair", "Bathroom fitting", "Pipe replacement"],
   },
   {
     icon: Flame,
@@ -40,6 +40,51 @@ function ServiceCard({
 }) {
   const [isActive, setIsActive] = useState(index === 0);
   const Icon = service.icon;
+  const [isAvailable, setIsAvailable] = useState(false);
+
+  useEffect(() => {
+    const checkAvailability = () => {
+      const londonTime = new Date(
+        new Date().toLocaleString("en-GB", {
+          timeZone: "Europe/London",
+        })
+      );
+
+      const day = londonTime.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+      const hours = londonTime.getHours();
+      const minutes = londonTime.getMinutes();
+
+      const currentTime = hours * 60 + minutes;
+
+      // Monday-Friday: 08:00 - 18:00
+      const weekdayOpen = 8 * 60;
+      const weekdayClose = 18 * 60;
+
+      // Saturday: 08:00 - 15:00
+      const saturdayOpen = 8 * 60;
+      const saturdayClose = 15 * 60;
+
+      let available = false;
+
+      if (day >= 1 && day <= 5) {
+        available =
+          currentTime >= weekdayOpen &&
+          currentTime < weekdayClose;
+      } else if (day === 6) {
+        available =
+          currentTime >= saturdayOpen &&
+          currentTime < saturdayClose;
+      }
+
+      setIsAvailable(available);
+    };
+
+    checkAvailability();
+
+    const interval = setInterval(checkAvailability, 60000); // update every minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
@@ -86,6 +131,8 @@ function ServiceCard({
 
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAvailable, setIsAvailable] = useState(false);
+
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -97,43 +144,95 @@ export function FeaturesSection() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const checkAvailability = () => {
+      const londonTime = new Date(
+        new Date().toLocaleString("en-GB", {
+          timeZone: "Europe/London",
+        })
+      );
+
+      const day = londonTime.getDay(); // 0=Sun, 1=Mon ... 6=Sat
+      const hours = londonTime.getHours();
+      const minutes = londonTime.getMinutes();
+
+      const currentMinutes = hours * 60 + minutes;
+
+      let available = false;
+
+      // Monday - Friday (08:00 - 18:00)
+      if (day >= 1 && day <= 5) {
+        available =
+          currentMinutes >= 8 * 60 &&
+          currentMinutes < 18 * 60;
+      }
+
+      // Saturday (08:00 - 15:00)
+      if (day === 6) {
+        available =
+          currentMinutes >= 8 * 60 &&
+          currentMinutes < 15 * 60;
+      }
+
+      // Sunday = unavailable
+      setIsAvailable(available);
+    };
+
+    checkAvailability();
+
+    const interval = setInterval(checkAvailability, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="services" ref={sectionRef} className="relative py-24 lg:py-32">
+    <section
+      id="services"
+      ref={sectionRef}
+      className="relative py-24 lg:py-32"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Two-column layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT — Header + Service Cards */}
+          {/* LEFT */}
           <div>
-            {/* Header */}
             <div className="mb-10">
               <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
                 <span className="w-8 h-px bg-gradient-to-r from-blue-500 to-blue-400" />
                 Our services
               </span>
+
               <h2
                 className={`text-4xl lg:text-5xl font-display tracking-tight text-foreground transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                 }`}
               >
-                Complete property care
+                Complete
                 <br />
-                <span className="text-primary">under one roof.</span>
+                <span className="text-primary">
+                  property care.
+                </span>
               </h2>
+
               <p
                 className={`mt-4 text-base text-foreground/70 leading-relaxed transition-all duration-700 delay-100 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
                 }`}
               >
-                From a dripping tap to a full renovation, our qualified engineers and
-                tradespeople deliver reliable results with transparent pricing.
+                From a dripping tap to a full renovation, our qualified
+                engineers and tradespeople deliver reliable results with
+                transparent pricing.
               </p>
             </div>
 
-            {/* Service Cards */}
             <div className="flex flex-col gap-3">
               {services.map((service, index) => (
                 <ServiceCard
@@ -146,36 +245,59 @@ export function FeaturesSection() {
             </div>
           </div>
 
-          {/* RIGHT — Image */}
+          {/* RIGHT */}
           <div
             className={`relative transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Decorative background accent */}
             <div className="absolute -inset-4 rounded-2xl bg-blue-500/5 -z-10" />
             <div className="absolute -top-6 -right-6 w-40 h-40 rounded-full bg-blue-500/10 blur-3xl -z-10" />
 
-            {/* Image container */}
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[4/5] lg:aspect-[2.5/4]">
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[4/4] lg:aspect-[2.5/4]">
               <Image
-                src="/61940140-5a44-4fb5-ad08-08b4dbc86e8b.png" // ← replace with your actual image path
+                src="/e93b6cf0-1f55-4aaa-95e4-970d6a189615.png"
                 alt="Our engineers at work"
                 fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw h-auto"
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
 
-              {/* Subtle overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
 
-              {/* Floating badge */}
+              {/* Availability Badge */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-sm border border-border/50 shadow-lg">
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-sm font-medium text-foreground">Available for emergencies</span>
+                  <div
+                    className={`w-2 h-2 rounded-full ${
+                      isAvailable
+                        ? "bg-green-500 animate-pulse"
+                        : "bg-red-500"
+                    }`}
+                  />
+
+                  <div className="flex flex-col">
+                    <span
+                      className={`text-sm font-medium ${
+                        isAvailable
+                          ? "text-green-600"
+                          : "text-red-600"
+                      }`}
+                    >
+                      {isAvailable
+                        ? "Available now"
+                        : "Currently unavailable"}
+                    </span>
+
+                    <span className="text-xs text-muted-foreground">
+                      Mon–Fri 8:00 AM–6:00 PM • Sat 8:00 AM–3:00 PM (London)
+                    </span>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
 

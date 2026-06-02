@@ -25,7 +25,7 @@ const gallery = [
     description: "AC installation and support",
     tag: "AC / Cooling",
     href: "/services/air-conditioning",
-    image: "ChatGPT Image May 29, 2026, 02_38_07 PM.png",
+    image: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/34099101-d86a-4df8-8407-80a982a4bfd7_olrfal.png",
   },
   {
     title: "Boiler repairs",

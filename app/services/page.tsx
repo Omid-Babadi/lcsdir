@@ -93,6 +93,22 @@ const services = [
         "Power Flush",
     ],
   },
+  {
+    name: "Underfloor Heating",
+    href: "/services/underfloor-heating",
+    icon: Wrench,
+    color: "text-amber-500",
+    bgColor: "bg-amber-500/10",
+    description: "Underfloor heating specialists — installations, electric and wet systems, controls, and repairs across London.",
+    items: [
+      "Underfloor Heating Installation",
+      "Electric Underfloor Heating",
+      "Wet Underfloor Heating Systems",
+      "Underfloor Heating Repairs",
+      "Underfloor Heating Controls & Thermostats",
+      "Smart Thermostat Integration",
+    ],
+  },
   // Power Flush moved under Boiler
 ];
 

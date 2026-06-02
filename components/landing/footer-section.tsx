@@ -5,12 +5,13 @@ import Image from "next/image";
 
 const footerLinks = {
   Services: [
-    { name: "All Services", href: "/services" },
-    { name: "Plumbing", href: "/services/plumbing" },
-    { name: "Heating & Boilers", href: "/services/heating" },
-    { name: "Air Conditioning", href: "/services/air-conditioning" },
-    { name: "Gas Services", href: "/services/gas" },
-    { name: "Boiler Services", href: "/services/boiler" },
+  { name: "All Services", href: "/services" },
+  { name: "Plumbing", href: "/services/plumbing" },
+  { name: "Heating & Boilers", href: "/services/heating" },
+  { name: "Air Conditioning", href: "/services/air-conditioning" },
+  { name: "Gas Services", href: "/services/gas" },
+  { name: "Boiler Services", href: "/services/boiler" },
+  { name: "Underfloor Heating", href: "/services/underfloor-heating" },
   ],
   Company: [
     { name: "About Us", href: "/about" },

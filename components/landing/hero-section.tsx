@@ -18,54 +18,64 @@ const trustBadges = [
 const sharpenCloudinaryLogo = (url: string) =>
   url.replace("/image/upload/", "/image/upload/f_auto,q_auto,dpr_2.0,w_640/");
 
-const brandPartners = [
+const boilerPartners = [
   {
     name: "Alpha Heating Innovation",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224348/download_12_zm6ei3.png"
-    ),
-    sizeClass: "max-h-16 max-w-44 sm:max-h-16 sm:max-w-56",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416308/images__7_-removebg-preview_ejlfny.png"),
+  },
+  {
+    name: "Keston",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780224347/download_14_gkkr45.png"),
   },
   {
     name: "Worcester Bosch",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224347/download_10_eqh5nv.png"
-    ),
-    sizeClass: "max-h-16 max-w-44 sm:max-h-16 sm:max-w-56",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416108/images__6_-removebg-preview_ngevl5.png"),
   },
   {
     name: "Vaillant",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224347/download_11_rmi8gq.png"
-    ),
-    sizeClass: "max-h-16 max-w-44 sm:max-h-16 sm:max-w-56",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780415900/vaillant-logo-aw-2104046-e1754335523397-removebg-preview_qfa7kp.png"),
   },
   {
     name: "Ideal Boilers",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224347/download_13_dypydk.png"
-    ),
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780224347/download_13_dypydk.png"),
   },
   {
     name: "Glow-worm",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224345/download_15_g5uhrn.png"
-    ),
-    sizeClass: "max-h-16 max-w-44 sm:max-h-16 sm:max-w-56",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416616/Glow-worm.svg_wniboh.png"),
   },
+    {
+    name: "Baxi",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780415770/imgbin-logo-baxi-boiler-brand-product-boiler-8rLhDb7VgAxeeb3DYSKvS7fFJ-removebg-preview_m2dvks.png"),
+  },
+];
+
+const acPartners = [
   {
     name: "LG",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780346343/LG_logo__2014.svg_nu8jfy.png"
-    ),
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780346343/LG_logo__2014.svg_nu8jfy.png"),
   },
   {
     name: "Samsung",
-    logo: sharpenCloudinaryLogo(
-      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780346467/kisspng-samsung-galaxy-j2-samsung-electronics-harman-inter-5b028f05a6eae0.9040984915268943416837-removebg-preview_zb9jsk.png"
-    ),
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780346467/kisspng-samsung-galaxy-j2-samsung-electronics-harman-inter-5b028f05a6eae0.9040984915268943416837-removebg-preview_zb9jsk.png"),
+  },
+  {
+    name: "Panasonic",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416686/images__8_-removebg-preview_oecmex.png"),
+  },
+  {
+    name: "Hitachi",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/png-transparent-hitachi-logo-thumbnail-removebg-preview_ipquaa.png"),
+  },
+  {
+    name: "Hitachi",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/viessmann_wordmark_rgb_1_vitorange_m0qaxn.png"),
+  },
+  {
+    name: "Daikin",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416373/png-clipart-daikin-applied-americas-business-air-conditioning-heat-pump-business-blue-text-removebg-preview_wnubsj.png"),
   },
 ];
+
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,7 +90,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background mt-30">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -226,7 +236,7 @@ export function HeroSection() {
               {/* Hero Image */}
               <div className="relative z-5 p-4 sm:p-6 lg:p-8">
                 <Image
-                  src="/67ac8e79-dfc0-4357-951a-73b5da85f2c6.png"
+                  src="/730fa73b-30cf-4284-80ba-9d8ffb286a40 (1).png"
                   alt="Professional London Climate Systems Engineer"
                   width={500}
                   height={500}
@@ -242,33 +252,62 @@ export function HeroSection() {
           className={`mt-10 sm:mt-12 border-y border-border/70 py-5 transition-all duration-700 delay-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          aria-label="Brands we work with"
         >
-          <div className="mb-4 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-            <span className="h-px w-8 gradient-flame" />
-            Brands we work with
+          {/* Boiler Brands */}
+          <div className="mb-8">
+            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              <span className="h-px w-8 gradient-flame" />
+              Boiler Brands We Work With
+            </div>
+
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
+
+              <div className="marquee flex w-max items-center gap-3">
+                {[...boilerPartners, ...boilerPartners].map((brand, index) => (
+                  <div
+                    key={`${brand.name}-${index}`}
+                    className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      className="max-h-10 max-w-32 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
-            <div className="marquee flex w-max items-center gap-4">
-              {[...brandPartners, ...brandPartners].map((brand, index) => (
-                <div
-                  key={`${brand.name}-${index}`}
-                  className="flex h-20 min-w-48 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-5 sm:h-20 sm:min-w-64"
-                >
-                  <img
-                    src={brand.logo}
-                    alt={`${brand.name} logo`}
-                    width={224}
-                    height={96}
-                    className={`h-auto object-contain ${
-                      brand.sizeClass ?? "max-h-12 max-w-36 sm:max-h-12 sm:max-w-44"
-                    }`}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
+
+          {/* AC Brands */}
+          <div>
+            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              <span className="h-px w-8 gradient-cool" />
+              Air Conditioning Brands We Work With
+            </div>
+
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
+
+              <div className="marquee-reverse flex w-max items-center gap-3">
+                {[...acPartners, ...acPartners].map((brand, index) => (
+                  <div
+                    key={`${brand.name}-${index}`}
+                    className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      className="max-h-10 max-w-32 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

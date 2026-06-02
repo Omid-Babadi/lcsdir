@@ -7,10 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const offers = [
-  { text: "🔥 Free boiler health check with any heating service this month", cta: "Book Now", href: "/contact" },
-  { text: "💧 10% off all plumbing installations — limited time offer", cta: "Get Quote", href: "/contact" },
-  { text: "❄️ AC installation from £799 — summer-ready in 24 hours", cta: "Learn More", href: "/services/air-conditioning" },
-  { text: "🛡️ Gas safety certificates from £49 — landlords & homeowners", cta: "Book Now", href: "/services/gas/safety-certificates" },
+  { text: "💧 10% off for all services", cta: "Get Quote", href: "/contact" },
+  { text: "🛡️ 1 year guarantee for all installation services", cta: "Book Now", href: "/contact" },
 ];
 
 const serviceCategories = [
@@ -80,6 +78,21 @@ const serviceCategories = [
       { name: "Pilot Light Repairs", href: "/services/boiler/pilot-light" },
       { name: "Boiler Warranty Work", href: "/services/boiler/warranty" },
       { name: "Power Flush", href: "/services/boiler/power-flush" },
+    ],
+  },
+  {
+    name: "Underfloor Heating",
+    href: "/services/underfloor-heating",
+    icon: Wrench,
+    color: "text-amber-500",
+    items: [
+      { name: "Underfloor Heating Installation", href: "/services/underfloor-heating/installation" },
+      { name: "Electric Underfloor Heating", href: "/services/underfloor-heating/electric" },
+      { name: "Wet Underfloor Heating Systems", href: "/services/underfloor-heating/wet-systems" },
+      { name: "Underfloor Heating Repairs", href: "/services/underfloor-heating/repairs" },
+      { name: "Underfloor Heating Controls & Thermostats", href: "/services/underfloor-heating/controls" },
+      { name: "Smart Thermostat Integration", href: "/services/underfloor-heating/smart-thermostats" },
+      { name: "System Design & Consultation", href: "/services/underfloor-heating/design-consultation" },
     ],
   },
   // Power Flush moved under Boiler category (see Boiler.items)
