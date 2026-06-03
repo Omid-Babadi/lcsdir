@@ -16,6 +16,8 @@ export default function EmergencyPlumbingPage() {
       highlight="plumbing solutions."
       description="From airlocks and leaks to complete cylinder installations and pump repairs, our certified engineers handle all emergency plumbing issues across London. Transparent pricing, fixed on the same visit."
       icon={Siren}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780490314/31c9d596-2a42-401c-8ec4-2b32c7df1779_qscpo4.png"
+      heroImageAlt="Emergency plumbing illustration"
       features={[
         { title: "Airlocks", description: "Quick diagnosis and removal of airlocks in your hot and cold water systems." },
         { title: "Hot Cylinder Installations", description: "Professional installation of vented and unvented hot water cylinders." },

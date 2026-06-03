@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Gauge, Wrench, ThermometerSun, Shield, FileCheck, Zap, Flame, Phone, Clock, Award, Siren } from "lucide-react";
+import { ArrowRight, Gauge, Wrench, ThermometerSun, Shield, FileCheck, Zap, Flame, Phone, Siren } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -13,21 +14,78 @@ export const metadata = createSeoMetadata({
 
 export default function BoilerPage() {
   const services = [
-    { title: "Boiler Breakdown Repairs", description: "Rapid fault diagnosis and repair for breakdowns.", href: "/services/boiler/breakdown-repairs", icon: Wrench },
-    { title: "New Boiler Installation", description: "Supply and fit of new boilers, system design and commissioning.", href: "/services/boiler/new-installation", icon: ThermometerSun },
-    { title: "Boiler Replacement and Upgrades", description: "Upgrade to more efficient boilers and low-carbon options.", href: "/services/boiler/replacement", icon: FileCheck },
-    { title: "Annual Boiler Servicing", description: "Gas Safe annual servicing to maintain warranties and efficiency.", href: "/services/boiler/servicing", icon: Shield },
-    { title: "System and Combi Boiler Fitting", description: "System and combi boiler installs with full commissioning.", href: "/services/boiler/system-combi-fitting", icon: ThermometerSun },
-    { title: "Boiler Pressure Issues", description: "We diagnose and remedy pressure faults and system imbalances.", href: "/services/boiler/pressure-issues", icon: Gauge },
-    { title: "Pilot Light Repairs", description: "Pilot light and ignition system repairs for older boilers.", href: "/services/boiler/pilot-light", icon: FileCheck },
-    { title: "Boiler Warranty Work", description: "We carry out warranty repairs under manufacturer terms.", href: "/services/boiler/warranty", icon: FileCheck },
-    { title: "Power Flush", description: "Power flushing to remove sludge and restore system efficiency.", href: "/services/boiler/power-flush", icon: Zap },
-  ];
-
-  const benefits = [
-    { icon: Shield, title: "Gas Safe Registered", description: "Every engineer is fully Gas Safe certified and ID-carrying." },
-    { icon: Clock, title: "Rapid Response", description: "Same-day breakdowns and emergency callouts across London." },
-    { icon: Award, title: "Installation Guarantee", description: "Boiler installation work is backed by a written workmanship guarantee." },
+    {
+      title: "Boiler Breakdown Repairs",
+      description: "Rapid fault diagnosis and repair for breakdowns.",
+      href: "/services/boiler/breakdown-repairs",
+      icon: Wrench,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/d33b7dda-c697-41fe-91a6-e7b5f553262d_jbtmt6.png",
+    },
+    {
+      title: "New Boiler Installation",
+      description: "Supply and fit of new boilers, system design and commissioning.",
+      href: "/services/boiler/new-installation",
+      icon: ThermometerSun,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780221381/ChatGPT_Image_May_30_2026_07_40_36_PM-fotor-20260531132346_zr1jpx.png",
+    },
+    {
+      title: "Boiler Replacement and Upgrades",
+      description: "Upgrade to more efficient boilers and low-carbon options.",
+      href: "/services/boiler/replacement",
+      icon: FileCheck,
+      bgImage:
+        "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Annual Boiler Servicing",
+      description: "Gas Safe annual servicing to maintain warranties and efficiency.",
+      href: "/services/boiler/servicing",
+      icon: Shield,
+      bgImage:
+        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "System and Combi Boiler Fitting",
+      description: "System and combi boiler installs with full commissioning.",
+      href: "/services/boiler/system-combi-fitting",
+      icon: ThermometerSun,
+      bgImage:
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Boiler Pressure Issues",
+      description: "We diagnose and remedy pressure faults and system imbalances.",
+      href: "/services/boiler/pressure-issues",
+      icon: Gauge,
+      bgImage:
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Pilot Light Repairs",
+      description: "Pilot light and ignition system repairs for older boilers.",
+      href: "/services/boiler/pilot-light",
+      icon: FileCheck,
+      bgImage:
+        "https://images.unsplash.com/photo-1512446810149-7c79b1a84f53?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Boiler Warranty Work",
+      description: "We carry out warranty repairs under manufacturer terms.",
+      href: "/services/boiler/warranty",
+      icon: FileCheck,
+      bgImage:
+        "https://images.unsplash.com/photo-1491897554428-130a60dd4757?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Power Flush",
+      description: "Power flushing to remove sludge and restore system efficiency.",
+      href: "/services/boiler/power-flush",
+      icon: Zap,
+      bgImage:
+        "https://images.unsplash.com/photo-1513866755814-4f6ca18a7f1e?auto=format&fit=crop&w=1200&q=80",
+    },
   ];
 
   const subServices = [
@@ -106,13 +164,29 @@ export default function BoilerPage() {
                 </a>
               </div>
             </div>
-            <div className="relative aspect-square max-w-[500px] mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 rounded-3xl" />
-              <div className="relative h-full flex items-center justify-center">
-                <Flame className="w-48 h-48 text-primary" strokeWidth={1} />
+            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-auto">
+              {/* Modern background gradient layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-secondary/20 rounded-[40px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+              
+              {/* Main image container with modern styling */}
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-primary/20">
+                <Image
+                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484321/d6bdf95a-c00b-48d4-b365-c202b44c43d7_utysn1.png"
+                  alt="Modern boiler service illustration"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Modern overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 gradient-flame rounded-2xl opacity-30 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 gradient-cool rounded-2xl opacity-30 blur-2xl" />
+              
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-primary/20 rounded-full opacity-30 blur-2xl" />
             </div>
           </div>
         </div>
@@ -160,13 +234,29 @@ export default function BoilerPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => {
-              const Icon = service.icon as any;
               return (
-                <Link key={service.title} href={service.href} className="group p-8 border border-border rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all bg-background">
-                  <Icon className="w-7 h-7 text-primary mb-5" />
-                  <h3 className="text-xl font-display text-foreground mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">Learn more <ArrowRight className="w-3.5 h-3.5" /></div>
+                <Link
+                  key={service.title}
+                  href={service.href}
+                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                >
+                  <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="relative min-h-[350px] p-8 flex flex-col justify-end">
+                    <span className="text-xs uppercase tracking-[0.35em] text-white/70 mb-3">
+                      Service
+                    </span>
+                    <h3 className="text-2xl font-display text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-white/80">
+                      {service.description}
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/90">
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
                 </Link>
               );
             })}
@@ -189,27 +279,6 @@ export default function BoilerPage() {
             {subServices.map((s) => (
               <span key={s} className="px-4 py-2 bg-background border border-border rounded-full text-sm text-foreground/80 hover:border-primary/50 hover:text-primary transition-all">{s}</span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground mb-16 max-w-2xl">Why London trusts us with boilers</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((b) => {
-              const Icon = b.icon as any;
-              return (
-                <div key={b.title} className="bg-secondary/5 p-8 rounded-2xl border border-border">
-                  <div className="w-12 h-12 rounded-xl gradient-flame flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground mb-2">{b.title}</h3>
-                  <p className="text-foreground/70">{b.description}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

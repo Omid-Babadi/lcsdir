@@ -16,6 +16,8 @@ export default function PlumbingRepairPage() {
       highlight="repair specialists."
       description="From leaking pipes and dripping taps to broken showers and malfunctioning toilets, our certified plumbers diagnose and fix all types of plumbing issues quickly and effectively. Transparent pricing, quality workmanship, and repairs completed with full testing."
       icon={Wrench}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780490312/3313c0ba-d9ec-419d-9f67-506568356e37_ctxcto.png"
+      heroImageAlt="Plumbing repair illustration"
       features={[
         { title: "Leaking Pipes", description: "Fast detection and repair of leaking pipes to prevent water damage and reduce bills." },
         { title: "Shower Repairs", description: "Fix low pressure, temperature fluctuations, broken controls, and complete shower system issues." },

@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Flame, Phone, Clock, Shield, Award, Wrench, AlertTriangle, FileCheck, Pipette } from "lucide-react";
+import { ArrowRight, Flame, Phone, Shield, Wrench, AlertTriangle, FileCheck, Pipette } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -18,55 +19,65 @@ export default function GasPage() {
       description: "Expert installation of new gas boilers. We work with all major brands and system types — combi, system, and conventional boilers.",
       href: "/services/gas/boiler-installation",
       icon: Flame,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780221382/fa8b7c95-9015-4389-aa2f-161ab6583ca2-fotor-2026053113822_w8zuhq.png",
     },
     {
       title: "Gas Cooker and Hob Installation",
       description: "Safe, professional installation of gas cookers, hobs, and range cookers. All connections tested and certified on completion.",
       href: "/services/gas/cooker-installation",
       icon: Wrench,
+      bgImage:
+        "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
     },
     {
       title: "Gas Fire Installation",
       description: "Installation of gas fires, wall-mounted fires, and flueless gas fires. Full safety checks and commissioning included.",
       href: "/services/gas/fire-installation",
       icon: Flame,
+      bgImage:
+        "https://images.unsplash.com/photo-1512446810149-7c79b1a84f53?auto=format&fit=crop&w=1200&q=80",
     },
     {
       title: "Gas Safety Certificates",
       description: "Official Gas Safe certificates issued same day. Required for landlords, homeowners, and property sales across London.",
       href: "/services/gas/safety-certificates",
       icon: FileCheck,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152518/301650b1-e06c-470d-9d3c-f099a7429f77_s2my30.png",
     },
     {
       title: "Gas Leak Detection and Repair",
       description: "Emergency gas leak detection, pressure testing, and repair. If you smell gas, call us immediately — we respond fast.",
       href: "/services/gas/leak-detection",
       icon: AlertTriangle,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152502/95bc1c7c-cb6a-4e5b-ae62-bc79060bf4fd_vrrmca.png",
     },
     {
       title: "Gas Pipe Installation",
       description: "New gas pipe runs, extensions, and replacements for kitchens, extensions, and new builds. All work to Gas Safe standards.",
       href: "/services/gas/pipe-installation",
       icon: Pipette,
+      bgImage:
+        "https://images.unsplash.com/photo-1513866755814-4f6ca18a7f1e?auto=format&fit=crop&w=1200&q=80",
     },
     {
       title: "Annual Gas Safety Checks",
       description: "Thorough annual inspections of all gas appliances, pipework, and flues. Keep your home safe and your appliances efficient.",
       href: "/services/gas/annual-checks",
       icon: Shield,
+      bgImage:
+        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
     },
     {
       title: "Landlord Gas Certificates",
       description: "Legally required CP12 certificates for landlords. We inspect all gas appliances and issue certificates on the same visit.",
       href: "/services/gas/landlord-certificates",
       icon: FileCheck,
+      bgImage:
+        "https://images.unsplash.com/photo-1491897554428-130a60dd4757?auto=format&fit=crop&w=1200&q=80",
     },
-  ];
-
-  const benefits = [
-    { icon: Shield, title: "Gas Safe Registered", description: "Every engineer is fully Gas Safe certified and ID-carrying." },
-    { icon: Clock, title: "Same-Day Certificates", description: "Gas safety certificates issued on the day of inspection." },
-    { icon: Award, title: "Installation Guarantee", description: "Gas installation work is backed by a written workmanship guarantee." },
   ];
 
   const galleryImages = [
@@ -136,13 +147,29 @@ export default function GasPage() {
                 </a>
               </div>
             </div>
-            <div className="relative aspect-square max-w-[500px] mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 rounded-3xl" />
-              <div className="relative h-full flex items-center justify-center">
-                <Flame className="w-48 h-48 text-primary" strokeWidth={1} />
+            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-auto">
+              {/* Modern background gradient layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/20 rounded-[40px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+              
+              {/* Main image container with modern styling */}
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-secondary/20">
+                <Image
+                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484323/1c1cc689-48f6-4f8a-bef1-a6d5770b6267_ga06oy.png"
+                  alt="Modern gas service illustration"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Modern overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 gradient-flame rounded-2xl opacity-30 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 gradient-cool rounded-2xl opacity-30 blur-2xl" />
+              
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-secondary/20 rounded-full opacity-30 blur-2xl" />
             </div>
           </div>
         </div>
@@ -200,45 +227,30 @@ export default function GasPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service) => {
-              const Icon = service.icon;
               return (
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group p-8 border border-border rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all bg-background"
+                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
                 >
-                  <Icon className="w-7 h-7 text-primary mb-5" />
-                  <h3 className="text-xl font-display text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="relative min-h-[350px] p-8 flex flex-col justify-end">
+                    <span className="text-xs uppercase tracking-[0.35em] text-white/70 mb-3">
+                      Service
+                    </span>
+                    <h3 className="text-2xl font-display text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-white/80">
+                      {service.description}
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/90">
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-primary/5">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground mb-16 max-w-2xl">
-            Why London trusts us with gas
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((b) => {
-              const Icon = b.icon;
-              return (
-                <div key={b.title} className="bg-background p-8 rounded-2xl border border-border">
-                  <div className="w-12 h-12 rounded-xl gradient-flame flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground mb-2">{b.title}</h3>
-                  <p className="text-foreground/70">{b.description}</p>
-                </div>
               );
             })}
           </div>

@@ -16,6 +16,8 @@ export default function ACMaintenancePage() {
       highlight="& servicing."
       description="Keep your AC running at peak efficiency with our annual maintenance plans. Filter cleans, refrigerant checks, drainage and full F-Gas reporting where required."
       icon={Snowflake}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780507186/bcc25112-d934-4f55-a111-78f878e1b615_bv2dyz.png"
+      heroImageAlt="Air Conditioning Maintenance"
       features={[
         { title: "Filter & Coil Clean", description: "Improves air quality and restores efficiency." },
         { title: "Refrigerant Check", description: "Pressure check and top-up if required." },

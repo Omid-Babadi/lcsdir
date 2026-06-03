@@ -16,6 +16,8 @@ export default function PlumbingInstallationPage() {
       highlight="done right."
       description="From kitchen appliances to complete bathroom renovations, our certified plumbers handle all types of plumbing installations with precision and care. We specialize in installing dishwashers, water softeners, toilets, sinks, taps, washing machines, electric showers, and bathroom fixtures. Every installation is completed to the highest standards, ensuring leak-free connections, proper drainage, and long-lasting performance. Fully insured, CIPHE-accredited engineers serving homes across London."
       icon={Droplets}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780490313/c98d1e83-bdbd-473a-9350-251a9645d2b9_1_jzhepv.png"
+      heroImageAlt="Plumbing installation illustration"
       features={[
         { title: "Dishwasher Installation", description: "Professional dishwasher plumbing, including waste pipe connection, water supply fitting, and leak testing." },
         { title: "Water Softener Installation", description: "Expert installation of water softeners to reduce limescale and improve water quality throughout your home." },

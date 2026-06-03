@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Flame, Phone, Clock, Shield, Award, Wrench, Siren, ThermometerSun } from "lucide-react";
+import { ArrowRight, Flame, Phone, Wrench, Siren, ThermometerSun, Shield } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -15,40 +16,44 @@ export default function HeatingPage() {
   const services = [
     {
       title: "Emergency Heating Engineers",
-      description: "rapid response for no-heat and urgent breakdowns across London.",
+      description: "Rapid response for no-heat and urgent breakdowns across London.",
       href: "/services/heating/emergency-heating",
       icon: Siren,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504712/d2672bfd-b74f-4a16-a425-2b77964c6f11_teglgh.png",
     },
     {
       title: "Emergency Boiler Repairs",
       description: "Fast boiler fault diagnosis and emergency repairs to restore heating and hot water.",
       href: "/services/heating/emergency-boiler",
       icon: Wrench,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504714/c8bbbb7c-82b8-4483-b358-4d597c434edb_gytgvc.png",
     },
     {
       title: "Central Heating Installation",
       description: "Design and installation of new central heating systems, controls and radiators.",
       href: "/services/heating/installation",
       icon: ThermometerSun,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504720/41533caa-fffc-4c49-aabd-8846bf7905d4_1_eiwi3l.png",
     },
     {
       title: "Central Heating Service",
       description: "Planned servicing, safety checks and system health inspections to keep systems efficient.",
       href: "/services/heating/service",
       icon: Shield,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504717/e1387603-cf4d-47b6-97c1-625cc5517e95_1_ythczo.png",
     },
     {
       title: "Central Heating Repairs",
       description: "Repairs for pumps, valves, radiators and controls to restore balanced heating performance.",
       href: "/services/heating/repairs",
       icon: Wrench,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/d33b7dda-c697-41fe-91a6-e7b5f553262d_jbtmt6.png",
     },
-  ];
-
-  const benefits = [
-    { icon: Clock, title: "Emergency", description: "Always available, even on bank holidays." },
-    { icon: Shield, title: "Gas Safe Registered", description: "Every engineer is fully Gas Safe certified." },
-    { icon: Award, title: "Installation Aftercare", description: "Installation work includes written sign-off and clear aftercare details." },
   ];
 
   const subServices = [
@@ -129,13 +134,29 @@ export default function HeatingPage() {
                 </a>
               </div>
             </div>
-            <div className="relative aspect-square max-w-[500px] mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 rounded-3xl" />
-              <div className="relative h-full flex items-center justify-center">
-                <Flame className="w-48 h-48 text-primary" strokeWidth={1} />
+            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-auto">
+              {/* Modern background gradient layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-secondary/20 rounded-[40px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+              
+              {/* Main image container with modern styling */}
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-primary/20">
+                <Image
+                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484318/29ce6433-b0df-4678-ae5f-091cec199c96_ie13rx.png"
+                  alt="Modern heating service illustration"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Modern overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 gradient-flame rounded-2xl opacity-30 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 gradient-cool rounded-2xl opacity-30 blur-2xl" />
+              
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-primary/20 rounded-full opacity-30 blur-2xl" />
             </div>
           </div>
         </div>
@@ -199,20 +220,28 @@ export default function HeatingPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => {
-              const Icon = service.icon;
               return (
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group p-8 border border-border rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all bg-background"
+                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "70vh" }}
                 >
-                  <Icon className="w-7 h-7 text-primary mb-5" />
-                  <h3 className="text-xl font-display text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="relative min-h-[350px] p-8 flex flex-col justify-end">
+                    <span className="text-xs uppercase tracking-[0.35em] text-white/70 mb-3">
+                      Service
+                    </span>
+                    <h3 className="text-2xl font-display text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-white/80">
+                      {service.description}
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/90">
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </Link>
               );
@@ -245,29 +274,6 @@ export default function HeatingPage() {
                 {service}
               </span>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground mb-16 max-w-2xl">
-            Why London chooses us for heating
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((b) => {
-              const Icon = b.icon;
-              return (
-                <div key={b.title} className="bg-secondary/5 p-8 rounded-2xl border border-border">
-                  <div className="w-12 h-12 rounded-xl gradient-flame flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground mb-2">{b.title}</h3>
-                  <p className="text-foreground/70">{b.description}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

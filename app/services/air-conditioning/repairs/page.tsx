@@ -16,6 +16,8 @@ export default function ACRepairsPage() {
       highlight="diagnostics."
       description="Not cooling? Leaking? Error codes? Our F-Gas certified engineers diagnose and repair AC systems across London with fixed pricing and full system testing."
       icon={Cog}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780507189/78399401-8eb8-4d9a-ab81-82a367cd417b_dwvgua.png"
+      heroImageAlt="Air Conditioning Repairs"
       features={[
         { title: "Not Cooling Diagnosis", description: "Refrigerant, compressor and airflow faults identified." },
         { title: "Refrigerant Leak Repair", description: "Leak detected, repaired, system recharged and certified." },

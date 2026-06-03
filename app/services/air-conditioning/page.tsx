@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Wind, Phone, Clock, Shield, Award, Wrench, Settings, Zap } from "lucide-react";
+import { ArrowRight, Wind, Phone, Wrench, Settings, Zap } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
@@ -18,25 +19,25 @@ export default function AirConditioningPage() {
       description: "Scheduled servicing and preventative maintenance to keep your AC running efficiently, extend system life, and avoid costly breakdowns.",
       href: "/services/air-conditioning/maintenance",
       icon: Settings,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780507186/bcc25112-d934-4f55-a111-78f878e1b615_bv2dyz.png",
     },
     {
       title: "Air Conditioning Installations",
       description: "Expert installation of split, multi-split, and ducted AC systems for homes and offices. All major brands including Daikin, Mitsubishi, LG, and Samsung.",
       href: "/services/air-conditioning/installation",
       icon: Zap,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780507169/a05f0d32-a58d-46dc-89a4-b616a1ea2b81_aq2e3z.png",
     },
     {
       title: "Air Conditioning Repair Services",
       description: "Fast diagnosis and lasting repairs for all AC faults — refrigerant leaks, compressor issues, error codes, and emergency breakdowns.",
       href: "/services/air-conditioning/repairs",
       icon: Wrench,
+      bgImage:
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780507189/78399401-8eb8-4d9a-ab81-82a367cd417b_dwvgua.png",
     },
-  ];
-
-  const benefits = [
-    { icon: Clock, title: "Rapid Response", description: "Same-day appointments available across London." },
-    { icon: Shield, title: "F-Gas Certified", description: "Fully accredited refrigerant specialists." },
-    { icon: Award, title: "All Major Brands", description: "Daikin, Mitsubishi, LG, Samsung and more." },
   ];
 
   const galleryImages = [
@@ -106,13 +107,29 @@ export default function AirConditioningPage() {
                 </a>
               </div>
             </div>
-            <div className="relative aspect-square max-w-[500px] mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-primary/10 rounded-3xl" />
-              <div className="relative h-full flex items-center justify-center">
-                <Wind className="w-48 h-48 text-secondary" strokeWidth={1} />
+            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-auto">
+              {/* Modern background gradient layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/20 rounded-[40px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+              
+              {/* Main image container with modern styling */}
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-secondary/20">
+                <Image
+                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484317/2ef84635-340a-4d24-a688-c31392689124_molxdz.png"
+                  alt="Modern air conditioning service illustration"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Modern overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 gradient-flame rounded-2xl opacity-30 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 gradient-cool rounded-2xl opacity-30 blur-2xl" />
+              
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-secondary/20 rounded-full opacity-30 blur-2xl" />
             </div>
           </div>
         </div>
@@ -170,45 +187,30 @@ export default function AirConditioningPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service) => {
-              const Icon = service.icon;
               return (
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group p-8 border border-border rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all bg-background"
+                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "70vh" }}
                 >
-                  <Icon className="w-7 h-7 text-primary mb-5" />
-                  <h3 className="text-xl font-display text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-6 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="relative min-h-[350px] p-8 flex flex-col justify-end">
+                    <span className="text-xs uppercase tracking-[0.35em] text-white/70 mb-3">
+                      Service
+                    </span>
+                    <h3 className="text-2xl font-display text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-white/80">
+                      {service.description}
+                    </p>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/90">
+                      Learn more <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-secondary/5">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground mb-16 max-w-2xl">
-            Why London chooses us for AC
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((b) => {
-              const Icon = b.icon;
-              return (
-                <div key={b.title} className="bg-background p-8 rounded-2xl border border-border">
-                  <div className="w-12 h-12 rounded-xl gradient-flame flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground mb-2">{b.title}</h3>
-                  <p className="text-foreground/70">{b.description}</p>
-                </div>
               );
             })}
           </div>

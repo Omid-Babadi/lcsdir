@@ -16,6 +16,8 @@ export default function ACInstallationPage() {
       highlight="installation."
       description="Stay cool every summer with a professionally designed AC system. Wall split, multi-split and ducted systems from Daikin, Mitsubishi, Panasonic and Samsung. F-Gas certified."
       icon={Wind}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780507169/a05f0d32-a58d-46dc-89a4-b616a1ea2b81_aq2e3z.png"
+      heroImageAlt="Air Conditioning Installation"
       features={[
         { title: "Wall Split Systems", description: "Single-room cooling and heating with quiet, efficient units." },
         { title: "Multi-Split Systems", description: "Multiple rooms from one outdoor unit — ideal for whole homes." },

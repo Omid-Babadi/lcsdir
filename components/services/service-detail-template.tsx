@@ -1,16 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation";
 import { FooterSection } from "@/components/landing/footer-section";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Phone,
-  Clock,
-  Shield,
-  Award,
-  CheckCircle2,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, type LucideIcon } from "lucide-react";
+
+const DEFAULT_HERO_IMAGE = "/Gemini_Generated_Image_s4gceys4gceys4gc.png";
 
 export type ServiceDetailProps = {
   category: string;
@@ -18,6 +13,8 @@ export type ServiceDetailProps = {
   highlight: string;
   description: string;
   icon: LucideIcon;
+  heroImageSrc?: string;
+  heroImageAlt?: string;
   galleryImages?: string[];
   features: { title: string; description: string }[];
   process: { step: string; title: string; description: string }[];
@@ -30,34 +27,12 @@ export function ServiceDetailTemplate({
   highlight,
   description,
   icon: Icon,
+  heroImageSrc,
+  heroImageAlt,
   features,
   process,
   faqs,
 }: ServiceDetailProps) {
-  const isInstallationService = /installation|fitting|replacement/i.test(
-    `${category} ${title}`
-  );
-
-  const benefits = [
-    {
-      icon: Clock,
-      title: "Fast Response",
-      description: "Quick dispatch of nearest available engineer to your location.",
-    },
-    {
-      icon: Shield,
-      title: "Certified Engineers",
-      description: "Gas Safe and F-Gas registered, fully insured professionals.",
-    },
-    {
-      icon: Award,
-      title: isInstallationService ? "Installation Guarantee" : "Quality Checked",
-      description: isInstallationService
-        ? "Installation workmanship is backed by our written guarantee."
-        : "Work is tested, documented, and signed off before we leave.",
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
@@ -101,13 +76,29 @@ export function ServiceDetailTemplate({
                 </a>
               </div>
             </div>
-            <div className="relative aspect-square max-w-[500px] mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-primary/10 rounded-3xl" />
-              <div className="relative h-full flex items-center justify-center">
-                <Icon className="w-48 h-48 text-secondary" strokeWidth={1} />
+            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-[600px]">
+              {/* Modern background gradient layers */}
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/20 rounded-[40px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+              
+              {/* Main image container with modern styling */}
+              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-secondary/20">
+                <Image
+                  src={heroImageSrc ?? DEFAULT_HERO_IMAGE}
+                  alt={heroImageAlt ?? `${title} illustration`}
+                  fill
+                  style={{ backgroundSize: "cover", backgroundPosition: "center" }}
+                  className="object-cover relative hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Modern overlay effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 gradient-flame rounded-2xl opacity-30 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 gradient-cool rounded-2xl opacity-30 blur-2xl" />
+              
+              {/* Enhanced decorative elements */}
+              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-secondary/20 rounded-full opacity-30 blur-2xl" />
             </div>
           </div>
         </div>
@@ -168,34 +159,6 @@ export function ServiceDetailTemplate({
                 <p className="text-foreground/70">{p.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why us */}
-      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground mb-16 max-w-2xl">
-            Why London chooses LCS
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {benefits.map((b) => {
-              const BIcon = b.icon;
-              return (
-                <div
-                  key={b.title}
-                  className="bg-background p-8 rounded-2xl border border-border"
-                >
-                  <div className="w-12 h-12 rounded-xl gradient-flame flex items-center justify-center mb-6">
-                    <BIcon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-display text-foreground mb-2">
-                    {b.title}
-                  </h3>
-                  <p className="text-foreground/70">{b.description}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

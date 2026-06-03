@@ -236,7 +236,7 @@ export function HeroSection() {
               {/* Hero Image */}
               <div className="relative z-5 p-4 sm:p-6 lg:p-8">
                 <Image
-                  src="/730fa73b-30cf-4284-80ba-9d8ffb286a40 (1).png"
+                  src="plumbing-hero.png"
                   alt="Professional London Climate Systems Engineer"
                   width={500}
                   height={500}

@@ -16,6 +16,8 @@ export default function CentralHeatingServicePage() {
       highlight="service & care."
       description="Keep your boiler safe, efficient and under warranty. Our annual service follows manufacturer schedules and includes a written report. Gas Safe certified."
       icon={Settings}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780504717/e1387603-cf4d-47b6-97c1-625cc5517e95_1_ythczo.png"
+      heroImageAlt="Central Heating Service"
       features={[
         { title: "Boiler Service", description: "Full strip-down, clean and inspection per manufacturer spec." },
         { title: "Combustion Analysis", description: "Flue gas analysis to verify safe, efficient combustion." },
