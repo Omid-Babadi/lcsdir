@@ -16,6 +16,8 @@ export default function LeakDetectionPage() {
       highlight="leak detection"
       description="We provide rapid gas leak detection, isolation and repair. If you smell gas, call our emergency number immediately."
       icon={AlertTriangle}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596582/b2bee8a1-e0fe-497d-ad41-a2eb7f326219_hu5hkp.png"
+      heroImageAlt="Gas leak detection by engineer"
       features={[
         { title: "Rapid response", description: "Emergency attendance for suspected gas leaks." },
         { title: "Pressure testing", description: "Locate and isolate leaks with industry-standard equipment." },

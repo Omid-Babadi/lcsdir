@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const offers = [
   { text: "💧 10% off for all services", cta: "Get Quote", href: "/contact" },
-  { text: "🛡️ 1 year guarantee for all installation services", cta: "Book Now", href: "/contact" },
+  { text: "🛡️ 10 year guarantee for boiler installation", cta: "Book Now", href: "/contact" },
 ];
 
 const serviceCategories = [

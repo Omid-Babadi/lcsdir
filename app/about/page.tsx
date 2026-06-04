@@ -191,6 +191,46 @@ export default function About() {
         </div>
       </section>
 
+      <section className="py-24 lg:py-32 bg-slate-50">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+              <span className="w-8 h-px bg-primary" />
+              Our team
+            </span>
+            <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-6">
+              Meet the leader guiding our service
+            </h2>
+            <p className="text-lg text-foreground/70 leading-relaxed mb-12">
+              Our team is led by a CEO with a strong technical and project management background, ensuring every job is delivered safely, efficiently, and with great attention to detail.
+            </p>
+          </div>
+
+          <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-3xl border border-border bg-white p-10 shadow-sm">
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm font-mono uppercase tracking-[0.2em] text-primary">CEO</p>
+                  <h3 className="mt-3 text-3xl font-display text-foreground">Masoud Moradi</h3>
+                </div>
+                <div className="space-y-4 text-foreground/70">
+                  <p>
+                    Masoud brings a strong academic foundation and practical leadership to London Climate Systems. His experience ensures the business delivers professional, reliable outcomes for every client.
+                  </p>
+                  <div className="rounded-2xl bg-slate-50 p-5 border border-slate-200">
+                    <p className="text-sm uppercase tracking-[0.2em] text-slate-500 mb-3">Qualifications</p>
+                    <ul className="space-y-2 text-foreground">
+                      <li>BSc Civil Engineering</li>
+                      <li>MSc Construction Project Management, UWL University</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 lg:py-32 border-y border-border">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-16 text-center">

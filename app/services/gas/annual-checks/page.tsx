@@ -16,6 +16,8 @@ export default function AnnualChecksPage() {
       highlight="safety checks"
       description="Thorough annual inspections of all gas appliances, pipework and flues to ensure compliance and safety."
       icon={Clock}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596568/72fe25ef-adb6-40cb-a8f4-98f870938313_ra1inl.png"
+      heroImageAlt="Gas safety check by engineer"
       features={[
         { title: "Full inspection", description: "Appliances, flues and pipework checked for safety." },
         { title: "Combustion testing", description: "Boiler operation and combustion readings checked where applicable." },

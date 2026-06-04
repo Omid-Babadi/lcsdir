@@ -16,6 +16,8 @@ export default function PipeInstallationPage() {
       highlight="installation"
       description="We install new gas pipe runs, alterations and replacements for kitchens, extensions and new builds — all to Gas Safe standards."
       icon={Pipette}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780597860/3c7a9665-1b1f-4322-b21e-09d9eba3a020_jtxbzh.png"
+      heroImageAlt="Gas pipe installation by engineer"
       features={[
         { title: "New runs & extensions", description: "Install new supply routes for cookers, boilers and appliances." },
         { title: "Pipe sizing", description: "Size pipework correctly for appliance demand and reliable performance." },

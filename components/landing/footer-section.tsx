@@ -31,11 +31,22 @@ const footerLinks = {
 const socialLinks: { name: string; href: string }[] = [];
 
 const certificates = [
-  "BSc Civil Engineering",
-  "MSc Construction Project Management, UWL University",
-  "Gas Safe Register",
-  "LCL Awards",
-  "City & Guilds",
+  {
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/gas-safe-logo_xoefn7.png",
+    alt: "Gas Safe logo",
+  },
+  {
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/G3-Unvented-certified-engineers_1_g63mew.webp",
+    alt: "G3 Unvented certified engineers logo",
+  },
+  {
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/45edf68c10-lcl-awards-logo_kxe4aq.webp",
+    alt: "LCL Awards logo",
+  },
+  {
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/F-Gas-Certified-Logo-1-e1754335467963_1_rzpt43.webp",
+    alt: "F-Gas certified logo",
+  },
 ];
 
 export function FooterSection() {
@@ -58,13 +69,19 @@ export function FooterSection() {
             <div className="hidden sm:block w-px h-8 bg-primary-foreground/10 flex-shrink-0" />
 
             {/* Cert badges */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               {certificates.map((cert) => (
                 <div
-                  key={cert}
-                  className="flex min-h-12 items-center justify-center rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 px-4 py-2 text-center text-xs font-medium leading-snug text-primary-foreground/80 transition-all duration-200 hover:border-primary-foreground/20 hover:bg-primary-foreground/10 sm:text-sm"
+                  key={cert.src}
+                  className="flex h-12 min-w-[110px] items-center justify-center rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 px-4 py-2 transition-all duration-200 hover:border-primary-foreground/20 hover:bg-primary-foreground/10"
                 >
-                  {cert}
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    width={120}
+                    height={40}
+                    className="max-h-10 object-contain"
+                  />
                 </div>
               ))}
             </div>

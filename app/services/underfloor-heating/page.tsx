@@ -16,35 +16,59 @@ export default function UnderfloorHeatingPage() {
   const services = [
     {
       title: "Underfloor Heating Installation",
-      description: "Design and installation for both wet and electric systems — tailored to your property and budget.",
+      description: "Design and install wet and electric systems tailored to your property and budget.",
       href: "/services/underfloor-heating/installation",
-      icon: Wrench,
-      bgImage:
-        "67ac8e79-dfc0-4357-951a-73b5da85f2c6.png",
-    },
-    {
-      title: "Electric Underfloor Heating",
-      description: "Low-profile electric systems ideal for retrofit projects and smaller rooms, supplied and fitted by experienced engineers.",
-      href: "/services/underfloor-heating/electric",
       icon: Wrench,
       bgImage:
         "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
     },
     {
+      title: "Electric Underfloor Heating",
+      description: "Low-profile electric systems for retrofit projects and smaller rooms, supplied and fitted by experienced engineers.",
+      href: "/services/underfloor-heating/electric",
+      icon: Wrench,
+      bgImage:
+        "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
       title: "Wet Underfloor Heating Systems",
-      description: "Hydronic systems integrated with your central heating for efficient whole-house warmth.",
+      description: "Hydronic systems integrated with central heating for efficient whole-house warmth.",
       href: "/services/underfloor-heating/wet-systems",
       icon: Wrench,
       bgImage:
         "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
     },
     {
-      title: "Repairs & Maintenance",
+      title: "Underfloor Heating Repairs",
       description: "Fault finding, repairs, pressure checks and thermostat recalibration to keep systems running efficiently.",
       href: "/services/underfloor-heating/repairs",
       icon: Wrench,
       bgImage:
         "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Underfloor Heating Controls & Thermostats",
+      description: "Smart controls and thermostat installation for better comfort, efficiency, and zone control.",
+      href: "/services/underfloor-heating/controls",
+      icon: Wrench,
+      bgImage:
+        "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "Smart Thermostat Integration",
+      description: "Integrate smart thermostats with your underfloor heating for remote control and energy savings.",
+      href: "/services/underfloor-heating/smart-thermostats",
+      icon: Wrench,
+      bgImage:
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      title: "System Design & Consultation",
+      description: "Tailored system design and consultation to create the ideal underfloor heating solution for your home.",
+      href: "/services/underfloor-heating/design-consultation",
+      icon: Wrench,
+      bgImage:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
     },
   ];
 

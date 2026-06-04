@@ -16,6 +16,8 @@ export default function SafetyCertificatesPage() {
       highlight="certificates"
       description="We inspect gas appliances and issue CP12 certificates for landlords and property sales. Same-day certificates available in most cases."
       icon={FileCheck}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596563/029ef2a9-7b73-41bd-a851-edfae6609cfc_yzm2oo.png"
+      heroImageAlt="Gas safety inspection by engineer"
       features={[
         { title: "CP12 Certificates", description: "Issued after a thorough inspection for landlords." },
         { title: "Appliance checks", description: "Boilers, cookers, fires, flues and ventilation checked for safety." },

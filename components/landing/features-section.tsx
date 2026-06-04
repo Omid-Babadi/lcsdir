@@ -258,7 +258,7 @@ export function FeaturesSection() {
 
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[4/4] lg:aspect-[2.5/4]">
               <Image
-                src="/e93b6cf0-1f55-4aaa-95e4-970d6a189615.png"
+                src="/faeac5c4-cfd9-409f-be7b-0b0683ecd282.png"
                 alt="Our engineers at work"
                 fill
                 className="object-cover object-top"

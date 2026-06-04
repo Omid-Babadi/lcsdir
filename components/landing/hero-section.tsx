@@ -47,6 +47,10 @@ const boilerPartners = [
     name: "Baxi",
     logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780415770/imgbin-logo-baxi-boiler-brand-product-boiler-8rLhDb7VgAxeeb3DYSKvS7fFJ-removebg-preview_m2dvks.png"),
   },
+    {
+    name: "Viseman",
+    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/viessmann_wordmark_rgb_1_vitorange_m0qaxn.png"),
+  },
 ];
 
 const acPartners = [
@@ -65,10 +69,6 @@ const acPartners = [
   {
     name: "Hitachi",
     logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/png-transparent-hitachi-logo-thumbnail-removebg-preview_ipquaa.png"),
-  },
-  {
-    name: "Hitachi",
-    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/viessmann_wordmark_rgb_1_vitorange_m0qaxn.png"),
   },
   {
     name: "Daikin",
@@ -90,11 +90,11 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background mt-30">
+    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1 lg:order-1  mt-5">
             {/* Eyebrow */}
             <div
               className={`mb-4 sm:mb-6 transition-all duration-700 ${
@@ -208,7 +208,7 @@ export function HeroSection() {
 
           {/* Right Content - Square Pattern Background with Image */}
           <div
-            className={`order-1 lg:order-2 relative transition-all duration-1000 delay-300 ${
+            className={`order-2 mt-0 mb-10 lg:mt-30 lg:order-2 relative transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
@@ -234,7 +234,7 @@ export function HeroSection() {
               </div>
 
               {/* Hero Image */}
-              <div className="relative z-5 p-4 sm:p-6 lg:p-8">
+              <div className="relative lg:z-5 p-4 sm:p-6 lg:p-8  ">
                 <Image
                   src="plumbing-hero.png"
                   alt="Professional London Climate Systems Engineer"

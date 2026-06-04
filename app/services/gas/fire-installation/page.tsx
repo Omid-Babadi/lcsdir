@@ -16,6 +16,8 @@ export default function FireInstallationPage() {
       highlight="installation"
       description="We install and commission gas fires, ensuring flue and ventilation compliance and providing handover paperwork."
       icon={Flame}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596568/24dc7868-0741-4d88-bbd7-c161e0cc1013_1_wbn6ek.png"
+      heroImageAlt="Gas fire installation by engineer"
       features={[
         { title: "Fire suitability", description: "Confirm the appliance, chimney and room are suitable before fitting." },
         { title: "Flue compliance", description: "Ensure correct flue and ventilation arrangements." },

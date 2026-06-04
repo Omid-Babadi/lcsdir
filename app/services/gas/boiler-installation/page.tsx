@@ -16,6 +16,8 @@ export default function GasBoilerInstallationPage() {
       highlight="installation"
       description="Gas Safe engineers supply and install combi, system and conventional boilers with full commissioning and safety checks."
       icon={ThermometerSun}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596566/0689c7a3-b1b0-40c0-978e-1b16ade4c776_1_cg5mub.png"
+      heroImageAlt="Gas boiler installation by engineer"
       features={[
         { title: "Combi & system", description: "Install combi, system and conventional boilers." },
         { title: "Safety checks", description: "Full Gas Safe commissioning and flue tests." },

@@ -118,8 +118,7 @@ const services = [
       "Wet Underfloor Heating Systems",
       "Underfloor Heating Repairs",
       "Underfloor Heating Controls & Thermostats",
-      "Smart Thermostat Integration",
-    ],
+      "Smart Thermostat Integration",      "System Design & Consultation",    ],
   },
   // Power Flush moved under Boiler
 ];

@@ -71,19 +71,19 @@ export default function HeatingPage() {
 
   const galleryImages = [
     {
-      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780221386/ace8f51a-7150-425b-bdb4-66a0ba7bbdcc-fotor-20260531132445_bj6fjt.png",
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596427/5e9ec4b2-50e1-40d6-ac04-52dfce9819e0-fotor-20260604213617_gaoe20.png",
       alt: "Boiler installation by engineer",
       label: "Expert Installation",
       category: "Installation",
     },
     {
-      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152595/ChatGPT_Image_May_29_2026_05_05_14_PM_bkk1sr.png",
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596428/778fe9d6-3e3c-44ad-97be-8ea81bc5c207_1_tlfl7g.png",
       alt: "Enmergency heating repair",
       label: "Emergency Response",
       category: "Emergency",
     },
     {
-      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152588/8601bb2e-6db2-4848-8933-ee50c9b770f7_jxiyc4.png",
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596426/dce24ed4-6a3b-4c63-9863-1ee78a0c6b7e-fotor-20260604213642_ustr56.png",
       alt: "Heating system service and maintenance",
       label: "Annual Servicing",
       category: "Service",

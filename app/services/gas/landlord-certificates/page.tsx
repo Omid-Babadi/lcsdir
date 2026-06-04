@@ -16,6 +16,8 @@ export default function LandlordCertificatesPage() {
       highlight="certificates"
       description="We inspect properties and issue CP12 landlord gas safety certificates with professional reports and fast turnaround."
       icon={FileCheck}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780597858/fef0ab0b-5217-4ac9-bd23-8353b830c29f_tae5jg.png"
+      heroImageAlt="Gas safety inspection for landlord certificate"
       features={[
         { title: "CP12 Issued", description: "Fast issuance for compliant rental properties." },
         { title: "Tenant-friendly visits", description: "Appointments arranged to suit tenants, agents and access windows." },

@@ -16,6 +16,8 @@ export default function CookerInstallationPage() {
       highlight="installation"
       description="We install gas cookers and hobs safely, pressure-test connections and provide certification on completion."
       icon={Wrench}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780596567/420a4372-17ec-4c8f-a834-2bad387d0217_tha6hr.png"
+      heroImageAlt="Gas cooker installation by engineer"
       features={[
         { title: "Cookers & hobs", description: "Install freestanding cookers, built-in hobs and range cookers." },
         { title: "Connection checks", description: "Check gas supply, hoses, isolation valves and appliance position." },

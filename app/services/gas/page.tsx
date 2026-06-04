@@ -20,7 +20,7 @@ export default function GasPage() {
       href: "/services/gas/boiler-installation",
       icon: Flame,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780221382/fa8b7c95-9015-4389-aa2f-161ab6583ca2-fotor-2026053113822_w8zuhq.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596566/0689c7a3-b1b0-40c0-978e-1b16ade4c776_1_cg5mub.png",
     },
     {
       title: "Gas Cooker and Hob Installation",
@@ -28,7 +28,7 @@ export default function GasPage() {
       href: "/services/gas/cooker-installation",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596567/420a4372-17ec-4c8f-a834-2bad387d0217_tha6hr.png",
     },
     {
       title: "Gas Fire Installation",
@@ -36,7 +36,7 @@ export default function GasPage() {
       href: "/services/gas/fire-installation",
       icon: Flame,
       bgImage:
-        "https://images.unsplash.com/photo-1512446810149-7c79b1a84f53?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596568/24dc7868-0741-4d88-bbd7-c161e0cc1013_1_wbn6ek.png",
     },
     {
       title: "Gas Safety Certificates",
@@ -44,7 +44,7 @@ export default function GasPage() {
       href: "/services/gas/safety-certificates",
       icon: FileCheck,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152518/301650b1-e06c-470d-9d3c-f099a7429f77_s2my30.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596563/029ef2a9-7b73-41bd-a851-edfae6609cfc_yzm2oo.png",
     },
     {
       title: "Gas Leak Detection and Repair",
@@ -52,7 +52,7 @@ export default function GasPage() {
       href: "/services/gas/leak-detection",
       icon: AlertTriangle,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152502/95bc1c7c-cb6a-4e5b-ae62-bc79060bf4fd_vrrmca.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596582/b2bee8a1-e0fe-497d-ad41-a2eb7f326219_hu5hkp.png",
     },
     {
       title: "Gas Pipe Installation",
@@ -60,7 +60,7 @@ export default function GasPage() {
       href: "/services/gas/pipe-installation",
       icon: Pipette,
       bgImage:
-        "https://images.unsplash.com/photo-1513866755814-4f6ca18a7f1e?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597860/3c7a9665-1b1f-4322-b21e-09d9eba3a020_jtxbzh.png",
     },
     {
       title: "Annual Gas Safety Checks",
@@ -68,7 +68,7 @@ export default function GasPage() {
       href: "/services/gas/annual-checks",
       icon: Shield,
       bgImage:
-        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596568/72fe25ef-adb6-40cb-a8f4-98f870938313_ra1inl.png",
     },
     {
       title: "Landlord Gas Certificates",
@@ -76,7 +76,7 @@ export default function GasPage() {
       href: "/services/gas/landlord-certificates",
       icon: FileCheck,
       bgImage:
-        "https://images.unsplash.com/photo-1491897554428-130a60dd4757?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597858/fef0ab0b-5217-4ac9-bd23-8353b830c29f_tae5jg.png",
     },
   ];
 
@@ -232,7 +232,7 @@ export default function GasPage() {
                   key={service.title}
                   href={service.href}
                   className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
-                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "70vh"}}
                 >
                   <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
