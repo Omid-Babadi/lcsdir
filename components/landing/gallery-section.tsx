@@ -18,7 +18,7 @@ const gallery = [
     description: "Boiler servicing and maintenance",
     tag: "Heating",
     href: "/services/heating",
-    image: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152595/ChatGPT_Image_May_29_2026_05_05_14_PM_bkk1sr.png",
+    image: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596428/778fe9d6-3e3c-44ad-97be-8ea81bc5c207_1_tlfl7g.png",
   },
   {
     title: "Air Conditioning",

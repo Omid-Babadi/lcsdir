@@ -231,6 +231,20 @@ export function FeaturesSection() {
                 engineers and tradespeople deliver reliable results with
                 transparent pricing.
               </p>
+
+              <div className="mt-6 rounded-xl bg-background/90 border border-border/50 p-4 shadow-lg lg:hidden">
+                <div className="flex items-center gap-3">
+                  <div className={`w-2 h-2 rounded-full ${isAvailable ? "bg-green-500 animate-pulse" : "bg-red-500"}`} />
+                  <div className="flex flex-col">
+                    <span className={`text-sm font-medium ${isAvailable ? "text-green-600" : "text-red-600"}`}>
+                      {isAvailable ? "Available now" : "Currently unavailable"}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      Mon–Fri 8:00 AM–6:00 PM • Sat 8:00 AM–3:00 PM (London)
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -256,7 +270,7 @@ export function FeaturesSection() {
             <div className="absolute -inset-4 rounded-2xl bg-blue-500/5 -z-10" />
             <div className="absolute -top-6 -right-6 w-40 h-40 rounded-full bg-blue-500/10 blur-3xl -z-10" />
 
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[4/4] lg:aspect-[2.5/4]">
+            <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[3/4] md:aspect-[4/3] lg:aspect-[2.4/4]">
               <Image
                 src="/faeac5c4-cfd9-409f-be7b-0b0683ecd282.png"
                 alt="Our engineers at work"
@@ -267,8 +281,8 @@ export function FeaturesSection() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
 
-              {/* Availability Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-sm border border-border/50 shadow-lg">
+              {/* Availability Badge (desktop only) */}
+              <div className="hidden lg:block absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/90 backdrop-blur-sm border border-border/50 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-2 h-2 rounded-full ${

@@ -32,7 +32,7 @@ const socialLinks: { name: string; href: string }[] = [];
 
 const certificates = [
   {
-    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/gas-safe-logo_xoefn7.png",
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780224348/download_9_fly9xv.png",
     alt: "Gas Safe logo",
   },
   {
@@ -45,6 +45,10 @@ const certificates = [
   },
   {
     src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/F-Gas-Certified-Logo-1-e1754335467963_1_rzpt43.webp",
+    alt: "F-Gas certified logo",
+  },
+    {
+    src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780600149/city-guilds-logo-png_seeklogo-213843_x524ry.png",
     alt: "F-Gas certified logo",
   },
 ];
@@ -73,7 +77,7 @@ export function FooterSection() {
               {certificates.map((cert) => (
                 <div
                   key={cert.src}
-                  className="flex h-12 min-w-[110px] items-center justify-center rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 px-4 py-2 transition-all duration-200 hover:border-primary-foreground/20 hover:bg-primary-foreground/10"
+                  className="flex h-12 w-[100px] items-center justify-center rounded-lg border border-primary-foreground/10 bg-white px-4 py-2 transition-all duration-200 hover:border-primary-foreground/20 hover:bg-primary-foreground/10"
                 >
                   <Image
                     src={cert.src}
