@@ -16,6 +16,8 @@ export default function SystemCombiFittingPage() {
       highlight="fitting"
       description="We fit combi and system boilers, integrate controls and ensure the system is balanced and commissioned to manufacturer standards."
       icon={ThermometerSun}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679430/b3a7d184-9eca-4ba1-86bd-91a829a5e28f_sr7hk8.png"
+      heroImageAlt="Engineer installing a boiler"
       features={[
         { title: "Boiler selection", description: "Recommend combi or system boilers based on property and hot water use." },
         { title: "Pipework adaption", description: "Adapt existing pipework and complete neat installations." },

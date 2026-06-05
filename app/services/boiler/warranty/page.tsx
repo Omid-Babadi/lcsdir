@@ -16,6 +16,8 @@ export default function WarrantyPage() {
       highlight="warranty"
       description="We complete warranty work where permitted and liaise with manufacturers to carry out covered repairs with proper parts and documentation."
       icon={Shield}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780694364/1fea9ad2-8e7f-44a1-a46b-538c3d2a2993_vhvd3y.png"
+      heroImageAlt="Engineer performing boiler warranty work"
       features={[
         { title: "Warranty checks", description: "Confirm service history, install paperwork and cover conditions." },
         { title: "Manufacturer liaison", description: "We work with manufacturers to validate and perform warranty repairs." },

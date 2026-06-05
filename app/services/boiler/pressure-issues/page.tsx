@@ -16,6 +16,8 @@ export default function PressureIssuesPage() {
       highlight="pressure"
       description="We identify root causes of pressure loss or spikes and provide repairs or replacements for valves, expansion vessels and pipework as required."
       icon={Gauge}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679432/2b468ef7-1d3b-4515-afee-05d958549ce1_mzpmvr.png"
+      heroImageAlt="Engineer checking boiler pressure"
       features={[
         { title: "Leak detection", description: "Locate leaks on radiators and pipework." },
         { title: "Valve replacement", description: "Replace faulty pressure relief valves and components." },

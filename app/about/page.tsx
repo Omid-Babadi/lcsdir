@@ -68,123 +68,178 @@ export default function About() {
   ];
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Navigation />
 
-      <section className="relative pt-32 pb-24 lg:py-48">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-primary" />
-              About London Climate Systems
-            </span>
-            <h1 className="text-5xl lg:text-7xl font-display leading-tight text-foreground mb-8">
-              Local engineers keeping London comfortable
-            </h1>
-            <p className="text-xl text-foreground/70 leading-relaxed">
-              London Climate Systems Ltd provides plumbing, heating, air conditioning, gas, and boiler services across Greater London. Since 2018, our team has combined technical expertise with straightforward customer care, delivering high-quality work at fair prices and at times that suit our clients.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="relative overflow-hidden pt-24 pb-20 sm:pt-28 lg:pt-32 lg:pb-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_35%)]" />
+        <div className="pointer-events-none absolute right-0 top-16 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(14,165,233,0.14),_transparent_55%)] blur-3xl" />
+        <div className="pointer-events-none absolute left-0 bottom-0 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(16,185,129,0.12),_transparent_55%)] blur-3xl" />
 
-      <section className="py-24 lg:py-32 border-y border-border">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-                <span className="w-8 h-px bg-primary" />
-                Why choose us
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_0.85fr] lg:items-center">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90 mb-6">
+                <span className="inline-block h-px w-12 rounded-full bg-primary" />
+                About London Climate Systems
               </span>
-              <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-8">
-                Precision, care, and a genuine local service
-              </h2>
-              <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
-                <p>
-                  At London Climate Systems, we combine over a decade of expertise in plumbing, heating, and air conditioning installations with a deep commitment to our customers. Our Gas Safe and F-Gas registered engineers serve London with precision and care, ensuring every project is completed to a high professional standard.
-                </p>
-                <p>
-                  As a proud local employer, we are rooted in the communities we serve. When you choose us, you get a trusted local expert at your door, not a faceless contractor. We keep things simple: top-quality service, fair pricing, clear communication, and appointments arranged around your needs.
-                </p>
-                <p>
-                  Whether you need an emergency repair, a detailed estimate within 48 hours, or a long-term maintenance plan, we listen, adapt, and put your comfort first. Our aim is not just to meet expectations, but to earn your trust for life.
-                </p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display tracking-tight text-foreground">
+                Modern heating, cooling and plumbing expertise for London homes.
+              </h1>
+              <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground/70">
+                Since 2018, we’ve been helping Londoners stay comfortable with fast, transparent engineering backed by Gas Safe and F-Gas registration. From emergency repairs to long-term maintenance, our local team delivers service you can trust.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>
+                  <Link href="/contact">
+                    Start your quote
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
+                  <a href="tel:07473423003">Call 07473 423003</a>
+                </Button>
               </div>
             </div>
 
-            <div className="border border-border rounded-xl p-8 lg:p-10 bg-primary/5">
-              <Wrench className="w-10 h-10 text-primary mb-6" />
-              <h3 className="text-2xl font-display text-foreground mb-6">
-                What we help with
-              </h3>
-              <div className="space-y-4">
-                {services.map((service) => (
-                  <div key={service} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <p className="text-foreground/70">{service}</p>
-                  </div>
-                ))}
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="rounded-[2rem] border border-border/70 bg-white/95 p-8 shadow-[0_40px_80px_-48px_rgba(15,23,42,0.3)] backdrop-blur-xl">
+                <span className="inline-flex items-center gap-3 rounded-full bg-primary/5 px-4 py-2 text-sm font-semibold text-primary">
+                  Trusted local engineering
+                </span>
+                <h2 className="mt-6 text-3xl font-display text-foreground">
+                  Certified service with a modern approach.
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-foreground/70">
+                  We combine transparent pricing with industry certifications, responsive communication, and practical solutions for homes and businesses across Greater London.
+                </p>
+                <div className="mt-8 grid gap-4">
+                  {values.slice(0, 2).map((value) => {
+                    const Icon = value.icon;
+                    return (
+                      <div key={value.title} className="flex items-start gap-3 rounded-3xl bg-slate-50 p-4">
+                        <Icon className="mt-1 h-6 w-6 text-primary" />
+                        <div>
+                          <p className="text-sm font-semibold text-foreground">{value.title}</p>
+                          <p className="mt-1 text-sm text-foreground/70">{value.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="rounded-[2rem] border border-border/70 bg-slate-950/95 p-8 text-white shadow-[0_40px_80px_-48px_rgba(15,23,42,0.5)] backdrop-blur-xl">
+                <span className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white/90">
+                  Fast, practical coverage
+                </span>
+                <h2 className="mt-6 text-3xl font-display text-white">
+                  Your property, protected from every angle.
+                </h2>
+                <div className="mt-8 grid gap-4 text-sm text-slate-200">
+                  {values.slice(2).map((value) => {
+                    const Icon = value.icon;
+                    return (
+                      <div key={value.title} className="flex items-start gap-3 rounded-3xl bg-white/5 p-4">
+                        <Icon className="mt-1 h-6 w-6 text-primary" />
+                        <div>
+                          <p className="font-semibold text-white">{value.title}</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-300">{value.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-white/90 p-8 text-center shadow-sm backdrop-blur-xl">
+                <p className="text-4xl font-display text-foreground sm:text-5xl">{stat.number}</p>
+                <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="mb-16">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-primary" />
-              Our values
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-display text-foreground">
-              Built around the way clients need service to work
-            </h2>
-          </div>
+      <section className="py-24 lg:py-32 border-t border-border bg-slate-50">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-[0.95fr_0.7fr] lg:items-center">
+            <div>
+              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90 mb-6">
+                <span className="inline-block h-px w-12 rounded-full bg-primary" />
+                What we help with
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-display text-foreground">Everything your property needs to run smoothly.</h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-foreground/70">
+                From gas safety certificates to full heating installs, our team is equipped to support your home or business with the right level of expertise and the right pace for your schedule.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value) => {
-              const Icon = value.icon;
-              return (
-                <div
-                  key={value.title}
-                  className="p-8 border border-border rounded-xl hover:border-primary/30 transition-colors"
-                >
-                  <Icon className="w-8 h-8 text-primary mb-5" />
-                  <h3 className="text-2xl font-display text-foreground mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-foreground/70 text-lg leading-relaxed">
-                    {value.description}
-                  </p>
+            <div className="grid gap-4 rounded-[2rem] border border-border bg-white p-8 shadow-sm">
+              {services.map((service) => (
+                <div key={service} className="flex items-start gap-4 rounded-3xl border border-slate-200/80 bg-slate-50 p-4">
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
+                  <p className="text-foreground/75 leading-7">{service}</p>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="py-24 lg:py-32 bg-primary text-primary-foreground">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-20 items-start">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
             <div>
-              <span className="inline-flex items-center gap-3 text-sm font-mono text-primary-foreground/60 mb-6">
-                <span className="w-8 h-px bg-primary-foreground/30" />
-                Message from our leader
+              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary-foreground/70 mb-6">
+                <span className="inline-block h-px w-12 rounded-full bg-primary-foreground/30" />
+                Our values
               </span>
-              <h2 className="text-4xl lg:text-5xl font-display">
-                A note from our founder
-              </h2>
+              <h2 className="text-4xl sm:text-5xl font-display">Built around the way clients need service to work.</h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-primary-foreground/80">
+                We make every engagement clear, timely and practical. That means detailed communication, sensible advice and a local team ready to act when you need us most.
+              </p>
             </div>
 
-            <figure className="border-l border-primary-foreground/20 pl-8 lg:pl-12">
-              <Quote className="w-10 h-10 text-primary-foreground/40 mb-8" />
-              <blockquote className="text-2xl lg:text-3xl font-display leading-relaxed">
+            <div className="grid gap-5 sm:grid-cols-2">
+              {values.map((value) => {
+                const Icon = value.icon;
+                return (
+                  <div key={value.title} className="rounded-[2rem] border border-primary/20 bg-white/10 p-8 shadow-sm backdrop-blur-xl transition hover:border-primary/40 hover:bg-white/15">
+                    <Icon className="h-7 w-7 text-primary" />
+                    <h3 className="mt-5 text-2xl font-display text-white">{value.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-primary-foreground/80">{value.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 lg:py-32 bg-slate-950 text-white">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-[0.95fr_0.85fr] lg:items-center">
+            <div>
+              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/80 mb-6">
+                <span className="inline-block h-px w-12 rounded-full bg-primary/60" />
+                Message from our leader
+              </span>
+              <h2 className="text-4xl sm:text-5xl font-display text-white">A note from our founder</h2>
+            </div>
+
+            <figure className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-10 shadow-2xl backdrop-blur-xl">
+              <Quote className="h-12 w-12 text-primary/70" />
+              <blockquote className="mt-8 text-2xl leading-10 text-white">
                 We know that inviting an engineer into your home or business is a matter of trust. My promise is simple: we will respect your time, explain the work clearly, and treat every job as if we are looking after our own property.
               </blockquote>
-              <figcaption className="mt-8">
-                <p className="text-lg font-semibold">Masoud Moradi</p>
-                <p className="text-primary-foreground/60">Founder, London Climate Systems Ltd</p>
+              <figcaption className="mt-10 text-sm text-slate-300">
+                <p className="font-semibold text-white">Masoud Moradi</p>
+                <p className="mt-1 text-primary/70">Founder, London Climate Systems Ltd</p>
               </figcaption>
             </figure>
           </div>
@@ -192,38 +247,34 @@ export default function About() {
       </section>
 
       <section className="py-24 lg:py-32 bg-slate-50">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-primary" />
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="text-center">
+            <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90 mb-6">
+              <span className="inline-block h-px w-12 rounded-full bg-primary" />
               Our team
             </span>
-            <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-6">
-              Meet the leader guiding our service
-            </h2>
-            <p className="text-lg text-foreground/70 leading-relaxed mb-12">
-              Our team is led by a CEO with a strong technical and project management background, ensuring every job is delivered safely, efficiently, and with great attention to detail.
+            <h2 className="text-4xl sm:text-5xl font-display text-foreground">Meet the leader guiding our service.</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-foreground/70">
+              Our team is led by a CEO with technical expertise and strong project management experience, ensuring every job is delivered safely, efficiently and with excellent attention to detail.
             </p>
           </div>
 
-          <div className="grid items-stretch gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-3xl border border-border bg-white p-10 shadow-sm">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-[2rem] border border-border bg-white p-10 shadow-sm">
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm font-mono uppercase tracking-[0.2em] text-primary">CEO</p>
+                  <p className="text-sm font-mono uppercase tracking-[0.22em] text-primary">CEO</p>
                   <h3 className="mt-3 text-3xl font-display text-foreground">Masoud Moradi</h3>
                 </div>
-                <div className="space-y-4 text-foreground/70">
-                  <p>
-                    Masoud brings a strong academic foundation and practical leadership to London Climate Systems. His experience ensures the business delivers professional, reliable outcomes for every client.
-                  </p>
-                  <div className="rounded-2xl bg-slate-50 p-5 border border-slate-200">
-                    <p className="text-sm uppercase tracking-[0.2em] text-slate-500 mb-3">Qualifications</p>
-                    <ul className="space-y-2 text-foreground">
-                      <li>BSc Civil Engineering</li>
-                      <li>MSc Construction Project Management, UWL University</li>
-                    </ul>
-                  </div>
+                <p className="text-foreground/70 leading-7">
+                  Masoud combines a strong academic foundation with practical leadership to deliver professional and reliable outcomes for every customer.
+                </p>
+                <div className="rounded-[1.75rem] bg-slate-50 p-5 text-foreground/80 ring-1 ring-slate-200">
+                  <p className="text-xs uppercase tracking-[0.26em] text-slate-500">Qualifications</p>
+                  <ul className="mt-4 space-y-2 text-sm leading-7 text-foreground">
+                    <li>BSc Civil Engineering</li>
+                    <li>MSc Construction Project Management, UWL University</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -231,18 +282,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 border-y border-border">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-16 text-center">
-            By the numbers
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-24 lg:py-32 border-t border-border bg-white">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-10 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-5xl font-display text-primary mb-3">
-                  {stat.number}
-                </div>
-                <p className="text-foreground/60 text-lg">{stat.label}</p>
+              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-slate-50 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <p className="text-4xl font-display text-foreground sm:text-5xl">{stat.number}</p>
+                <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -250,30 +296,21 @@ export default function About() {
       </section>
 
       <section className="py-24 lg:py-32 bg-primary/5">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
-          <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12 text-center">
+          <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-6">
             Ready to speak with a local expert?
           </h2>
-          <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-xl leading-8 text-foreground/70 mb-12">
             Tell us what you need and we will help you plan the right next step, from urgent repairs to planned maintenance.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 h-14 group"
-              asChild
-            >
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>
               <Link href="/contact">
                 Get Quote
-                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full px-8 h-14 border-primary/30 text-foreground"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
               <a href="tel:07473423003">Call 07473 423003</a>
             </Button>
           </div>

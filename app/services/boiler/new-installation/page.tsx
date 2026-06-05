@@ -16,6 +16,8 @@ export default function NewInstallationPage() {
       highlight="installation."
       description="We supply, fit and commission new boilers — combi, system and conventional. Installations include system flushing, controls setup and safety checks."
       icon={ThermometerSun}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679428/aa3c0c42-a34f-4cc9-b9a3-f42198665f54_ob2iwe.png"
+      heroImageAlt="Engineer installing a new boiler"
       features={[
         { title: "System design", description: "Heat-loss calculation and recommended boiler sizing." },
         { title: "Removal & replacement", description: "Safe removal of old boilers and pipework adaptation." },

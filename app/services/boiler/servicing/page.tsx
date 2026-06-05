@@ -16,6 +16,8 @@ export default function ServicingPage() {
       highlight="servicing"
       description="Our Gas Safe engineers perform full boiler services — safety checks, combustion analysis and parts inspection to keep your system safe and efficient."
       icon={Shield}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679430/f723f4e5-cc99-4c89-b025-2260f03df530_okgrlw.png"
+      heroImageAlt="Engineer servicing a boiler"
       features={[
         { title: "Safety checks", description: "Combustion, flue and pressure checks for safe operation." },
         { title: "Parts inspection", description: "Assess wear and recommend replacements." },

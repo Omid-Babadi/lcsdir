@@ -20,7 +20,7 @@ export default function BoilerPage() {
       href: "/services/boiler/breakdown-repairs",
       icon: Wrench,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/d33b7dda-c697-41fe-91a6-e7b5f553262d_jbtmt6.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679427/e1a422a6-4d3a-482a-9802-a69daad383de_pihoqh.png",
     },
     {
       title: "New Boiler Installation",
@@ -28,7 +28,7 @@ export default function BoilerPage() {
       href: "/services/boiler/new-installation",
       icon: ThermometerSun,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780221381/ChatGPT_Image_May_30_2026_07_40_36_PM-fotor-20260531132346_zr1jpx.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679428/aa3c0c42-a34f-4cc9-b9a3-f42198665f54_ob2iwe.png",
     },
     {
       title: "Boiler Replacement and Upgrades",
@@ -36,7 +36,7 @@ export default function BoilerPage() {
       href: "/services/boiler/replacement",
       icon: FileCheck,
       bgImage:
-        "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679428/025fd6c9-7d4c-42c1-ba4c-7d189de66879_sfvm8c.png",
     },
     {
       title: "Annual Boiler Servicing",
@@ -44,7 +44,7 @@ export default function BoilerPage() {
       href: "/services/boiler/servicing",
       icon: Shield,
       bgImage:
-        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679430/f723f4e5-cc99-4c89-b025-2260f03df530_okgrlw.png",
     },
     {
       title: "System and Combi Boiler Fitting",
@@ -52,7 +52,7 @@ export default function BoilerPage() {
       href: "/services/boiler/system-combi-fitting",
       icon: ThermometerSun,
       bgImage:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679430/b3a7d184-9eca-4ba1-86bd-91a829a5e28f_sr7hk8.png",
     },
     {
       title: "Boiler Pressure Issues",
@@ -60,7 +60,7 @@ export default function BoilerPage() {
       href: "/services/boiler/pressure-issues",
       icon: Gauge,
       bgImage:
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679432/2b468ef7-1d3b-4515-afee-05d958549ce1_mzpmvr.png",
     },
     {
       title: "Pilot Light Repairs",
@@ -68,7 +68,7 @@ export default function BoilerPage() {
       href: "/services/boiler/pilot-light",
       icon: FileCheck,
       bgImage:
-        "https://images.unsplash.com/photo-1512446810149-7c79b1a84f53?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679447/ddf60d23-fbdc-441a-af54-e3b75842a281_hv2bab.png",
     },
     {
       title: "Boiler Warranty Work",
@@ -76,7 +76,7 @@ export default function BoilerPage() {
       href: "/services/boiler/warranty",
       icon: FileCheck,
       bgImage:
-        "https://images.unsplash.com/photo-1491897554428-130a60dd4757?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780694364/1fea9ad2-8e7f-44a1-a46b-538c3d2a2993_vhvd3y.png",
     },
     {
       title: "Power Flush",
@@ -84,7 +84,7 @@ export default function BoilerPage() {
       href: "/services/boiler/power-flush",
       icon: Zap,
       bgImage:
-        "https://images.unsplash.com/photo-1513866755814-4f6ca18a7f1e?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780694366/d8365fc9-78ee-4b52-a72d-ad58cae4723a_kmofmy.png",
     },
   ];
 
@@ -239,7 +239,7 @@ export default function BoilerPage() {
                   key={service.title}
                   href={service.href}
                   className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
-                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", height : "70vh" }}
                 >
                   <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

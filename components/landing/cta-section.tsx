@@ -95,7 +95,7 @@ export function CtaSection() {
               <div className="inline-flex items-center gap-2 border border-secondary/30 bg-secondary/5 rounded-full px-3 py-1.5 mb-8 self-start">
                 <Star className="w-3.5 h-3.5 text-secondary fill-secondary" />
                 <span className="text-xs font-mono text-secondary/80 tracking-wide">
-                  4.9 · 1,200+ reviews
+                  4.9 · 500+ reviews
                 </span>
               </div>
 

@@ -157,7 +157,7 @@ export default function ServicesPage() {
                   key={service.name}
                   href={service.href}
                   className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
-                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", width: "100%", height: "100%" }}
                 >
                   <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

@@ -16,6 +16,8 @@ export default function ReplacementPage() {
       highlight="upgrades"
       description="Upgrade to a more efficient boiler to reduce running costs and improve reliability. We handle full switchovers, commissioning and warranty registration."
       icon={Cog}
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679428/025fd6c9-7d4c-42c1-ba4c-7d189de66879_sfvm8c.png"
+      heroImageAlt="Engineer installing a new boiler"
       features={[
         { title: "Energy savings", description: "Modern boilers are more efficient and cheaper to run." },
         { title: "Right-size upgrade", description: "Choose boiler output and cylinder options around your hot water demand." },

@@ -156,222 +156,239 @@ const handleSubmit = async (e: React.FormEvent) => {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:py-48">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-primary" />
-              Get in Touch
-            </span>
-            <h1 className="text-5xl lg:text-7xl font-display leading-tight text-foreground mb-8">
-              Book a service or reach out
-            </h1>
-            <p className="text-xl text-foreground/70 leading-relaxed">
-              Whether it&apos;s an emergency or a scheduled appointment, we&apos;re here to help. Contact us using any method below or submit a booking request.
-            </p>
+      <section className="relative overflow-hidden pt-24 pb-20 sm:pt-28 lg:pt-32 lg:pb-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_30%)]" />
+        <div className="pointer-events-none absolute right-0 top-16 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(14,165,233,0.16),_transparent_55%)] blur-3xl" />
+        <div className="pointer-events-none absolute left-0 bottom-0 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(16,185,129,0.12),_transparent_55%)] blur-3xl" />
+
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_0.85fr] lg:items-center">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary/90 mb-6">
+                <span className="inline-block h-px w-14 rounded-full bg-primary" />
+                Get in Touch
+              </span>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display tracking-tight text-foreground">
+                Fast, modern contact for every London property.
+              </h1>
+              <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground/70">
+                Whether it&apos;s an emergency repair or a planned service, our local team makes it easy to book with confidence. Reach out now and we&apos;ll support you from the first message to the finished job.
+              </p>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>
+                  <a href="#booking">
+                    Book a service
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
+                  <a href="tel:07473423003">Call 07473 423003</a>
+                </Button>
+              </div>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {contactMethods.map((method) => {
+                const Icon = method.icon;
+                return (
+                  <div key={method.label} className="rounded-[2rem] border border-border bg-white/95 p-8 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary shadow-sm">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mt-6 text-xl font-semibold text-foreground">{method.label}</h3>
+                    <p className="mt-3 font-mono text-foreground">{method.value}</p>
+                    <p className="mt-2 text-sm text-foreground/60">{method.subtext}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-16">Quick contact</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactMethods.map((method, index) => {
-              const Icon = method.icon;
-              return (
-                <div
-                  key={index}
-                  className="p-8 border border-border rounded-xl hover:border-primary/30 transition-all hover:shadow-lg"
-                >
-                  <Icon className="w-8 h-8 text-primary mb-4" />
-                  <h3 className="text-lg font-display text-foreground mb-2">{method.label}</h3>
-                  <p className="text-foreground font-mono mb-2">{method.value}</p>
-                  <p className="text-sm text-foreground/60">{method.subtext}</p>
+      <section id="booking" className="py-24 lg:py-32 border-t border-border bg-slate-50">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="rounded-[2rem] bg-white p-10 shadow-sm ring-1 ring-slate-200/80">
+              <span className="inline-flex items-center gap-3 rounded-full bg-primary/5 px-4 py-2 text-sm font-semibold text-primary">
+                Quick booking
+              </span>
+              <h2 className="mt-6 text-4xl font-display text-foreground">Request a service in minutes.</h2>
+              <p className="mt-6 text-lg leading-8 text-foreground/70">
+                Fill out your details once and we&apos;ll handle the rest. You can also call or email us directly if you need support right away.
+              </p>
+              <div className="mt-10 space-y-4 text-sm text-foreground/70">
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-primary">1</span>
+                  <p>Describe the issue and the service you need.</p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Form */}
-      <section id="booking" className="py-24 lg:py-32 border-t border-border bg-primary/5">
-        <div className="max-w-2xl mx-auto px-6 lg:px-12">
-          <div className="mb-12">
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-              <span className="w-8 h-px bg-primary" />
-              Booking Form
-            </span>
-            <h2 className="text-4xl lg:text-5xl font-display">
-              Request a service
-            </h2>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-mono text-muted-foreground mb-2">
-                Full Name *
-              </label>
-              <Input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                required
-                className="w-full h-12 px-4 rounded-lg border border-foreground/20 bg-background focus:border-primary"
-              />
-            </div>
-
-            {/* Phone and Email */}
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-mono text-muted-foreground mb-2">
-                  Phone Number *
-                </label>
-                <Input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+44 (0) 20..."
-                  required
-                  className="w-full h-12 px-4 rounded-lg border border-foreground/20 bg-background focus:border-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-mono text-muted-foreground mb-2">
-                  Email Address *
-                </label>
-                <Input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  required
-                  className="w-full h-12 px-4 rounded-lg border border-foreground/20 bg-background focus:border-primary"
-                />
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-primary">2</span>
+                  <p>Choose how fast you need us and share your address.</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-primary">3</span>
+                  <p>Submit your request and we&apos;ll contact you straight away.</p>
+                </div>
               </div>
             </div>
 
-            {/* Address */}
-            <div>
-              <label className="block text-sm font-mono text-muted-foreground mb-2">
-                Service Address *
-              </label>
-              <Input
-                type="text"
-                name="address"
-                value={formData.address}
-                onChange={handleChange}
-                placeholder="Your address in London"
-                required
-                className="w-full h-12 px-4 rounded-lg border border-foreground/20 bg-background focus:border-primary"
-              />
-            </div>
-
-            {/* Service Type */}
-            <div>
-              <label className="block text-sm font-mono text-muted-foreground mb-2">
-                Service Required *
-              </label>
-              <select
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                required
-                className="w-full h-12 px-4 rounded-lg border border-foreground/20 bg-background text-foreground focus:border-primary"
-              >
-                <option value="">Select a service...</option>
-                {services.map((svc) => (
-                  <option key={svc} value={svc}>
-                    {svc}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Urgency */}
-            <div>
-              <label className="block text-sm font-mono text-muted-foreground mb-2">
-                Urgency *
-              </label>
-              <div className="flex flex-col gap-3">
-                {[
-                  { value: "emergency", label: "Emergency (ASAP - Same day)" },
-                  { value: "urgent", label: "Urgent (Within 2-3 days)" },
-                  { value: "scheduled", label: "Scheduled appointment" },
-                ].map((option) => (
-                  <label key={option.value} className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="urgency"
-                      value={option.value}
-                      checked={formData.urgency === option.value}
-                      onChange={handleChange}
-                      className="w-4 h-4"
-                    />
-                    <span className="text-sm">{option.label}</span>
-                  </label>
-                ))}
-                <p className="text-xs text-muted-foreground mt-2">
-                  ⓘ We operate during regular business hours. Emergency requests are prioritized and handled ASAP.
+            <div className="rounded-[2rem] bg-white p-10 shadow-xl ring-1 ring-slate-200/80">
+              <div className="mb-8">
+                <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90">
+                  <span className="inline-block h-px w-12 rounded-full bg-primary" />
+                  Booking Form
+                </span>
+                <h3 className="mt-6 text-3xl font-display text-foreground">Start your booking</h3>
+                <p className="mt-4 text-sm text-foreground/70">
+                  Tell us what service you need and we&apos;ll take care of the rest.
                 </p>
               </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Full Name *</label>
+                    <Input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      required
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Phone *</label>
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+44 20..."
+                      required
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Email *</label>
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      required
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Address *</label>
+                    <Input
+                      type="text"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      placeholder="Your property address"
+                      required
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Service Required *</label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      required
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-foreground focus:border-primary"
+                    >
+                      <option value="">Select a service...</option>
+                      {services.map((svc) => (
+                        <option key={svc} value={svc}>
+                          {svc}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/70 mb-2">Urgency *</label>
+                    <div className="grid gap-3">
+                      {[
+                        { value: "emergency", label: "Emergency (ASAP)" },
+                        { value: "urgent", label: "Urgent (2-3 days)" },
+                        { value: "scheduled", label: "Scheduled appointment" },
+                      ].map((option) => (
+                        <label key={option.value} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm shadow-sm transition hover:border-primary">
+                          <input
+                            type="radio"
+                            name="urgency"
+                            value={option.value}
+                            checked={formData.urgency === option.value}
+                            onChange={handleChange}
+                            className="h-4 w-4 accent-primary"
+                          />
+                          <span>{option.label}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground/70 mb-2">Description *</label>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleChange}
+                    placeholder="Describe the problem or work needed..."
+                    required
+                    rows={5}
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-foreground focus:border-primary resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting}
+                  className="group inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90"
+                >
+                  {isSubmitting ? "Submitting..." : "Request Booking"}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </Button>
+                <p className="text-sm text-foreground/70 text-center">
+                  We&apos;ll contact you shortly to confirm your appointment and answer any follow-up questions.
+                </p>
+              </form>
             </div>
-
-            {/* Description */}
-            <div>
-              <label className="block text-sm font-mono text-muted-foreground mb-2">
-                Problem Description *
-              </label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                placeholder="Please describe the issue you're experiencing..."
-                required
-                rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-foreground/20 bg-background text-foreground focus:border-primary resize-none"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <Button
-              type="submit"
-              size="lg"
-              disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg h-14 group"
-            >
-              {isSubmitting ? "Submitting..." : "Request Booking"}
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
-
-            <p className="text-sm text-muted-foreground text-center">
-              We&apos;ll contact you shortly to confirm your appointment and discuss pricing.
-            </p>
-          </form>
+          </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section id="faq" className="py-24 lg:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="mb-16">
-            <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-8">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
+          <div className="mb-16 max-w-3xl">
+            <h2 className="text-4xl lg:text-5xl font-display text-foreground mb-4">
               Frequently asked questions
             </h2>
+            <p className="text-lg leading-8 text-foreground/70">
+              Answers to the most common questions about our booking process, pricing and emergency support.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-8 md:grid-cols-2">
             {[
               {
                 q: "What are your operating hours?",
@@ -398,15 +415,16 @@ const handleSubmit = async (e: React.FormEvent) => {
                 a: "Yes, we offer tailored maintenance plans to keep your systems running smoothly and prevent costly breakdowns.",
               },
             ].map((item, index) => (
-              <div key={index}>
-                <h3 className="text-lg font-display text-foreground mb-3">{item.q}</h3>
-                <p className="text-foreground/60 leading-relaxed">{item.a}</p>
+              <div key={index} className="rounded-[2rem] border border-border bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+                <h3 className="text-xl font-semibold text-foreground mb-3">{item.q}</h3>
+                <p className="text-foreground/70 leading-7">{item.a}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-    <FooterSection />
+
+      <FooterSection />
     </main>
   );
 }
