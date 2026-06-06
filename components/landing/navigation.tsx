@@ -309,7 +309,11 @@ export function Navigation() {
                             </Link>
                             <div className="space-y-2 pl-7">
                               {category.items.map((item) => (
-                                <Link key={item.name} href={item.href} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                                <Link
+                                  key={item.name}
+                                  href={item.href}
+                                  className="block text-sm text-muted-foreground hover:text-primary transition-colors break-words whitespace-normal"
+                                >
                                   {item.name}
                                 </Link>
                               ))}
@@ -385,7 +389,7 @@ export function Navigation() {
                   Services
                   <ChevronDown className={`w-6 h-6 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-[800px] mt-4" : "max-h-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-[1600px] mt-4" : "max-h-0"}`}>
                   <div className="space-y-4 pl-4">
                     {serviceCategories.map((category) => {
                       const Icon = category.icon;
@@ -397,7 +401,12 @@ export function Navigation() {
                           </Link>
                           <div className="mt-2 space-y-2 pl-7">
                             {category.items.map((item) => (
-                              <Link key={item.name} href={item.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-base text-muted-foreground">
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="block text-base text-muted-foreground break-words whitespace-normal"
+                              >
                                 {item.name}
                               </Link>
                             ))}

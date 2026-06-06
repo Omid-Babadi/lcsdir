@@ -115,6 +115,36 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@layer utilities {
+  .hero-anim-ring {
+    animation: hero-spin 20s linear infinite;
+  }
+
+  .hero-symbol {
+    animation: hero-float 6.5s ease-in-out infinite;
+  }
+
+  .shadow-shadow-icon {
+    box-shadow: 0 24px 55px -30px rgba(255, 106, 0, 0.45);
+  }
+
+  @keyframes hero-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes hero-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

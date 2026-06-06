@@ -56,7 +56,7 @@ const testBlogs = [
     title: 'The Ultimate Guide to Central Heating Maintenance',
     description:
       'Proper maintenance of your central heating system is essential for efficiency and longevity. In this comprehensive guide, we cover everything you need to know about keeping your heating system in top condition. From annual servicing to identifying common problems, we provide expert advice to help you maintain optimal performance. Learn about the importance of bleeding radiators, checking thermostats, and when to call a professional. Our experienced technicians at London Climate Systems recommend scheduling regular maintenance checks before the heating season begins. This not only ensures your system runs efficiently but can also help you avoid costly repairs down the line. We also discuss energy-saving tips that can reduce your heating bills while maintaining comfort throughout your home.',
-    writtenBy: 'John Smith',
+    writtenBy: 'Masoud Moradi',
   },
 ];
 
