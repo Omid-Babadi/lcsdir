@@ -6,7 +6,7 @@ import { BlogGrid } from '@/components/blog/blog-grid';
 import { getPublishedBlogs } from '@/lib/blogs';
 
 export default async function BlogPage() {
-  const blogs = await getPublishedBlogs(9);
+  const blogs = await getPublishedBlogs();
   const featuredBlog = blogs[0];
 
   return (
