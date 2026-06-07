@@ -129,7 +129,7 @@ export function HeroSection() {
             <div className={`mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-500/5 border border-blue-400/20 rounded-xl transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
               <p className="text-xs sm:text-sm text-foreground">
                 <span className="font-semibold text-blue-600">Fast Response:</span>{" "}
-                Our engineers are spread across London ready to help. No call-out fees.
+                Our engineers are spread across London ready to help.
               </p>
             </div>
           </div>

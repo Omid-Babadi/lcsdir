@@ -20,7 +20,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/installation",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780782708/bf94aa15-3bd0-4b5c-b0bc-b0299bafc993_2_uoteer.png",
     },
     {
       title: "Electric Underfloor Heating",
@@ -28,7 +28,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/electric",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780782710/3b400d4f-fa98-4c2f-9403-2d452473816d_zq2aab.png",
     },
     {
       title: "Wet Underfloor Heating Systems",
@@ -36,7 +36,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/wet-systems",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780782710/e8a22d99-961b-4b71-a151-713768aefd0a_xifhot.png",
     },
     {
       title: "Underfloor Heating Repairs",
@@ -44,7 +44,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/repairs",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780782714/5971ebac-14b2-446b-a12e-e739effd26c4_ayfkkb.png",
     },
     {
       title: "Underfloor Heating Controls & Thermostats",
@@ -52,7 +52,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/controls",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780831513/ab980d22-352a-4571-8495-4031f9b0ecf7_2_sy097w.png",
     },
     {
       title: "Smart Thermostat Integration",
@@ -60,7 +60,7 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/smart-thermostats",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780834768/9a0a4492-e33d-4e53-9a16-00f7921dfe4e_ufvns0.png",
     },
     {
       title: "System Design & Consultation",
@@ -68,7 +68,43 @@ export default function UnderfloorHeatingPage() {
       href: "/services/underfloor-heating/design-consultation",
       icon: Wrench,
       bgImage:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780831513/190026bd-cffa-458e-9ddd-e2299cb1fd05_qzgzqf.png",
+    },
+  ];
+
+  const subServices = [
+    "Wet Underfloor Heating",
+    "Electric Underfloor Heating",
+    "Underfloor Heating Repairs",
+    "Smart Thermostats",
+    "Zone Controls",
+    "Manifold Installation",
+    "Floor Sensors",
+    "Insulation Boards",
+    "Pressure Testing",
+    "System Balancing",
+    "Heat Loss Checks",
+    "Design Consultation",
+  ];
+
+  const galleryImages = [
+    {
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780834287/147306bc-351a-4c09-8e3c-4f86b2c6ee71-fotor-20260607154032_cbubnx.png",
+      alt: "Warm modern room with underfloor heating",
+      label: "Complete Installation",
+      category: "Installation",
+    },
+    {
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780834359/90ea6f3d-aa37-421f-b591-6dfc591c50cc_1_-fotor-20260607154220_lqu7xk.png",
+      alt: "Wet underfloor heating system in a modern home",
+      label: "Wet Systems",
+      category: "Hydronic",
+    },
+    {
+      src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780834286/6df2ccb5-e5d3-4fbd-9c61-6b1a69f428ff-fotor-20260607154055_snyyd8.png",
+      alt: "Engineer diagnosing an underfloor heating system",
+      label: "Fault Finding",
+      category: "Repair",
     },
   ];
 
@@ -115,30 +151,74 @@ export default function UnderfloorHeatingPage() {
                 </a>
               </div>
             </div>
-            <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-[600px]">
-              {/* Modern background gradient layers */}
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/20 rounded-[40px]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
-              
-              {/* Main image container with modern styling */}
-              <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-secondary/20">
-                <Image
-                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484320/aff6d943-a5be-4c9f-a06c-a98f85eb947a_byep3o.png"
-                  alt="Modern underfloor heating service illustration"
-                  width={500}
-                  height={500}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  priority
-                />
-                {/* Modern overlay effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+              <div className="relative w-full max-w-2xl mx-auto lg:ml-auto h-auto">
+                {/* Modern background gradient layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-secondary/5 to-primary/20 rounded-[40px]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent rounded-[40px]" />
+                
+                {/* Main image container with modern styling */}
+                <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-secondary/20">
+                  <Image
+                    src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780832772/12a54173-9c65-423d-9d99-11750fe693aa_rjkhah.png"
+                    alt="Modern plumbing service illustration"
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    priority
+                  />
+                  {/* Modern overlay effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                </div>
+                
+                {/* Enhanced decorative elements */}
+                <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
+                <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
+                <div className="absolute top-1/2 right-0 w-32 h-32 bg-secondary/20 rounded-full opacity-30 blur-2xl" />
               </div>
-              
-              {/* Enhanced decorative elements */}
-              <div className="absolute -top-8 -right-8 w-40 h-40 gradient-flame rounded-full opacity-40 blur-3xl animate-pulse" />
-              <div className="absolute -bottom-8 -left-8 w-48 h-48 gradient-cool rounded-full opacity-35 blur-3xl animate-pulse" />
-              <div className="absolute top-1/2 right-0 w-32 h-32 bg-secondary/20 rounded-full opacity-30 blur-2xl" />
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery - Professional Uniform Layout */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12 border-t border-border overflow-hidden">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-12">
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+              <span className="w-8 h-px bg-secondary" />
+              Our Work
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground">
+              Underfloor heating installed with care
+            </h2>
+            <p className="text-foreground/70 mt-4 max-w-2xl">
+              Neat installations, balanced wet systems, and dependable repairs for comfortable rooms from floor to ceiling.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {galleryImages.map((image) => (
+              <div
+                key={image.label}
+                className="group relative overflow-hidden rounded-2xl bg-secondary/5"
+                style={{ aspectRatio: "4/3" }}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="absolute inset-0 w-full h-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-block px-3 py-1 text-xs font-mono font-medium text-white bg-black/50 backdrop-blur-sm rounded-full uppercase tracking-wider">
+                    {image.category}
+                  </span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white text-xl font-display leading-snug">{image.label}</p>
+                  <div className="w-12 h-0.5 bg-white/60 mt-2 group-hover:w-full transition-all duration-300" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -161,8 +241,8 @@ export default function UnderfloorHeatingPage() {
                 <Link
                   key={service.title}
                   href={service.href}
-                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl h-auto"
-                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center" }}
+                  className="group relative overflow-hidden rounded-3xl border border-border transition-all duration-300 hover:shadow-2xl"
+                  style={{ backgroundImage: `url(${service.bgImage})`, backgroundSize: "cover", backgroundPosition: "center", height : "70vh" }}
                 >
                   <div className="absolute inset-0 bg-black/40 transition duration-300 group-hover:bg-black/30" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -183,6 +263,34 @@ export default function UnderfloorHeatingPage() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Sub-services showcase */}
+      <section className="py-20 lg:py-28 px-4 sm:px-6 lg:px-12 bg-secondary/5">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="mb-16 text-center">
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+              <span className="w-8 h-px bg-secondary" />
+              Our Expertise
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground">
+              Every underfloor heating need covered
+            </h2>
+            <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
+              From first design to controls, commissioning, and repairs, we cover complete underfloor heating systems.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {subServices.map((service) => (
+              <span
+                key={service}
+                className="px-4 py-2 bg-background border border-border rounded-full text-sm text-foreground/80 hover:border-primary/50 hover:text-primary transition-all"
+              >
+                {service}
+              </span>
+            ))}
           </div>
         </div>
       </section>

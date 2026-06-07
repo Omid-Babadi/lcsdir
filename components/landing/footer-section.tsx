@@ -135,7 +135,11 @@ export function FooterSection() {
                 </a>
                 <span className="inline-flex items-center gap-2 text-sm text-primary-foreground/60">
                   <MapPin className="w-3.5 h-3.5" />
-                  Covent Garden, London
+                  71-75 Shelton Street
+                  Covent Garden
+                  London
+                  WC2H 9JQ
+                  United Kingdom
                 </span>
               </div>
 
