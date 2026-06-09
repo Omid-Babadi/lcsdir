@@ -20,7 +20,7 @@ export default function HeatingPage() {
       href: "/services/heating/emergency-heating",
       icon: Siren,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504712/d2672bfd-b74f-4a16-a425-2b77964c6f11_teglgh.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781005487/d996c2b8-40a0-4f2e-b687-9f7b9694967c_ro1cym.png",
     },
     {
       title: "Emergency Boiler Repairs",
@@ -28,7 +28,7 @@ export default function HeatingPage() {
       href: "/services/heating/emergency-boiler",
       icon: Wrench,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504714/c8bbbb7c-82b8-4483-b358-4d597c434edb_gytgvc.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781005486/0794083b-aee8-4614-878e-b56bbbf0b5c3_sgfokm.png",
     },
     {
       title: "Central Heating Installation",
@@ -36,7 +36,7 @@ export default function HeatingPage() {
       href: "/services/heating/installation",
       icon: ThermometerSun,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504720/41533caa-fffc-4c49-aabd-8846bf7905d4_1_eiwi3l.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781005500/765b0655-901e-480b-a591-7587d6f2fa73_wvpvit.png",
     },
     {
       title: "Central Heating Service",
@@ -44,7 +44,7 @@ export default function HeatingPage() {
       href: "/services/heating/service",
       icon: Shield,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780504717/e1387603-cf4d-47b6-97c1-625cc5517e95_1_ythczo.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781005483/be74182d-19d3-4cd5-98f6-5af85222c4a1_s8dhhu.png",
     },
     {
       title: "Central Heating Repairs",
@@ -52,7 +52,7 @@ export default function HeatingPage() {
       href: "/services/heating/repairs",
       icon: Wrench,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/d33b7dda-c697-41fe-91a6-e7b5f553262d_jbtmt6.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781005484/7c738aee-6294-4271-9cc9-3c913d09f0ba_rlkq6x.png",
     },
   ];
 
@@ -142,7 +142,7 @@ export default function HeatingPage() {
               {/* Main image container with modern styling */}
               <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl border border-primary/20">
                 <Image
-                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1780484318/29ce6433-b0df-4678-ae5f-091cec199c96_ie13rx.png"
+                  src="https://res.cloudinary.com/daucwpsi8/image/upload/v1781005489/0f408ef5-9a08-4013-abaf-20d7bf217f92_smv1pq.png"
                   alt="Modern heating service illustration"
                   width={500}
                   height={500}

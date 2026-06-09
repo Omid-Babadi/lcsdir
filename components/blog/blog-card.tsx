@@ -27,13 +27,13 @@ export function BlogCard({ title, description, writtenBy, slug, createdAt }: Blo
   return (
     <Link
       href={`/blog/${slug || fallbackSlug(title)}`}
-      className="group flex min-h-[310px] flex-col rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+      className="group flex min-h-[320px] flex-col rounded-[2rem] border border-border/70 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
     >
       <div className="flex items-start justify-between gap-4">
-        <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
           <CalendarDays className="h-5 w-5" />
         </div>
-        <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground/50 transition-colors group-hover:border-primary/40 group-hover:text-primary">
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-foreground/50 transition-colors group-hover:border-primary/40 group-hover:bg-primary group-hover:text-primary-foreground">
           <ArrowUpRight className="h-4 w-4" />
         </span>
       </div>
@@ -42,12 +42,12 @@ export function BlogCard({ title, description, writtenBy, slug, createdAt }: Blo
         <h3 className="text-2xl font-display leading-tight text-foreground transition-colors group-hover:text-primary line-clamp-2">
           {title}
         </h3>
-        <p className="mt-4 text-sm leading-relaxed text-foreground/60 line-clamp-4">
+        <p className="mt-4 text-sm leading-7 text-foreground/65 line-clamp-4">
           {description}
         </p>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-5 text-xs font-mono text-muted-foreground">
+      <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-200 pt-5 text-xs font-medium text-muted-foreground">
         <span className="inline-flex items-center gap-1.5">
           <UserRound className="h-3.5 w-3.5 text-primary" />
           {writtenBy}

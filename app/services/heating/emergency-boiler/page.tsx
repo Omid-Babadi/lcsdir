@@ -16,7 +16,7 @@ export default function EmergencyBoilerRepairsPage() {
       highlight="repairs."
       description="In London, we know a broken boiler means a freezing house or no hot water — and that's why our Gas Safe engineers are spread across London, ready to help. We focus on fast, quality service — no call-out fees. Whether it's no heat, pressure drops, leaks, pilot light issues, or strange noises, we'll be there to sort it out — no fuss, just reliable repairs."
       icon={Flame}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780504714/c8bbbb7c-82b8-4483-b358-4d597c434edb_gytgvc.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781005486/0794083b-aee8-4614-878e-b56bbbf0b5c3_sgfokm.png"
       heroImageAlt="Emergency Boiler Repairs"
       features={[
         { title: "No Heat or Hot Water", description: "Fast diagnosis and repair for boilers with no heating output or hot water supply." },

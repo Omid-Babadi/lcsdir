@@ -16,7 +16,7 @@ export default function EmergencyHeatingEngineersPage() {
       highlight="engineers."
       description="Our Gas Safe registered engineers are committed to a full range of heating services. Backed by years of experience and deep knowledge of top boiler brands—like Vaillant and Worcester Bosch—we deliver expert service every step of the way."
       icon={Heater}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780504712/d2672bfd-b74f-4a16-a425-2b77964c6f11_teglgh.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781005487/d996c2b8-40a0-4f2e-b687-9f7b9694967c_ro1cym.png"
       heroImageAlt="Emergency Heating Engineers"
       features={[
         { title: "Boiler Breakdown Repairs", description: "Fast diagnosis and repair of all boiler types and brands, including Vaillant and Worcester Bosch." },

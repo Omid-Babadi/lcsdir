@@ -64,16 +64,16 @@ export default function Contact() {
 
   const contactMethods = [
     {
-      icon: Phone,
-      label: "Call Us",
-      value: "07473 423003",
-      subtext: "Fast response during business hours",
-    },
-    {
       icon: Mail,
       label: "Email",
       value: "londonclimatesystems@gmail.com",
       subtext: "Response within 2 hours",
+    },
+    {
+      icon: Phone,
+      label: "Call Us",
+      value: "07473 423003",
+      subtext: "Fast response during business hours",
     },
     {
       icon: MapPin,
@@ -165,62 +165,71 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="pointer-events-none absolute left-0 bottom-0 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(16,185,129,0.12),_transparent_55%)] blur-3xl" />
 
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-[0.95fr_0.85fr] lg:items-center">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary/90 mb-6">
-                <span className="inline-block h-px w-14 rounded-full bg-primary" />
-                Get in Touch
-              </span>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display tracking-tight text-foreground">
-                Fast, modern contact for every London property.
-              </h1>
-              <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground/70">
-                Whether it&apos;s an emergency repair or a planned service, our local team makes it easy to book with confidence. Reach out now and we&apos;ll support you from the first message to the finished job.
-              </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>
-                  <a href="#booking">
-                    Book a service
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </a>
-                </Button>
-                <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
-                  <a href="tel:07473423003">Call 07473 423003</a>
-                </Button>
-              </div>
+          {/* Hero Text Section */}
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary/90 mb-6">
+              <span className="inline-block h-px w-14 rounded-full bg-primary" />
+              Get in Touch
+              <span className="inline-block h-px w-14 rounded-full bg-primary" />
+            </span>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display tracking-tight text-foreground">
+              Fast, modern contact for every London property.
+            </h1>
+            <p className="mt-6 max-w-2xl mx-auto text-xl leading-8 text-foreground/70">
+              Whether it&apos;s an emergency repair or a planned service, our local team makes it easy to book with confidence. Reach out now and we&apos;ll support you from the first message to the finished job.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center">
+              <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>
+                <a href="#booking">
+                  Book a service
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
+                <a href="tel:07473423003">Call 07473 423003</a>
+              </Button>
             </div>
+          </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              {contactMethods.map((method) => {
-                const Icon = method.icon;
-                return (
-                  <div key={method.label} className="rounded-[2rem] border border-border bg-white/95 p-8 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary shadow-sm">
-                      <Icon className="h-6 w-6" />
+          {/* Single Big Card - 90% width, larger size */}
+          <div className="mt-16 w-full mx-auto">
+            <div className="rounded-[2rem] border border-border bg-white/95 p-8 md:p-10 lg:p-12 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                {contactMethods.map((method) => {
+                  const Icon = method.icon;
+                  return (
+                    <div key={method.label} className="flex flex-col items-start text-center md:text-left">
+                      <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl bg-primary/10 text-primary shadow-sm mx-auto md:mx-0">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <div className="mt-5 w-full">
+                        <h3 className="text-xl font-semibold text-foreground">{method.label}</h3>
+                        <p className="text-foreground mt-1 break-words whitespace-normal text-base md:text-lg">
+                          {method.value}
+                        </p>
+                        <p className="text-sm text-foreground/60 mt-2">{method.subtext}</p>
+                      </div>
                     </div>
-                    <h3 className="mt-6 text-xl font-semibold text-foreground">{method.label}</h3>
-                    <p className="mt-3 font-mono text-foreground">{method.value}</p>
-                    <p className="mt-2 text-sm text-foreground/60">{method.subtext}</p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="booking" className="py-24 lg:py-32 border-t border-border bg-slate-50">
+      <section id="booking" className="py-24 lg:py-32 border-t border-border ">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div className="rounded-[2rem] bg-white p-10 shadow-sm ring-1 ring-slate-200/80">
+            <div className="rounded-[2rem] bg-slate-950/95 text-white p-10 shadow-sm ring-1 ring-slate-200/80">
               <span className="inline-flex items-center gap-3 rounded-full bg-primary/5 px-4 py-2 text-sm font-semibold text-primary">
                 Quick booking
               </span>
-              <h2 className="mt-6 text-4xl font-display text-foreground">Request a service in minutes.</h2>
-              <p className="mt-6 text-lg leading-8 text-foreground/70">
+              <h2 className="mt-6 text-4xl font-display text-white">Request a service in minutes.</h2>
+              <p className="mt-6 text-lg leading-8 text-white/70">
                 Fill out your details once and we&apos;ll handle the rest. You can also call or email us directly if you need support right away.
               </p>
-              <div className="mt-10 space-y-4 text-sm text-foreground/70">
+              <div className="mt-10 space-y-4 text-sm text-white/70">
                 <div className="flex items-start gap-3">
                   <span className="mt-1 inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-slate-100 text-primary">1</span>
                   <p>Describe the issue and the service you need.</p>
@@ -269,7 +278,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="+44 20..."
+                      placeholder="+44 ..."
                       required
                       className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
                     />

@@ -3,17 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useLondonAvailability } from "@/components/landing/use-london-availability";
 import {
   ArrowRight,
   Phone,
-  ShieldCheck,
   Clock,
   Star,
 } from "lucide-react";
 
 export function CtaSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(false);
+  const isAvailable = useLondonAvailability();
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -28,46 +28,6 @@ export function CtaSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const checkAvailability = () => {
-      const londonTime = new Date(
-        new Date().toLocaleString("en-GB", {
-          timeZone: "Europe/London",
-        })
-      );
-
-      const day = londonTime.getDay(); // 0=Sun, 1=Mon ... 6=Sat
-      const hours = londonTime.getHours();
-      const minutes = londonTime.getMinutes();
-
-      const currentMinutes = hours * 60 + minutes;
-
-      let available = false;
-
-      // Monday-Friday 08:00-18:00
-      if (day >= 1 && day <= 5) {
-        available =
-          currentMinutes >= 8 * 60 &&
-          currentMinutes < 18 * 60;
-      }
-
-      // Saturday 08:00-15:00
-      if (day === 6) {
-        available =
-          currentMinutes >= 8 * 60 &&
-          currentMinutes < 15 * 60;
-      }
-
-      setIsAvailable(available);
-    };
-
-    checkAvailability();
-
-    const interval = setInterval(checkAvailability, 60000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (

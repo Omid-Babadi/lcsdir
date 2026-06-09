@@ -16,7 +16,7 @@ export default function CentralHeatingRepairsPage() {
       highlight="repairs & rescue."
       description="Cold radiators, leaks, kettling, sludge buildup or pump failure? We diagnose and repair central heating systems across London with fixed pricing and full system testing."
       icon={Hammer}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780152492/d33b7dda-c697-41fe-91a6-e7b5f553262d_jbtmt6.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781005484/7c738aee-6294-4271-9cc9-3c913d09f0ba_rlkq6x.png"
       heroImageAlt="Central Heating Repairs"
       features={[
         { title: "Cold Radiator Diagnosis", description: "Air locks, sludge, valve and balance issues resolved." },

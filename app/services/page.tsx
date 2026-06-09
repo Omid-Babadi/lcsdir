@@ -111,7 +111,7 @@ const services = [
     bgColor: "bg-amber-500/10",
     description: "Underfloor heating specialists — installations, electric and wet systems, controls, and repairs across London.",
     bgImage:
-      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80",
+      "https://res.cloudinary.com/daucwpsi8/image/upload/v1780834287/147306bc-351a-4c09-8e3c-4f86b2c6ee71-fotor-20260607154032_cbubnx.png",
     items: [
       "Underfloor Heating Installation",
       "Electric Underfloor Heating",

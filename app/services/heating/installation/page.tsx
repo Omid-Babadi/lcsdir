@@ -16,7 +16,7 @@ export default function CentralHeatingServicePage() {
       highlight="service."
       description="Keep your central heating system running efficiently and reliably with our comprehensive service packages. Our Gas Safe registered engineers perform complete system checks, boiler servicing, radiator balancing, and efficiency optimization. Regular servicing prevents unexpected breakdowns, extends your system's lifespan, and keeps energy bills low. Whether it's an annual check-up or a one-time service, we ensure your home stays warm when you need it most."
       icon={Flame}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780504720/41533caa-fffc-4c49-aabd-8846bf7905d4_1_eiwi3l.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781005500/765b0655-901e-480b-a591-7587d6f2fa73_wvpvit.png"
       heroImageAlt="Central Heating Installation"
       features={[
         { title: "Complete Boiler Service", description: "Thorough inspection, cleaning, and testing of your boiler to ensure safe and efficient operation." },

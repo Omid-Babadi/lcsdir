@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Droplets, Flame, Zap } from "lucide-react";
 import Image from "next/image";
-import featuresImage from "../../public/61940140-5a44-4fb5-ad08-08b4dbc86e8b.png";
+import { useLondonAvailability } from "@/components/landing/use-london-availability";
 
 const services = [
   {
@@ -40,51 +40,6 @@ function ServiceCard({
 }) {
   const [isActive, setIsActive] = useState(index === 0);
   const Icon = service.icon;
-  const [isAvailable, setIsAvailable] = useState(false);
-
-  useEffect(() => {
-    const checkAvailability = () => {
-      const londonTime = new Date(
-        new Date().toLocaleString("en-GB", {
-          timeZone: "Europe/London",
-        })
-      );
-
-      const day = londonTime.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
-      const hours = londonTime.getHours();
-      const minutes = londonTime.getMinutes();
-
-      const currentTime = hours * 60 + minutes;
-
-      // Monday-Friday: 08:00 - 18:00
-      const weekdayOpen = 8 * 60;
-      const weekdayClose = 18 * 60;
-
-      // Saturday: 08:00 - 15:00
-      const saturdayOpen = 8 * 60;
-      const saturdayClose = 15 * 60;
-
-      let available = false;
-
-      if (day >= 1 && day <= 5) {
-        available =
-          currentTime >= weekdayOpen &&
-          currentTime < weekdayClose;
-      } else if (day === 6) {
-        available =
-          currentTime >= saturdayOpen &&
-          currentTime < saturdayClose;
-      }
-
-      setIsAvailable(available);
-    };
-
-    checkAvailability();
-
-    const interval = setInterval(checkAvailability, 60000); // update every minute
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div
@@ -131,7 +86,7 @@ function ServiceCard({
 
 export function FeaturesSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(false);
+  const isAvailable = useLondonAvailability();
 
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -146,47 +101,6 @@ export function FeaturesSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const checkAvailability = () => {
-      const londonTime = new Date(
-        new Date().toLocaleString("en-GB", {
-          timeZone: "Europe/London",
-        })
-      );
-
-      const day = londonTime.getDay(); // 0=Sun, 1=Mon ... 6=Sat
-      const hours = londonTime.getHours();
-      const minutes = londonTime.getMinutes();
-
-      const currentMinutes = hours * 60 + minutes;
-
-      let available = false;
-
-      // Monday - Friday (08:00 - 18:00)
-      if (day >= 1 && day <= 5) {
-        available =
-          currentMinutes >= 8 * 60 &&
-          currentMinutes < 18 * 60;
-      }
-
-      // Saturday (08:00 - 15:00)
-      if (day === 6) {
-        available =
-          currentMinutes >= 8 * 60 &&
-          currentMinutes < 15 * 60;
-      }
-
-      // Sunday = unavailable
-      setIsAvailable(available);
-    };
-
-    checkAvailability();
-
-    const interval = setInterval(checkAvailability, 60000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -272,10 +186,10 @@ export function FeaturesSection() {
 
             <div className="relative rounded-2xl overflow-hidden border border-border shadow-xl aspect-[3/4] md:aspect-[4/3] lg:aspect-[2.4/4]">
               <Image
-                src="/faeac5c4-cfd9-409f-be7b-0b0683ecd282.png"
+                src="https://res.cloudinary.com/daucwpsi8/image/upload/v1781006179/b365e0c1-e13a-4a2c-b519-c2f2068607c4_tgfqx7.png"
                 alt="Our engineers at work"
                 fill
-                className="object-cover object-top"
+                className="object-c over object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
 
