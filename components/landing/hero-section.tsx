@@ -35,6 +35,7 @@ const acPartners = [
   { name: "Panasonic", logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416686/images__8_-removebg-preview_oecmex.png") },
   { name: "Hitachi",   logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416374/png-transparent-hitachi-logo-thumbnail-removebg-preview_ipquaa.png") },
   { name: "Daikin",    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1780416373/png-clipart-daikin-applied-americas-business-air-conditioning-heat-pump-business-blue-text-removebg-preview_wnubsj.png") },
+  { name: "Mitsubishi",    logo: sharpenCloudinaryLogo("https://res.cloudinary.com/daucwpsi8/image/upload/v1781306375/Mitsubishi_Electric_logo_l4birt.png") },
 ];
 
 export function HeroSection() {
