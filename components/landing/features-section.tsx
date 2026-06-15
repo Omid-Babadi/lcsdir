@@ -189,7 +189,7 @@ export function FeaturesSection() {
                 src="https://res.cloudinary.com/daucwpsi8/image/upload/v1781006179/b365e0c1-e13a-4a2c-b519-c2f2068607c4_tgfqx7.png"
                 alt="Our engineers at work"
                 fill
-                className="object-c over object-top"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
 

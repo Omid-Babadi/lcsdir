@@ -1,6 +1,7 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import Script from "next/script"
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Toaster } from "@/components/ui/toaster";
@@ -24,14 +25,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   ...createSeoMetadata({
-    title: "London Climate Systems | Heating, Cooling, Plumbing & Boiler Engineers",
+    title: "London Climate Systems | HVAC & Plumbing",
     description:
-      "Gas Safe and F-Gas certified plumbing, heating, boiler, gas, and air conditioning engineers serving homes and businesses across Greater London.",
+      "Gas Safe and F-Gas certified London engineers for plumbing, heating, boilers, gas, and air conditioning. Fast service for homes and businesses.",
     path: "/",
   }),
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "London Climate Systems | Heating, Cooling, Plumbing & Boiler Engineers",
+    default: "London Climate Systems | HVAC & Plumbing",
     template: "%s | London Climate Systems",
   },
   applicationName: siteConfig.name,
@@ -61,12 +62,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en" className="bg-background">
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
         <Toaster />
         <Analytics />
+        {gaMeasurementId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}');
+              `}
+            </Script>
+          </>
+        )}
         <script
           type="application/ld+json"
           suppressHydrationWarning

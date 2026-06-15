@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useLondonAvailability } from "@/components/landing/use-london-availability";
@@ -125,11 +126,12 @@ export function CtaSection() {
 
             {/* RIGHT */}
             <div className="relative hidden lg:block overflow-hidden">
-              <img
-                src="0da77d91-da19-48b6-8765-a8db8e3b79dd.jpg"
+              <Image
+                src="/0da77d91-da19-48b6-8765-a8db8e3b79dd.jpg"
                 alt="Professional engineer at work"
-                className="absolute inset-0 w-full h-full object-cover object-center"
-                loading="lazy"
+                fill
+                sizes="50vw"
+                className="object-cover object-center"
               />
 
               <div className="absolute inset-0 bg-gradient-to-r from-background via-background/10 to-transparent" />

@@ -28,7 +28,20 @@ const footerLinks = {
   ],
 };
 
-const socialLinks: { name: string; href: string }[] = [];
+const socialLinks: { name: string; href: string }[] = [
+  {
+    name: "Share on Facebook",
+    href: "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flondonclimatesystems.com%2F",
+  },
+  {
+    name: "Share on LinkedIn",
+    href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flondonclimatesystems.com%2F",
+  },
+  {
+    name: "Share on X",
+    href: "https://twitter.com/intent/tweet?url=https%3A%2F%2Flondonclimatesystems.com%2F&text=London%20Climate%20Systems",
+  },
+];
 
 const certificates = [
   {
@@ -149,6 +162,8 @@ export function FooterSection() {
                     <a
                       key={link.name}
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm text-primary-foreground/40 hover:text-primary-foreground transition-colors flex items-center gap-1 group"
                     >
                       {link.name}

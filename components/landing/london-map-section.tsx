@@ -19,7 +19,7 @@ const TOTAL_FRAMES = 121;
 const FRAME_DIRECTORY = "/london-map-frames";
 const FRAME_WIDTH = 864;
 const FRAME_HEIGHT = 1000;
-const PRELOAD_BATCH_SIZE = 18;
+const FRAME_PREFETCH_RADIUS = 2;
 
 // How many extra vh the canvas travels downward over the full scroll.
 // The section height is expanded by the same amount so nothing overflows.
@@ -127,13 +127,15 @@ function drawContain(
 export function LondonMapSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const framesRef = useRef<HTMLImageElement[]>([]);
+  const framesRef = useRef<Map<number, HTMLImageElement>>(new Map());
+  const loadingFramesRef = useRef<Set<number>>(new Set());
   const targetFrameRef = useRef(0);
   const drawnFrameRef = useRef(-1);
   const animationFrameRef = useRef<number | null>(null);
 
   const [loadProgress, setLoadProgress] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [shouldLoadFrames, setShouldLoadFrames] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   // Raw pixels scrolled since the section entered the viewport
   const [scrolledPx, setScrolledPx] = useState(0);
@@ -191,46 +193,77 @@ export function LondonMapSection() {
     setScrolledPx(clampedScrolled);
   }, []);
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function preloadFrames() {
-      const frames: HTMLImageElement[] = new Array(TOTAL_FRAMES);
-
-      for (let start = 1; start <= TOTAL_FRAMES; start += PRELOAD_BATCH_SIZE) {
-        const end = Math.min(TOTAL_FRAMES, start + PRELOAD_BATCH_SIZE - 1);
-        const batch = [];
-
-        for (let index = start; index <= end; index += 1) {
-          batch.push(loadFrame(index).then((image) => ({ index, image })));
-        }
-
-        const loaded = await Promise.all(batch);
-        if (cancelled) return;
-
-        for (const { index, image } of loaded) {
-          frames[index - 1] = image;
-        }
-
-        framesRef.current = frames;
-        setLoadProgress(Math.round((end / TOTAL_FRAMES) * 100));
-      }
-
-      if (!cancelled) {
-        setIsReady(true);
-        resizeCanvas();
-        updateScrollProgress();
-      }
+  const requestFrame = useCallback((index: number) => {
+    const frameNumber = clamp(index, 0, TOTAL_FRAMES - 1);
+    if (
+      framesRef.current.has(frameNumber) ||
+      loadingFramesRef.current.has(frameNumber)
+    ) {
+      return;
     }
 
-    preloadFrames().catch(() => {
-      if (!cancelled) setLoadProgress(0);
-    });
+    loadingFramesRef.current.add(frameNumber);
+    loadFrame(frameNumber + 1)
+      .then((image) => {
+        framesRef.current.set(frameNumber, image);
+        if (frameNumber === targetFrameRef.current) {
+          drawnFrameRef.current = -1;
+        }
+      })
+      .catch(() => {
+        setLoadProgress(0);
+      })
+      .finally(() => {
+        loadingFramesRef.current.delete(frameNumber);
+        setLoadProgress(
+          Math.round((framesRef.current.size / TOTAL_FRAMES) * 100),
+        );
+        if (framesRef.current.size > 0) {
+          setIsReady(true);
+        }
+      });
+  }, []);
 
-    return () => {
-      cancelled = true;
-    };
-  }, [resizeCanvas, updateScrollProgress]);
+  const requestNearbyFrames = useCallback(() => {
+    const targetFrame = targetFrameRef.current;
+
+    requestFrame(targetFrame);
+    for (let offset = 1; offset <= FRAME_PREFETCH_RADIUS; offset += 1) {
+      requestFrame(targetFrame - offset);
+      requestFrame(targetFrame + offset);
+    }
+  }, [requestFrame]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoadFrames(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "900px 0px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoadFrames) return;
+
+    resizeCanvas();
+    updateScrollProgress();
+    requestNearbyFrames();
+  }, [requestNearbyFrames, resizeCanvas, shouldLoadFrames, updateScrollProgress]);
+
+  useEffect(() => {
+    if (!shouldLoadFrames) return;
+    requestNearbyFrames();
+  }, [requestNearbyFrames, scrollProgress, shouldLoadFrames]);
 
   useEffect(() => {
     function handleResize() {
@@ -254,7 +287,7 @@ export function LondonMapSection() {
       const canvas = canvasRef.current;
       const context = canvas?.getContext("2d");
       const frameIndex = targetFrameRef.current;
-      const frame = framesRef.current[frameIndex];
+      const frame = framesRef.current.get(frameIndex);
 
       if (canvas && context && frame && drawnFrameRef.current !== frameIndex) {
         drawContain(context, frame, canvas);

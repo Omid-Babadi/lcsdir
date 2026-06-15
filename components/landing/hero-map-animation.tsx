@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -169,9 +170,14 @@ export function LondonMapAnimation({ backgroundImage }: LondonMapAnimationProps)
       style={{ minHeight: "320px" }}
     >
       {backgroundImage && (
-        <div 
-          className="absolute inset-0 z-0 w-full h-full bg-cover bg-center bg-no-repeat opacity-100"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="(max-width: 640px) 360px, (max-width: 1024px) 480px, 560px"
+          className="absolute inset-0 z-0 object-cover"
+          aria-hidden="true"
         />
       )}
 

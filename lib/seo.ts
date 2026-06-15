@@ -7,7 +7,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://londonclimatesystems.com",
   description:
-    "Gas Safe and F-Gas certified plumbing, heating, boiler, gas, and air conditioning engineers serving homes and businesses across Greater London.",
+    "Gas Safe and F-Gas certified London engineers for plumbing, heating, boilers, gas, and air conditioning. Fast service for homes and businesses.",
   phone: "07473 423003",
   email: "londonclimatesystems@gmail.com",
   address: {
