@@ -50,7 +50,7 @@ export function HeroVideoModal() {
         <div className="relative aspect-video w-full bg-black">
           <iframe
             className="absolute inset-0 w-full h-full"
-            src="https://www.youtube.com/shorts/wzFbJ_lesAk"
+            src="https://www.youtube-nocookie.com/embed/wzFbJ_lesAk"
             title="London Climate Systems - Introduction"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
