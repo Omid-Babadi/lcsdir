@@ -76,7 +76,7 @@ export default function BoilerPage() {
       href: "/services/boiler/warranty",
       icon: FileCheck,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780694364/1fea9ad2-8e7f-44a1-a46b-538c3d2a2993_vhvd3y.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781988087/5e48f7cd-852b-4a00-bf88-f807b4dc3b57_osvn9x.png",
     },
     {
       title: "Power Flush",
