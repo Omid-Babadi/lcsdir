@@ -16,7 +16,7 @@ export default function PowerFlushPage() {
       highlight="power flushing"
       description="Power flushing removes sludge, rust and debris from your central heating system, restoring flow and improving efficiency. Our Gas Safe engineers use professional flushing plant and approved inhibitors."
       icon={Zap}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780694366/d8365fc9-78ee-4b52-a72d-ad58cae4723a_kmofmy.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781988086/903c3902-7a04-4176-81a0-fbbd1c7af0f8_fyyipn.png"
       heroImageAlt="Engineer performing a boiler power flush"
       features={[
         { title: "Sludge removal", description: "Remove sludge and corrosion products to restore flow." },
