@@ -84,7 +84,7 @@ export default function BoilerPage() {
       href: "/services/boiler/power-flush",
       icon: Zap,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780694366/d8365fc9-78ee-4b52-a72d-ad58cae4723a_kmofmy.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781988086/903c3902-7a04-4176-81a0-fbbd1c7af0f8_fyyipn.png",
     },
   ];
 
