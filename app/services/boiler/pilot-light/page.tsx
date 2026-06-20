@@ -16,7 +16,7 @@ export default function PilotLightPage() {
       highlight="repairs"
       description="We repair pilot lights, ignition modules and sensors. For older boilers we can replace components or offer upgrade paths."
       icon={Flame}
-      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1780679447/ddf60d23-fbdc-441a-af54-e3b75842a281_hv2bab.png"
+      heroImageSrc="https://res.cloudinary.com/daucwpsi8/image/upload/v1781988086/f9d4ca23-9b70-477d-88ca-6ea23aabb26f_wo5wpl.png"
       heroImageAlt="Engineer repairing a boiler ignition system"
       features={[
         { title: "Ignition repairs", description: "Fix ignition modules and faulty sensors." },
