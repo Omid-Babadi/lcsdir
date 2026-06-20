@@ -68,7 +68,7 @@ export default function BoilerPage() {
       href: "/services/boiler/pilot-light",
       icon: FileCheck,
       bgImage:
-        "https://res.cloudinary.com/daucwpsi8/image/upload/v1780679447/ddf60d23-fbdc-441a-af54-e3b75842a281_hv2bab.png",
+        "https://res.cloudinary.com/daucwpsi8/image/upload/v1781988086/f9d4ca23-9b70-477d-88ca-6ea23aabb26f_wo5wpl.png",
     },
     {
       title: "Boiler Warranty Work",
