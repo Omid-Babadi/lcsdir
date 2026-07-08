@@ -27,7 +27,7 @@ export function BlogCard({ title, description, writtenBy, slug, createdAt }: Blo
   return (
     <Link
       href={`/blog/${slug || fallbackSlug(title)}`}
-      className="group flex min-h-[320px] flex-col rounded-[2rem] border border-border/70 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+      className="group flex min-h-[320px] flex-col rounded-[2rem] border border-border/70 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">

@@ -47,6 +47,40 @@
   --cool-light: #3399FF;
 }
 
+.dark {
+  --background: oklch(0.16 0.015 255);
+  --foreground: oklch(0.98 0.005 255);
+  --card: oklch(0.2 0.018 255);
+  --card-foreground: oklch(0.98 0.005 255);
+  --popover: oklch(0.2 0.018 255);
+  --popover-foreground: oklch(0.98 0.005 255);
+  --primary: oklch(0.74 0.19 50);
+  --primary-foreground: oklch(0.16 0.015 255);
+  --secondary: oklch(0.68 0.16 250);
+  --secondary-foreground: oklch(0.98 0.005 255);
+  --muted: oklch(0.25 0.02 255);
+  --muted-foreground: oklch(0.74 0.025 255);
+  --accent: oklch(0.3 0.055 250);
+  --accent-foreground: oklch(0.98 0.005 255);
+  --destructive: oklch(0.64 0.22 25);
+  --destructive-foreground: oklch(0.98 0.005 255);
+  --border: oklch(0.32 0.025 255);
+  --input: oklch(0.26 0.02 255);
+  --ring: oklch(0.74 0.19 50);
+  --chart-1: oklch(0.74 0.19 50);
+  --chart-2: oklch(0.68 0.16 250);
+  --chart-3: oklch(0.72 0.16 55);
+  --chart-4: oklch(0.66 0.17 30);
+  --chart-5: oklch(0.78 0.13 220);
+  --sidebar: oklch(0.2 0.018 255);
+  --sidebar-foreground: oklch(0.98 0.005 255);
+  --sidebar-primary: oklch(0.74 0.19 50);
+  --sidebar-primary-foreground: oklch(0.16 0.015 255);
+  --sidebar-accent: oklch(0.3 0.055 250);
+  --sidebar-accent-foreground: oklch(0.98 0.005 255);
+  --sidebar-border: oklch(0.32 0.025 255);
+  --sidebar-ring: oklch(0.74 0.19 50);
+}
 @theme inline {
   --font-sans: var(--font-instrument), 'Instrument Sans', system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;

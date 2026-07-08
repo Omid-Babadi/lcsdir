@@ -193,7 +193,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
           {/* Single Big Card - 90% width, larger size */}
           <div className="mt-16 w-full mx-auto">
-            <div className="rounded-[2rem] border border-border bg-white/95 p-8 md:p-10 lg:p-12 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
+            <div className="rounded-[2rem] border border-border bg-card/95 p-8 md:p-10 lg:p-12 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 {contactMethods.map((method) => {
                   const Icon = method.icon;
@@ -245,7 +245,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] bg-white p-10 shadow-xl ring-1 ring-slate-200/80">
+            <div className="rounded-[2rem] bg-card p-10 shadow-xl ring-1 ring-border">
               <div className="mb-8">
                 <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90">
                   <span className="inline-block h-px w-12 rounded-full bg-primary" />
@@ -268,7 +268,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       placeholder="Your name"
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                      className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30"
                     />
                   </div>
                   <div>
@@ -280,7 +280,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       placeholder="+44 ..."
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                      className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30"
                     />
                   </div>
                 </div>
@@ -295,7 +295,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       placeholder="you@example.com"
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                      className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30"
                     />
                   </div>
                   <div>
@@ -307,7 +307,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       placeholder="Your property address"
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 focus:border-primary"
+                      className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30"
                     />
                   </div>
                 </div>
@@ -320,7 +320,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-foreground focus:border-primary"
+                      className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30"
                     >
                       <option value="">Select a service...</option>
                       {services.map((svc) => (
@@ -339,7 +339,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         { value: "urgent", label: "Urgent (2-3 days)" },
                         { value: "scheduled", label: "Scheduled appointment" },
                       ].map((option) => (
-                        <label key={option.value} className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm shadow-sm transition hover:border-primary">
+                        <label key={option.value} className="flex items-center gap-3 rounded-2xl border border-input bg-background px-4 py-3 text-sm shadow-sm transition hover:border-primary dark:bg-input/30">
                           <input
                             type="radio"
                             name="urgency"
@@ -364,7 +364,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     placeholder="Describe the problem or work needed..."
                     required
                     rows={5}
-                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-foreground focus:border-primary resize-none"
+                    className="w-full rounded-2xl border border-input bg-background px-4 py-3 text-foreground focus:border-primary dark:bg-input/30 resize-none"
                   />
                 </div>
 
@@ -424,7 +424,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 a: "Yes, we offer tailored maintenance plans to keep your systems running smoothly and prevent costly breakdowns.",
               },
             ].map((item, index) => (
-              <div key={index} className="rounded-[2rem] border border-border bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div key={index} className="rounded-[2rem] border border-border bg-card p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-foreground mb-3">{item.q}</h3>
                 <p className="text-foreground/70 leading-7">{item.a}</p>
               </div>

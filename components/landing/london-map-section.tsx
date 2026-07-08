@@ -342,16 +342,16 @@ export function LondonMapSection() {
               willChange: isLarge ? "transform" : undefined,
             }}
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-orange-700 shadow-sm backdrop-blur">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-card/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary shadow-sm backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
               Live Coverage
             </div>
 
-            <h2 className="max-w-sm text-4xl font-black leading-[1.02] tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <h2 className="max-w-sm text-4xl font-black leading-[1.02] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Our Service Area
             </h2>
 
-            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600 sm:text-base">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground sm:text-base">
               Scroll through London Climate Systems coverage, from rapid plumbing
               repairs to heating and AC engineering across Greater London.
             </p>
@@ -367,8 +367,8 @@ export function LondonMapSection() {
                   className="p-3 text-center"
                 >
                   <Icon className="mx-auto mb-0.5 h-4 w-4 text-orange-600" />
-                  <div className="text-lg font-black text-slate-950">{value}</div>
-                  <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
+                  <div className="text-lg font-black text-foreground">{value}</div>
+                  <div className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
                     {label}
                   </div>
                 </div>
@@ -400,14 +400,14 @@ export function LondonMapSection() {
 
                 {!isReady && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-60 rounded-lg border border-white/70 bg-white/80 p-4 text-center shadow-xl backdrop-blur">
-                      <div className="mb-3 h-1.5 overflow-hidden rounded-full bg-slate-200">
+                    <div className="w-60 rounded-lg border border-border bg-card/90 p-4 text-center shadow-xl backdrop-blur">
+                      <div className="mb-3 h-1.5 overflow-hidden rounded-full bg-muted">
                         <div
                           className="h-full bg-orange-500 transition-[width] duration-100"
                           style={{ width: `${loadProgress}%` }}
                         />
                       </div>
-                      <div className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                      <div className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                         Loading animation {loadProgress}%
                       </div>
                     </div>
@@ -426,7 +426,7 @@ export function LondonMapSection() {
                   return (
                     <div
                       key={phase.id}
-                      className={`absolute max-w-[230px] rounded-lg border bg-white/80 p-3 shadow-xl shadow-slate-900/10 backdrop-blur-md transition-all duration-100 ${style.border} ${
+                      className={`absolute max-w-[230px] rounded-lg border bg-card/90 p-3 shadow-xl shadow-slate-900/10 backdrop-blur-md transition-all duration-100 ${style.border} ${
                         isVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
                       } ${index % 2 === 0 ? "left-0" : "right-0"}`}
                       style={{ top: `${index * 78 - 112}px` }}
@@ -435,11 +435,11 @@ export function LondonMapSection() {
                         <span className={`flex h-7 w-7 items-center justify-center rounded-full ${style.soft}`}>
                           <Icon className={`h-3.5 w-3.5 ${style.color}`} />
                         </span>
-                        <span className="text-xs font-bold text-slate-950">
+                        <span className="text-xs font-bold text-foreground">
                           {phase.service}
                         </span>
                       </div>
-                      <p className="mt-2 text-xs leading-5 text-slate-500">
+                      <p className="mt-2 text-xs leading-5 text-muted-foreground">
                         {phase.area}
                       </p>
                     </div>

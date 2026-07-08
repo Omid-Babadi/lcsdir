@@ -588,7 +588,7 @@ export function ServiceDetailTemplate({
 
       {/* --- MODERN EMBEDDED CTA BLOCK --- */}
       <section className="pb-24 px-4 sm:px-6 lg:px-12">
-        <div className="max-w-[1400px] mx-auto relative rounded-[40px] overflow-hidden border border-border bg-foreground text-background shadow-2xl isolate p-12 sm:p-16 lg:p-24 text-center">
+        <div className="max-w-[1400px] mx-auto relative rounded-[40px] overflow-hidden border border-border bg-slate-950 text-white shadow-2xl isolate p-12 sm:p-16 lg:p-24 text-center">
           {/* Subtle patterns for high-end look inside the CTA */}
           <div className="absolute inset-0 noise-overlay opacity-5 mix-blend-overlay -z-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-cool-blue/20 via-transparent to-flame-deep/10 -z-10" />

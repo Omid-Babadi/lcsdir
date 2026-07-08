@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, ChevronDown, Droplets, Flame, Wind, Wrench, Gauge, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const offers = [
   { text: "💧 10% off for all services", cta: "Get Quote", href: "/contact" },
@@ -267,7 +268,7 @@ export function Navigation() {
           >
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
-              <div className={`relative transition-all duration-500 ${isScrolled ? "w-8 h-8 sm:w-10 sm:h-10" : "w-10 h-10 sm:w-12 sm:h-12"}`}>
+              <div className={`relative overflow-hidden rounded-lg bg-transparent transition-all duration-500 dark:bg-white ${isScrolled ? "w-8 h-8 sm:w-10 sm:h-10" : "w-10 h-10 sm:w-12 sm:h-12"}`}>
                 <Image src="/logo.png" alt="London Climate Systems" fill className="object-contain" priority />
               </div>
               <div className="flex flex-col">
@@ -345,6 +346,7 @@ export function Navigation() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3 xl:gap-4">
+              <ThemeToggle />
               <a
                 href="tel:07473423003"
                 className={`flex items-center gap-1.5 text-foreground/70 hover:text-[#FF6A00] transition-all duration-500 ${isScrolled ? "text-xs" : "text-sm"}`}
@@ -361,14 +363,17 @@ export function Navigation() {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-foreground"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <ThemeToggle />
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 text-foreground"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </nav>
 
@@ -439,6 +444,7 @@ export function Navigation() {
               }`}
               style={{ transitionDelay: isMobileMenuOpen ? "300ms" : "0ms" }}
             >
+
               <a href="tel:07473423003" className="flex-1" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="outline" className="w-full rounded-full h-12 sm:h-14 text-sm sm:text-base border-[#FF6A00] text-[#FF6A00]">
                   <Phone className="w-4 h-4 mr-2" />

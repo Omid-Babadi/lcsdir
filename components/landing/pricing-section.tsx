@@ -101,7 +101,7 @@ export function PricingSection() {
             Annual
           </span>
           {isAnnual && (
-            <span className="ml-2 px-2 py-1 bg-foreground text-primary-foreground text-xs font-mono">
+            <span className="ml-2 px-2 py-1 bg-slate-950 text-white text-xs font-mono">
               Save 17%
             </span>
           )}
@@ -117,7 +117,7 @@ export function PricingSection() {
               }`}
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-8 px-3 py-1 bg-foreground text-primary-foreground text-xs font-mono uppercase tracking-widest">
+                <span className="absolute -top-3 left-8 px-3 py-1 bg-slate-950 text-white text-xs font-mono uppercase tracking-widest">
                   Most Popular
                 </span>
               )}
@@ -159,7 +159,7 @@ export function PricingSection() {
               <button
                 className={`w-full py-4 flex items-center justify-center gap-2 text-sm font-medium transition-all group ${
                   plan.popular
-                    ? "bg-foreground text-primary-foreground hover:bg-foreground/90"
+                    ? "bg-slate-950 text-white hover:bg-slate-900"
                     : "border border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground/5"
                 }`}
               >

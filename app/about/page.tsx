@@ -103,7 +103,7 @@ export default function About() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
-              <div className="rounded-[2rem] border border-border/70 bg-white/95 p-8 shadow-[0_40px_80px_-48px_rgba(15,23,42,0.3)] backdrop-blur-xl">
+              <div className="rounded-[2rem] border border-border/70 bg-card/95 p-8 shadow-[0_40px_80px_-48px_rgba(15,23,42,0.3)] backdrop-blur-xl">
                 <span className="inline-flex items-center gap-3 rounded-full bg-primary/5 px-4 py-2 text-sm font-semibold text-primary">
                   Trusted local engineering
                 </span>
@@ -117,7 +117,7 @@ export default function About() {
                   {values.slice(0, 2).map((value) => {
                     const Icon = value.icon;
                     return (
-                      <div key={value.title} className="flex items-start gap-3 rounded-3xl bg-slate-50 p-4">
+                      <div key={value.title} className="flex items-start gap-3 rounded-3xl bg-muted/50 p-4">
                         <Icon className="mt-1 h-6 w-6 text-primary" />
                         <div>
                           <p className="text-sm font-semibold text-foreground">{value.title}</p>
@@ -156,7 +156,7 @@ export default function About() {
 
           <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-white/90 p-8 text-center shadow-sm backdrop-blur-xl">
+              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-card/90 p-8 text-center shadow-sm backdrop-blur-xl">
                 <p className="text-4xl font-display text-foreground sm:text-5xl">{stat.number}</p>
                 <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">{stat.label}</p>
               </div>
@@ -165,7 +165,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 border-t border-border bg-slate-50">
+      <section className="py-24 lg:py-32 border-t border-border bg-muted/50">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-[0.95fr_0.7fr] lg:items-center">
             <div>
@@ -179,9 +179,9 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid gap-4 rounded-[2rem] border border-border bg-white p-8 shadow-sm">
+            <div className="grid gap-4 rounded-[2rem] border border-border bg-card p-8 shadow-sm">
               {services.map((service) => (
-                <div key={service} className="flex items-start gap-4 rounded-3xl border border-slate-200/80 bg-slate-50 p-4">
+                <div key={service} className="flex items-start gap-4 rounded-3xl border border-border bg-muted/50 p-4">
                   <CheckCircle2 className="mt-1 h-5 w-5 text-primary" />
                   <p className="text-foreground/75 leading-7">{service}</p>
                 </div>
@@ -246,7 +246,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-slate-50">
+      <section className="py-24 lg:py-32 bg-muted/50">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <div className="text-center">
             <span className="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.28em] text-primary/90 mb-6">
@@ -260,7 +260,7 @@ export default function About() {
           </div>
 
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-[2rem] border border-border bg-white p-10 shadow-sm">
+            <div className="rounded-[2rem] border border-border bg-card p-10 shadow-sm">
               <div className="space-y-6">
                 <div>
                   <p className="text-sm font-mono uppercase tracking-[0.22em] text-primary">CEO</p>
@@ -269,8 +269,8 @@ export default function About() {
                 <p className="text-foreground/70 leading-7">
                   Masoud combines a strong academic foundation with practical leadership to deliver professional and reliable outcomes for every customer.
                 </p>
-                <div className="rounded-[1.75rem] bg-slate-50 p-5 text-foreground/80 ring-1 ring-slate-200">
-                  <p className="text-xs uppercase tracking-[0.26em] text-slate-500">Qualifications</p>
+                <div className="rounded-[1.75rem] bg-muted/50 p-5 text-foreground/80 ring-1 ring-border">
+                  <p className="text-xs uppercase tracking-[0.26em] text-muted-foreground">Qualifications</p>
                   <ul className="mt-4 space-y-2 text-sm leading-7 text-foreground">
                     <li>BSc Civil Engineering</li>
                     <li>MSc Construction Project Management, UWL University</li>
@@ -282,11 +282,11 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 border-t border-border bg-white">
+      <section className="py-24 lg:py-32 border-t border-border bg-background">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-slate-50 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-muted/50 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
                 <p className="text-4xl font-display text-foreground sm:text-5xl">{stat.number}</p>
                 <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">{stat.label}</p>
               </div>

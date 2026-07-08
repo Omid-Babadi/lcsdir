@@ -10,7 +10,7 @@ export default async function BlogPage() {
   const featuredBlog = blogs[0];
 
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-slate-50">
+    <main className="relative min-h-screen overflow-x-hidden bg-background">
       <Navigation />
 
       <section className="relative overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-24">
@@ -34,7 +34,7 @@ export default async function BlogPage() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-border/70 bg-white/90 p-4 shadow-[0_30px_70px_-48px_rgba(15,23,42,0.35)] backdrop-blur-xl">
+            <div className="rounded-[2rem] border border-border/70 bg-card/90 p-4 shadow-[0_30px_70px_-48px_rgba(15,23,42,0.35)] backdrop-blur-xl">
               <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
               {[
                 { icon: ShieldCheck, label: 'Certified guidance' },
@@ -43,7 +43,7 @@ export default async function BlogPage() {
               ].map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-3 rounded-[1.35rem] border border-slate-200/80 bg-slate-50 px-4 py-4"
+                  className="flex items-center gap-3 rounded-[1.35rem] border border-border bg-background px-4 py-4"
                 >
                   <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                     <Icon className="h-5 w-5" />
@@ -62,7 +62,7 @@ export default async function BlogPage() {
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <Link
               href={`/blog/${featuredBlog.slug}`}
-              className="group grid overflow-hidden rounded-[2rem] border border-border/70 bg-white shadow-[0_32px_80px_-54px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl lg:grid-cols-[1.05fr_0.95fr]"
+              className="group grid overflow-hidden rounded-[2rem] border border-border/70 bg-card shadow-[0_32px_80px_-54px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl lg:grid-cols-[1.05fr_0.95fr]"
             >
               <div className="p-7 sm:p-9 lg:p-12">
                 <span className="mb-8 inline-flex items-center rounded-full bg-primary/10 text-primary px-4 py-2 text-sm font-semibold">
@@ -117,7 +117,7 @@ export default async function BlogPage() {
           {blogs.length > 0 ? (
             <BlogGrid blogs={blogs.slice(featuredBlog ? 1 : 0)} />
           ) : (
-            <div className="rounded-[2rem] border border-dashed border-border bg-white/80 py-16 px-6 text-center shadow-sm">
+            <div className="rounded-[2rem] border border-dashed border-border bg-card/80 py-16 px-6 text-center shadow-sm">
               <p className="text-foreground font-medium text-lg">No blogs found yet.</p>
               <p className="text-muted-foreground mt-2">Fresh guidance will appear here soon.</p>
             </div>

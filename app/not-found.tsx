@@ -50,7 +50,7 @@ export default function NotFound() {
 
           <div className="rounded-lg border border-border bg-background/85 p-6 shadow-xl backdrop-blur">
             <div className="mb-6 flex items-center gap-3">
-              <div className="relative size-12 overflow-hidden rounded-xl border border-border bg-background">
+              <div className="relative size-12 overflow-hidden rounded-xl border border-border bg-background dark:bg-white">
                 <Image src="/logo.png" alt="London Climate Systems" fill className="object-contain p-2" />
               </div>
               <div>

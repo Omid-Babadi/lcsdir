@@ -28,7 +28,7 @@ export default function Loading() {
           <div className="absolute inset-0 rounded-full border border-orange-500/20" />
           <div className="absolute inset-3 animate-spin rounded-full border-2 border-orange-500/20 border-t-orange-500" />
           <div className="absolute inset-8 animate-pulse rounded-full bg-orange-500/10" />
-          <div className="relative size-16 overflow-hidden rounded-2xl border border-border bg-background shadow-lg">
+          <div className="relative size-16 overflow-hidden rounded-2xl border border-border bg-background shadow-lg dark:bg-white">
             <Image
               src="/logo.png"
               alt="London Climate Systems"

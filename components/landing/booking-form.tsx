@@ -65,7 +65,7 @@ export function BookingForm() {
         onChange={e=>setName(e.target.value)} 
         placeholder="Full name" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <input 
         required 
@@ -74,35 +74,35 @@ export function BookingForm() {
         placeholder="Email" 
         type="email" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <input 
         value={phone} 
         onChange={e=>setPhone(e.target.value)} 
         placeholder="Phone" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <input 
         value={service} 
         onChange={e=>setService(e.target.value)} 
         placeholder="Service (e.g. boiler repair)" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <input 
         value={date} 
         onChange={e=>setDate(e.target.value)} 
         placeholder="Preferred date" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <textarea 
         value={notes} 
         onChange={e=>setNotes(e.target.value)} 
         placeholder="Additional notes" 
         disabled={isSubmitting}
-        className="w-full px-3 py-2 border border-border rounded-md disabled:opacity-50" 
+        className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground disabled:opacity-50 dark:bg-input/30" 
       />
       <div className="flex items-center gap-2">
         <button 

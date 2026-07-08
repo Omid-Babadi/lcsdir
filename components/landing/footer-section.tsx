@@ -68,29 +68,29 @@ const certificates = [
 
 export function FooterSection() {
   return (
-    <footer className="relative border-t border-border bg-foreground text-primary-foreground">
+    <footer className="relative border-t border-border bg-slate-950 text-white">
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* ── Certificates Strip ── */}
-        <div className="py-8 border-b border-primary-foreground/10">
+        <div className="py-8 border-b border-white/10">
           <div className="flex flex-col sm:flex-row sm:items-center gap-6">
             {/* Label */}
             <div className="flex items-center gap-2 flex-shrink-0">
               <ShieldCheck className="w-4 h-4 text-primary" />
-              <span className="text-xs font-mono text-primary-foreground/40 uppercase tracking-widest whitespace-nowrap">
+              <span className="text-xs font-mono text-white/40 uppercase tracking-widest whitespace-nowrap">
                 Certifications
               </span>
             </div>
 
             {/* Divider */}
-            <div className="hidden sm:block w-px h-8 bg-primary-foreground/10 flex-shrink-0" />
+            <div className="hidden sm:block w-px h-8 bg-white/10 flex-shrink-0" />
 
             {/* Cert badges */}
             <div className="flex flex-wrap items-center gap-3">
               {certificates.map((cert) => (
                 <div
                   key={cert.src}
-                  className="flex h-12 w-[100px] items-center justify-center rounded-lg border border-primary-foreground/10 bg-white px-4 py-2 transition-all duration-200 hover:border-primary-foreground/20 hover:bg-primary-foreground/10"
+                  className="flex h-12 w-[100px] items-center justify-center rounded-lg border border-white/10 bg-white px-4 py-2 transition-all duration-200 hover:border-white/20 hover:bg-white"
                 >
                   <Image
                     src={cert.src}
@@ -111,7 +111,7 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="/" className="inline-flex items-center gap-3 mb-6">
-                <div className="relative w-10 h-10 rounded-lg bg-primary-foreground p-1 flex items-center justify-center">
+                <div className="relative w-10 h-10 rounded-lg bg-white p-1 flex items-center justify-center">
                   <Image
                     src="/logo.png"
                     alt="London Climate Systems"
@@ -120,12 +120,12 @@ export function FooterSection() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-xl font-display text-primary-foreground">
+                <span className="text-xl font-display text-white">
                   London Climate Systems LTD
                 </span>
               </a>
 
-              <p className="text-primary-foreground/60 leading-relaxed mb-6 max-w-xs text-sm">
+              <p className="text-white/60 leading-relaxed mb-6 max-w-xs text-sm">
                 Professional heating, cooling, and plumbing services across
                 Greater London. Expert engineers for your home comfort.
               </p>
@@ -134,19 +134,19 @@ export function FooterSection() {
               <div className="flex flex-col gap-3 mb-8">
                 <a
                   href="tel:07473423003"
-                  className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   07473 423003
                 </a>
                 <a
                   href="mailto:londonclimatesystems@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5" />
                   londonclimatesystems@gmail.com
                 </a>
-                <span className="inline-flex items-center gap-2 text-sm text-primary-foreground/60">
+                <span className="inline-flex items-center gap-2 text-sm text-white/60">
                   <MapPin className="w-3.5 h-3.5" />
                   71-75 Shelton Street
                   Covent Garden
@@ -164,7 +164,7 @@ export function FooterSection() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-primary-foreground/40 hover:text-primary-foreground transition-colors flex items-center gap-1 group"
+                      className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1 group"
                     >
                       {link.name}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -177,7 +177,7 @@ export function FooterSection() {
             {/* Link Columns */}
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="text-sm font-medium text-primary-foreground mb-6">
+                <h3 className="text-sm font-medium text-white mb-6">
                   {title}
                 </h3>
                 <ul className="flex flex-col gap-3">
@@ -185,7 +185,7 @@ export function FooterSection() {
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors"
+                        className="text-sm text-white/50 hover:text-white transition-colors"
                       >
                         {link.name}
                       </a>
@@ -198,15 +198,15 @@ export function FooterSection() {
         </div>
 
         {/* ── Bottom Bar ── */}
-        <div className="py-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-primary-foreground/40">
+        <div className="py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-white/40">
             &copy; 2026 London Climate Systems LTD. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-sm text-primary-foreground/40">
-            <a href="/privacy" className="hover:text-primary-foreground transition-colors">
+          <div className="flex items-center gap-6 text-sm text-white/40">
+            <a href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </a>
-            <a href="/terms" className="hover:text-primary-foreground transition-colors">
+            <a href="/terms" className="hover:text-white transition-colors">
               Terms
             </a>
           </div>

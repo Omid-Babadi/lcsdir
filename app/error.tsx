@@ -57,7 +57,7 @@ export default function Error({
           </div>
 
           <div className="rounded-lg border border-border bg-background/85 p-6 shadow-xl backdrop-blur">
-            <div className="relative mb-6 size-16 overflow-hidden rounded-2xl border border-border bg-background">
+            <div className="relative mb-6 size-16 overflow-hidden rounded-2xl border border-border bg-background dark:bg-white">
               <Image src="/logo.png" alt="London Climate Systems" fill className="object-contain p-2" />
             </div>
             <div className="space-y-4">

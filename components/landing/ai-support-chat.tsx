@@ -98,7 +98,7 @@ export function AiSupportChat() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-xl shadow-foreground/20 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#FF6A00]/30 sm:h-16 sm:w-16"
+        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 text-white shadow-xl shadow-foreground/20 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#FF6A00]/30 sm:h-16 sm:w-16"
         aria-label="Open AI support chat"
       >
         <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
@@ -111,20 +111,20 @@ export function AiSupportChat() {
       className="fixed bottom-4 right-4 z-40 flex w-[calc(100vw-2rem)] max-w-[390px] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl shadow-foreground/20 sm:bottom-6 sm:right-6"
       aria-label="AI support chat"
     >
-      <header className="flex items-center justify-between border-b border-border bg-foreground px-4 py-3 text-background">
+      <header className="flex items-center justify-between border-b border-border bg-slate-950 px-4 py-3 text-white">
         <div className="flex min-w-0 items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background text-foreground">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-slate-950">
             <Bot className="h-5 w-5" />
           </span>
           <div className="min-w-0">
             <h2 className="truncate text-sm font-semibold">AI Support</h2>
-            <p className="truncate text-xs text-background/70">London Climate Systems</p>
+            <p className="truncate text-xs text-white/70">London Climate Systems</p>
           </div>
         </div>
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-background/80 transition-colors hover:bg-background/10 hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background/40"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
           aria-label="Close AI support chat"
         >
           <X className="h-5 w-5" />
