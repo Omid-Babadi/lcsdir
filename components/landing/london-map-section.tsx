@@ -319,19 +319,19 @@ export function LondonMapSection() {
       ref={sectionRef}
       // Base 300vh for the scroll runway + PARALLAX_VH so the section is
       // tall enough to accommodate the canvas drift without a white gap.
-      className="relative bg-[#f7f5ef] h-auto"
+      className="relative h-auto bg-[#f7f5ef] dark:bg-background"
     >
       {/* Sticky wrapper is exactly one viewport tall — no overflow issues */}
       <div className="lg:sticky lg:h-[150vh] h-auto lg:pb-200 pb-14 overflow-hidden">
         {/* Progress bar */}
-        <div className="absolute inset-x-0 top-0 z-30 h-1 bg-black/5">
+        <div className="absolute inset-x-0 top-0 z-30 h-1 bg-black/5 dark:bg-white/10">
           <div
             className="h-full bg-orange-500 transition-[width] duration-100"
             style={{ width: `${Math.round(scrollProgress * 100)}%` }}
           />
         </div>
 
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_65%_45%,rgba(249,115,22,0.13),transparent_42%),linear-gradient(135deg,#ffffff_0%,#f3eee3_52%,#e5edf1_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_65%_45%,rgba(249,115,22,0.13),transparent_42%),linear-gradient(135deg,#ffffff_0%,#f3eee3_52%,#e5edf1_100%)] dark:bg-[radial-gradient(ellipse_at_65%_45%,rgba(249,115,22,0.16),transparent_42%),linear-gradient(135deg,rgba(15,23,42,0.96)_0%,rgba(20,28,42,0.98)_52%,rgba(8,13,23,1)_100%)]" />
 
         <div className="relative z-10 mx-auto grid h-full max-w-[1400px] grid-cols-1 items-center gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[390px_1fr] lg:px-12">
           {/* LEFT PANEL — moves only on large screens to avoid overlap */}
