@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Phone, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Instagram, Mail, MapPin, Phone, ShieldCheck, Youtube } from "lucide-react";
 import Image from "next/image";
 
 const footerLinks = {
@@ -28,18 +28,16 @@ const footerLinks = {
   ],
 };
 
-const socialLinks: { name: string; href: string }[] = [
+const socialLinks = [
   {
-    name: "Share on Facebook",
-    href: "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flondonclimatesystems.com%2F",
+    name: "Instagram",
+    href: "https://www.instagram.com/londonclimatesystems/",
+    Icon: Instagram,
   },
   {
-    name: "Share on LinkedIn",
-    href: "https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flondonclimatesystems.com%2F",
-  },
-  {
-    name: "Share on X",
-    href: "https://twitter.com/intent/tweet?url=https%3A%2F%2Flondonclimatesystems.com%2F&text=London%20Climate%20Systems",
+    name: "YouTube",
+    href: "https://www.youtube.com/@LondonClimateSystemsLTD",
+    Icon: Youtube,
   },
 ];
 
@@ -60,9 +58,13 @@ const certificates = [
     src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780597445/F-Gas-Certified-Logo-1-e1754335467963_1_rzpt43.webp",
     alt: "F-Gas certified logo",
   },
-    {
+  {
     src: "https://res.cloudinary.com/daucwpsi8/image/upload/v1780600149/city-guilds-logo-png_seeklogo-213843_x524ry.png",
-    alt: "F-Gas certified logo",
+    alt: "City & Guilds logo",
+  },
+  {
+    src: "/MSC.png",
+    alt: "MSC certified logo",
   },
 ];
 
@@ -72,35 +74,39 @@ export function FooterSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
 
         {/* ── Certificates Strip ── */}
-        <div className="py-8 border-b border-white/10">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+        <div className="my-6 overflow-hidden rounded-[2.5rem] border-2 border-orange-300/50 bg-orange-500 px-4 py-8 shadow-2xl shadow-orange-950/25 sm:px-6 lg:px-10">
+          <div className="mx-auto flex max-w-[1180px] flex-col items-center gap-6">
             {/* Label */}
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <ShieldCheck className="w-4 h-4 text-primary" />
-              <span className="text-xs font-mono text-white/40 uppercase tracking-widest whitespace-nowrap">
+            <div className="flex flex-shrink-0 items-center justify-center gap-2">
+              <ShieldCheck className="w-5 h-5 text-white" />
+              <span className="text-xs font-mono text-white/90 uppercase tracking-widest whitespace-nowrap">
                 Certifications
               </span>
             </div>
 
             {/* Divider */}
-            <div className="hidden sm:block w-px h-8 bg-white/10 flex-shrink-0" />
+            <div className="h-px w-full max-w-24 bg-white/35" />
 
             {/* Cert badges */}
-            <div className="flex flex-wrap items-center gap-3">
-              {certificates.map((cert) => (
-                <div
-                  key={cert.src}
-                  className="flex h-12 w-[100px] items-center justify-center rounded-lg border border-white/10 bg-white px-4 py-2 transition-all duration-200 hover:border-white/20 hover:bg-white"
-                >
-                  <Image
-                    src={cert.src}
-                    alt={cert.alt}
-                    width={120}
-                    height={40}
-                    className="max-h-10 object-contain"
-                  />
-                </div>
-              ))}
+            <div className="relative w-full overflow-hidden py-3 sm:py-4">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-orange-500/95 to-transparent sm:w-20" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-orange-500/95 to-transparent sm:w-20" />
+              <div className="marquee flex w-max items-center gap-8 sm:gap-12">
+                {[...certificates, ...certificates].map((cert, index) => (
+                  <div
+                    key={`${cert.src}-${index}`}
+                    className="flex h-20 w-40 shrink-0 items-center justify-center sm:h-24 sm:w-52 lg:h-24 lg:w-56"
+                  >
+                    <Image
+                      src={cert.src}
+                      alt={cert.alt}
+                      width={220}
+                      height={90}
+                      className="max-h-16 w-auto max-w-full object-contain drop-shadow-sm sm:max-h-20"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -158,15 +164,16 @@ export function FooterSection() {
 
               {socialLinks.length > 0 && (
                 <div className="flex gap-6">
-                  {socialLinks.map((link) => (
+                  {socialLinks.map(({ name, href, Icon }) => (
                     <a
-                      key={link.name}
-                      href={link.href}
+                      key={name}
+                      href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-1 group"
+                      className="text-sm text-white/40 hover:text-white transition-colors flex items-center gap-2 group"
                     >
-                      {link.name}
+                      <Icon className="w-4 h-4" />
+                      {name}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     </a>
                   ))}

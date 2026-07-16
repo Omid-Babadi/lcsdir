@@ -6,7 +6,6 @@ import { ArrowRight, Phone, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { HeroVideoModal } from "@/components/landing/hero-video-modal";
 import { AiSupportChat } from "@/components/landing/ai-support-chat";
-import { LondonMapAnimation } from "@/components/landing/hero-map-animation";
 
 const services = ["heating", "cooling", "plumbing", "boilers"];
 
@@ -135,14 +134,23 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Content — Map with mb-20 bottom margin, no floating stats */}
+          {/* Right Content: autoplay hero video */}
           <div
             className={`order-2 mt-0 mb-10 lg:mt-0 lg:order-2 relative transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="w-full max-w-[360px] sm:max-w-[480px] lg:max-w-[560px] mx-auto lg:ml-auto h-[300px] sm:h-[380px] lg:h-[480px] mb-20">
-              <LondonMapAnimation backgroundImage="/9383f26e-e787-4442-8921-76b5ae102d96-fotor-20260606145932.png" />
+            <div className="w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] mx-auto lg:ml-auto h-[340px] sm:h-[460px] lg:h-[580px] mb-20 overflow-hidden rounded-[36px] border border-border bg-black shadow-2xl">
+              <video
+                className="h-full w-full object-cover"
+                src="/hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-label="London Climate Systems service video"
+              />
             </div>
           </div>
         </div>
