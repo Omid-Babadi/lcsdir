@@ -6,9 +6,9 @@ import { Clock, ShieldCheck, BadgePoundSterling, Award, HeadphonesIcon, Calendar
 const reasons = [
   {
     icon: Clock,
-    title: "15-Minute Response",
+    title: "1-Hour Response",
     description:
-      "Emergency? Our engineers are dispatched within 15 minutes. Swift response to get your property back to comfort.",
+      "Emergency? Our engineers aim to respond within 1 hour, helping get your property back to comfort quickly.",
   },
   {
     icon: BadgePoundSterling,
@@ -90,9 +90,7 @@ export function WhyUsSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Trusted by thousands
-            <br />
-            <span className="text-primary-foreground/60">of London homeowners.</span>
+            Built for London properties.
           </h2>
         </div>
 

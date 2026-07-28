@@ -28,7 +28,7 @@ Company summary:
 - Website booking page: /contact#booking.
 - Engineers are Gas Safe registered and F-Gas certified.
 - The business highlights fast response, fair pricing, no call-out fees, clear quotations, local engineers, and maintenance plans.
-- The company has served London since 2018 and has 12+ years of industry expertise.
+- London Climate Systems operates across Greater London as of 22 April 2026.
 
 Services:
 - Plumbing: installation, emergency service, repairs.

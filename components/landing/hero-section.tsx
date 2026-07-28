@@ -50,7 +50,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 lg:pt-0 overflow-hidden bg-background mt-0 lg:mt-30">
+    <section className="relative min-h-[auto] flex items-center pt-20 lg:min-h-screen lg:pt-0 overflow-hidden bg-background mt-0 lg:mt-30">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full py-8 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -59,7 +59,7 @@ export function HeroSection() {
             <div className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
               <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground">
                 <span className="w-6 sm:w-8 h-px gradient-flame" />
-                London&apos;s Trusted Climate Experts Since 2018
+                London&apos;s Trusted Climate Experts · 22 April 2026
               </span>
             </div>
 
@@ -126,12 +126,7 @@ export function HeroSection() {
               </a>
             </div>
 
-            <div className={`mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-500/5 border border-blue-400/20 rounded-xl transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-              <p className="text-xs sm:text-sm text-foreground">
-                <span className="font-semibold text-blue-600">Fast Response:</span>{" "}
-                Our engineers are spread across London ready to help.
-              </p>
-            </div>
+
           </div>
 
           {/* Right Content: autoplay hero video */}
@@ -140,7 +135,7 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
             }`}
           >
-            <div className="w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] mx-auto lg:ml-auto h-[340px] sm:h-[460px] lg:h-[580px] mb-20 overflow-hidden rounded-[36px] border border-border bg-black shadow-2xl">
+            <div className="w-full max-w-[420px] sm:max-w-[560px] lg:max-w-[680px] mx-auto lg:ml-auto h-[340px] sm:h-[460px] lg:h-[580px] mb-8 overflow-hidden rounded-[36px] border border-border bg-black shadow-2xl">
               <video
                 className="h-full w-full object-cover"
                 src="/hero-video.mp4"
@@ -155,41 +150,18 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Brand Logos Strip */}
-        <div className={`mt-10 sm:mt-12 border-y border-border/70 py-5 transition-all duration-700 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <div className="mb-8">
-            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
+        <div className={`mt-6 border-y border-border/70 py-4 transition-all duration-700 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
               <span className="h-px w-8 gradient-flame" />
-              Boiler Brands We Work With
+              Trusted equipment partners
             </div>
-            <div className="relative overflow-hidden">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
-              <div className="marquee flex w-max items-center gap-3">
-                {[...boilerPartners, ...boilerPartners].map((brand, index) => (
-                  <div key={`${brand.name}-${index}`} className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4">
-                    <img src={brand.logo} alt={`${brand.name} logo`} className="max-h-10 max-w-32 object-contain" loading="lazy" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-              <span className="h-px w-8 gradient-cool" />
-              Air Conditioning Brands We Work With
-            </div>
-            <div className="relative overflow-hidden">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
-              <div className="marquee-reverse flex w-max items-center gap-3">
-                {[...acPartners, ...acPartners].map((brand, index) => (
-                  <div key={`${brand.name}-${index}`} className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4">
-                    <img src={brand.logo} alt={`${brand.name} logo`} className="max-h-10 max-w-32 object-contain" loading="lazy" />
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {[...boilerPartners.slice(0, 4), ...acPartners.slice(0, 3)].map((brand) => (
+                <span key={brand.name} className="rounded-full border border-border bg-card/70 px-3 py-1.5 text-[10px] font-semibold text-muted-foreground">
+                  {brand.name}
+                </span>
+              ))}
             </div>
           </div>
         </div>

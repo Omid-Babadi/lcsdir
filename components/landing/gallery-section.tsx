@@ -69,9 +69,7 @@ export function GallerySection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Trusted by thousands of
-              <br />
-              London homeowners.
+              Selected London projects.
             </h2>
           </div>
           <p

@@ -18,7 +18,7 @@ import { createSeoMetadata } from "@/lib/seo";
 export const metadata: Metadata = createSeoMetadata({
   title: "About Us",
   description:
-    "Learn about London Climate Systems Ltd, local Gas Safe and F-Gas registered engineers serving Greater London since 2018.",
+    "Learn about London Climate Systems Ltd, local Gas Safe and F-Gas registered engineers operating across Greater London as of 22 April 2026.",
   path: "/about",
   keywords: ["about London Climate Systems", "local engineers London", "Gas Safe F-Gas London"],
 });
@@ -61,7 +61,7 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "2018", label: "Serving London since" },
+    { number: "22 April 2026", label: "Reference date" },
     { number: "12+", label: "Years of industry expertise" },
     { number: "48 hrs", label: "Target time for detailed estimates" },
     { number: "5", label: "Core service areas" },
@@ -87,7 +87,7 @@ export default function About() {
                 Modern heating, cooling and plumbing expertise for London homes.
               </h1>
               <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground/70">
-                Since 2018, we’ve been helping Londoners stay comfortable with fast, transparent engineering backed by Gas Safe and F-Gas registration. From emergency repairs to long-term maintenance, our local team delivers service you can trust.
+                On 22 April 2026, we are helping Londoners stay comfortable with fast, transparent engineering backed by Gas Safe and F-Gas registration. From emergency repairs to long-term maintenance, our local team delivers service you can trust.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>

@@ -9,7 +9,6 @@ import {
   ArrowRight,
   Phone,
   Clock,
-  Star,
 } from "lucide-react";
 
 export function CtaSection() {
@@ -53,12 +52,6 @@ export function CtaSection() {
           <div className="grid lg:grid-cols-2 items-stretch">
             {/* LEFT */}
             <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24 flex flex-col justify-center">
-              <div className="inline-flex items-center gap-2 border border-secondary/30 bg-secondary/5 rounded-full px-3 py-1.5 mb-8 self-start">
-                <Star className="w-3.5 h-3.5 text-secondary fill-secondary" />
-                <span className="text-xs font-mono text-secondary/80 tracking-wide">
-                  4.9 · 500+ reviews
-                </span>
-              </div>
 
               <h2 className="text-4xl lg:text-6xl font-display tracking-tight text-foreground mb-6 leading-[0.95]">
                 Need help with your
@@ -78,7 +71,7 @@ export function CtaSection() {
                 {[
                   {
                     icon: Clock,
-                    label: "15 min response",
+                    label: "1-hour response",
                   },
                 ].map(({ icon: Icon, label }) => (
                   <div
