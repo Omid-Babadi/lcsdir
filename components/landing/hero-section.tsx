@@ -150,22 +150,43 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className={`mt-6 border-y border-border/70 py-4 transition-all duration-700 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">
+        <div className={`mt-8 sm:mt-10 border-y border-border/70 py-5 transition-all duration-700 delay-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
+          <div className="mb-6">
+            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
               <span className="h-px w-8 gradient-flame" />
-              Trusted equipment partners
+              Boiler Brands We Work With
             </div>
-            <div className="flex flex-wrap gap-2">
-              {[...boilerPartners.slice(0, 4), ...acPartners.slice(0, 3)].map((brand) => (
-                <span key={brand.name} className="rounded-full border border-border bg-card/70 px-3 py-1.5 text-[10px] font-semibold text-muted-foreground">
-                  {brand.name}
-                </span>
-              ))}
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
+              <div className="marquee flex w-max items-center gap-3">
+                {[...boilerPartners, ...boilerPartners].map((brand, index) => (
+                  <div key={`${brand.name}-${index}`} className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4">
+                    <img src={brand.logo} alt={`${brand.name} logo`} className="max-h-10 max-w-32 object-contain" loading="lazy" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div>
+            <div className="mb-3 flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
+              <span className="h-px w-8 gradient-cool" />
+              Air Conditioning Brands We Work With
+            </div>
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent" />
+              <div className="marquee-reverse flex w-max items-center gap-3">
+                {[...acPartners, ...acPartners].map((brand, index) => (
+                  <div key={`${brand.name}-${index}`} className="flex h-16 min-w-40 shrink-0 items-center justify-center rounded-lg border border-border bg-white px-4">
+                    <img src={brand.logo} alt={`${brand.name} logo`} className="max-h-10 max-w-32 object-contain" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>      </div>
 
       <HeroVideoModal />
       <AiSupportChat />
