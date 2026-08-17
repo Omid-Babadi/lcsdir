@@ -254,7 +254,7 @@ export function LondonScrollSequence() {
             <div className="pointer-events-none absolute inset-0 rounded-[3rem] bg-gradient-to-r from-orange-500/20 via-cyan-500/10 to-blue-500/20 blur-3xl" />
             <div
               ref={stageRef}
-              className="relative h-[min(48vw,76svh)] min-h-[220px] max-h-[680px] w-full overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#03070c] shadow-2xl shadow-slate-950/30 sm:rounded-[2.5rem]"
+              className="relative h-[clamp(280px,78vw,460px)] max-h-[76svh] w-full overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#03070c] shadow-2xl shadow-slate-950/30 sm:h-[min(60vw,76svh)] sm:max-h-[560px] sm:rounded-[2.5rem] lg:h-[min(48vw,76svh)] lg:max-h-[680px]"
             >
               <canvas
                 ref={canvasRef}

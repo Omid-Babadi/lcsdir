@@ -4,8 +4,6 @@ import { Navigation } from '@/components/landing/navigation-v2';
 import { FooterSection } from '@/components/landing/footer-section-v2';
 import { absoluteUrl, createSeoMetadata, siteConfig } from '@/lib/seo';
 import { getPublishedBlogBySlug } from '@/lib/blogs';
-import { DEFAULT_BLOG_COVER } from '@/lib/blog-images';
-import { BlogCover } from '@/components/blog/blog-cover';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Phone, UserRound } from 'lucide-react';
@@ -39,8 +37,6 @@ export async function generateMetadata({
     path: `/blog/${slug}`,
     type: "article",
     keywords: [title, "London Climate Systems blog"],
-    image: blog?.coverImage || DEFAULT_BLOG_COVER,
-    imageAlt: blog?.coverImageAlt || title,
   });
 }
 
@@ -60,7 +56,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     "@type": "Article",
     headline: blog.title,
     description: blog.metaDescription || blog.excerpt,
-    image: absoluteUrl(blog.coverImage || DEFAULT_BLOG_COVER),
     datePublished: blog.createdAt,
     dateModified: blog.updatedAt,
     mainEntityOfPage: absoluteUrl(`/blog/${blog.slug}`),
@@ -121,16 +116,6 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </article>
         </div>
       </section>
-
-      <div className="mx-auto max-w-[1200px] px-4 pb-12 sm:px-6 lg:px-12 lg:pb-16">
-        <div className="aspect-[16/8] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-[0_30px_80px_-50px_rgba(15,23,42,0.55)]">
-          <BlogCover
-            src={blog.coverImage}
-            alt={blog.coverImageAlt || blog.title}
-            priority
-          />
-        </div>
-      </div>
 
       <section className="pb-20 lg:pb-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">

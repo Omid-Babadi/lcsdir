@@ -1,13 +1,12 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
-import { ImageIcon, Loader2, Save, X } from "lucide-react";
+import { Loader2, Save, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
-import { DEFAULT_BLOG_COVER } from "@/lib/blog-images";
 
 export type AdminBlog = {
   _id: string;
@@ -16,8 +15,6 @@ export type AdminBlog = {
   excerpt?: string;
   description: string;
   writtenBy: string;
-  coverImage?: string;
-  coverImageAlt?: string;
   seoTitle?: string;
   metaDescription?: string;
   published: boolean;
@@ -31,8 +28,6 @@ type FormState = {
   excerpt: string;
   description: string;
   writtenBy: string;
-  coverImage: string;
-  coverImageAlt: string;
   seoTitle: string;
   metaDescription: string;
   published: boolean;
@@ -44,8 +39,6 @@ const emptyForm: FormState = {
   excerpt: "",
   description: "",
   writtenBy: "London Climate Systems",
-  coverImage: "",
-  coverImageAlt: "",
   seoTitle: "",
   metaDescription: "",
   published: true,
@@ -75,8 +68,6 @@ export function BlogEditor({
       excerpt: blog.excerpt ?? "",
       description: blog.description,
       writtenBy: blog.writtenBy,
-      coverImage: blog.coverImage ?? "",
-      coverImageAlt: blog.coverImageAlt ?? "",
       seoTitle: blog.seoTitle ?? "",
       metaDescription: blog.metaDescription ?? "",
       published: blog.published,
@@ -128,12 +119,6 @@ export function BlogEditor({
             </div>
 
             <aside className="space-y-5">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/20">
-                <div className="aspect-[16/9] bg-cover bg-center" style={{ backgroundImage: `url("${form.coverImage || DEFAULT_BLOG_COVER}")` }} />
-                <div className="flex items-center gap-2 px-3 py-2 text-[10px] text-slate-500"><ImageIcon className="h-3.5 w-3.5" /> Cover preview (cropped to fill)</div>
-              </div>
-              <div className="space-y-2"><Label htmlFor="blog-cover" className="text-slate-300">Cover image URL</Label><Input id="blog-cover" type="url" value={form.coverImage} onChange={(event) => update("coverImage", event.target.value)} className="border-white/10 bg-white/[0.04]" placeholder="https://…" /><p className="text-[10px] leading-4 text-slate-600">Use an HTTPS image URL. Leave blank for the default cover.</p></div>
-              <div className="space-y-2"><Label htmlFor="blog-alt" className="text-slate-300">Image alt text</Label><Input id="blog-alt" value={form.coverImageAlt} onChange={(event) => update("coverImageAlt", event.target.value)} maxLength={180} className="border-white/10 bg-white/[0.04]" placeholder="Describe what the image shows" /></div>
               <div className="space-y-2"><Label htmlFor="blog-author" className="text-slate-300">Author</Label><Input id="blog-author" value={form.writtenBy} onChange={(event) => update("writtenBy", event.target.value)} maxLength={120} required className="border-white/10 bg-white/[0.04]" /></div>
               <div className="space-y-2"><Label htmlFor="blog-slug" className="text-slate-300">URL slug</Label><Input id="blog-slug" value={form.slug} onChange={(event) => update("slug", event.target.value.toLowerCase().replace(/\s+/g, "-"))} maxLength={220} className="border-white/10 bg-white/[0.04]" placeholder="generated-from-title" /></div>
 

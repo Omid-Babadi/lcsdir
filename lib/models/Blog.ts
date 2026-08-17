@@ -32,17 +32,6 @@ const blogSchema = new mongoose.Schema(
       trim: true,
       index: true,
     },
-    coverImage: {
-      type: String,
-      trim: true,
-      default: '',
-    },
-    coverImageAlt: {
-      type: String,
-      maxlength: [180, 'Image alt text cannot be more than 180 characters'],
-      trim: true,
-      default: '',
-    },
     seoTitle: {
       type: String,
       maxlength: [70, 'SEO title cannot be more than 70 characters'],

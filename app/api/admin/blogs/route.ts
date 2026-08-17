@@ -52,7 +52,6 @@ export async function POST(request: NextRequest) {
       ...parsed.data,
       slug,
       excerpt: parsed.data.excerpt || parsed.data.description.replace(/\s+/g, " ").slice(0, 220),
-      coverImageAlt: parsed.data.coverImageAlt || parsed.data.title,
     });
 
     revalidatePath("/blog");

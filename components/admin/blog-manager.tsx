@@ -14,7 +14,6 @@ import {
 import { AdminBlog, BlogEditor } from "@/components/admin/blog-editor";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { DEFAULT_BLOG_COVER } from "@/lib/blog-images";
 
 export function BlogManager() {
   const [blogs, setBlogs] = useState<AdminBlog[]>([]);
@@ -106,12 +105,11 @@ export function BlogManager() {
         {isLoading ? (
           <div className="flex items-center justify-center gap-2 py-24 text-sm text-slate-500"><Loader2 className="h-4 w-4 animate-spin" />Loading articles…</div>
         ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center px-5 py-24 text-center"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-slate-500"><FileText className="h-6 w-6" /></span><h2 className="mt-4 font-semibold text-white">{blogs.length ? "No matching articles" : "Your journal is ready"}</h2><p className="mt-2 max-w-sm text-sm text-slate-500">{blogs.length ? "Try a different search." : "Create your first article with a cover image, search preview, and draft controls."}</p>{!blogs.length && <Button onClick={createArticle} className="mt-5 bg-orange-500 text-white hover:bg-orange-600">Create article</Button>}</div>
+          <div className="flex flex-col items-center px-5 py-24 text-center"><span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/[0.05] text-slate-500"><FileText className="h-6 w-6" /></span><h2 className="mt-4 font-semibold text-white">{blogs.length ? "No matching articles" : "Your journal is ready"}</h2><p className="mt-2 max-w-sm text-sm text-slate-500">{blogs.length ? "Try a different search." : "Create your first article with search preview and draft controls."}</p>{!blogs.length && <Button onClick={createArticle} className="mt-5 bg-orange-500 text-white hover:bg-orange-600">Create article</Button>}</div>
         ) : (
           <div className="divide-y divide-white/[0.07]">
             {filtered.map((blog) => (
-              <article key={blog._id} className="group grid gap-4 p-4 transition-colors hover:bg-white/[0.025] sm:grid-cols-[120px_1fr_auto] sm:items-center sm:p-5">
-                <div className="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 bg-cover bg-center" style={{ backgroundImage: `url("${blog.coverImage || DEFAULT_BLOG_COVER}")` }} />
+              <article key={blog._id} className="group grid gap-4 p-4 transition-colors hover:bg-white/[0.025] sm:grid-cols-[1fr_auto] sm:items-center sm:p-5">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className={`rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider ${blog.published ? "bg-emerald-400/10 text-emerald-300" : "bg-slate-400/10 text-slate-400"}`}>{blog.published ? "Published" : "Draft"}</span>

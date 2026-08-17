@@ -42,7 +42,6 @@ export async function PUT(request: NextRequest, { params }: Context) {
         ...parsed.data,
         slug,
         excerpt: parsed.data.excerpt || parsed.data.description.replace(/\s+/g, " ").slice(0, 220),
-        coverImageAlt: parsed.data.coverImageAlt || parsed.data.title,
       },
       { new: true, runValidators: true },
     );

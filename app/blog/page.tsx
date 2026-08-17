@@ -3,7 +3,6 @@ import { ArrowRight, BookOpen, Clock, ShieldCheck } from 'lucide-react';
 import { Navigation } from '@/components/landing/navigation-v2';
 import { FooterSection } from '@/components/landing/footer-section-v2';
 import { BlogGrid } from '@/components/blog/blog-grid';
-import { BlogCover } from '@/components/blog/blog-cover';
 import { getPublishedBlogs } from '@/lib/blogs';
 
 export default async function BlogPage() {
@@ -63,39 +62,33 @@ export default async function BlogPage() {
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <Link
               href={`/blog/${featuredBlog.slug}`}
-              className="group grid overflow-hidden rounded-[2rem] border border-border/70 bg-card shadow-[0_32px_80px_-54px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl lg:grid-cols-[1.05fr_0.95fr]"
+              className="group block overflow-hidden rounded-[2rem] border border-border/70 bg-card shadow-[0_32px_80px_-54px_rgba(15,23,42,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
             >
               <div className="p-7 sm:p-9 lg:p-12">
-                <span className="mb-8 inline-flex items-center rounded-full bg-primary/10 text-primary px-4 py-2 text-sm font-semibold">
-                  Featured
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-foreground leading-tight mb-5 group-hover:text-primary transition-colors">
+                <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="inline-flex w-fit items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                    Featured
+                  </span>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
+                    <span>{featuredBlog.writtenBy}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>
+                      {new Date(featuredBlog.createdAt).toLocaleDateString('en-GB', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                      })}
+                    </span>
+                  </div>
+                </div>
+                <h2 className="max-w-5xl text-3xl font-display leading-tight text-foreground transition-colors group-hover:text-primary sm:text-4xl lg:text-5xl">
                   {featuredBlog.title}
                 </h2>
-                <p className="text-foreground/65 leading-relaxed text-base sm:text-lg max-w-2xl line-clamp-3">
+                <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/65 line-clamp-3 sm:text-lg">
                   {featuredBlog.excerpt || featuredBlog.description}
                 </p>
-              </div>
-              <div className="relative flex min-h-72 flex-col justify-between overflow-hidden p-7 sm:p-9 lg:min-h-[440px] lg:p-10">
-                <BlogCover
-                  src={featuredBlog.coverImage}
-                  alt={featuredBlog.coverImageAlt || featuredBlog.title}
-                  priority
-                  className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.025]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/20 to-slate-950/75" />
-                <div className="relative flex items-center justify-between gap-4 text-sm text-white/80">
-                  <span>{featuredBlog.writtenBy}</span>
-                  <span>
-                    {new Date(featuredBlog.createdAt).toLocaleDateString('en-GB', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </span>
-                </div>
-                <div className="relative mt-16">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white ring-1 ring-white/15 backdrop-blur">
+                <div className="mt-8 border-t border-border/70 pt-6">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
                     Read article
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>

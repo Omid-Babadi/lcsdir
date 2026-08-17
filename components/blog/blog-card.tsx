@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { formatDistanceToNow } from 'date-fns';
 import { ArrowUpRight, CalendarDays, UserRound } from 'lucide-react';
-import { BlogCover } from './blog-cover';
 
 interface BlogCardProps {
   _id: string;
@@ -12,8 +11,6 @@ interface BlogCardProps {
   excerpt?: string;
   writtenBy: string;
   slug: string;
-  coverImage?: string;
-  coverImageAlt?: string;
   createdAt: string;
 }
 
@@ -25,18 +22,14 @@ function fallbackSlug(title: string) {
     .replace(/-+/g, '-');
 }
 
-export function BlogCard({ title, description, excerpt, writtenBy, slug, coverImage, coverImageAlt, createdAt }: BlogCardProps) {
+export function BlogCard({ title, description, excerpt, writtenBy, slug, createdAt }: BlogCardProps) {
   const timeAgo = formatDistanceToNow(new Date(createdAt), { addSuffix: true });
 
   return (
     <Link
       href={`/blog/${slug || fallbackSlug(title)}`}
-      className="group flex min-h-[410px] flex-col overflow-hidden rounded-[2rem] border border-border/70 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
+      className="group flex min-h-[320px] flex-col rounded-[2rem] border border-border/70 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl"
     >
-      <div className="h-48 overflow-hidden bg-muted">
-        <BlogCover src={coverImage} alt={coverImageAlt || title} className="transition-transform duration-700 group-hover:scale-[1.04]" />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
       <div className="flex items-start justify-between gap-4">
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-primary/10 text-primary">
           <CalendarDays className="h-5 w-5" />
@@ -61,7 +54,6 @@ export function BlogCard({ title, description, excerpt, writtenBy, slug, coverIm
           {writtenBy}
         </span>
         <span>{timeAgo}</span>
-      </div>
       </div>
     </Link>
   );

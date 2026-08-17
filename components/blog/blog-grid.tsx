@@ -10,8 +10,6 @@ interface BlogGridProps {
     excerpt: string;
     writtenBy: string;
     slug: string;
-    coverImage: string;
-    coverImageAlt: string;
     createdAt: string;
   }>;
 }
