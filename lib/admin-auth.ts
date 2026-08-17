@@ -13,8 +13,8 @@ function sign(value: string) {
 }
 
 function safeEqual(a: string, b: string) {
-  const aBuffer = Buffer.from(a);
-  const bBuffer = Buffer.from(b);
+  const aBuffer = Buffer.from(a, "utf8");
+  const bBuffer = Buffer.from(b, "utf8");
 
   return aBuffer.length === bBuffer.length && timingSafeEqual(aBuffer, bBuffer);
 }
@@ -27,9 +27,26 @@ export function validateAdminCredentials(username: string, password: string) {
   if (!adminCredentialsAreConfigured()) return false;
 
   return (
-    username === process.env.ADMIN_USERNAME &&
-    password === process.env.ADMIN_PASSWORD
+    safeEqual(username, process.env.ADMIN_USERNAME || "") &&
+    safeEqual(password, process.env.ADMIN_PASSWORD || "")
   );
+}
+
+export function isSameOriginRequest(request: Request) {
+  const origin = request.headers.get("origin");
+  const fetchSite = request.headers.get("sec-fetch-site");
+
+  if (fetchSite && !["same-origin", "same-site", "none"].includes(fetchSite)) {
+    return false;
+  }
+
+  if (!origin) return process.env.NODE_ENV !== "production";
+
+  try {
+    return new URL(origin).origin === new URL(request.url).origin;
+  } catch {
+    return false;
+  }
 }
 
 export function createAdminSessionToken() {

@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PageViewTracker } from "@/components/analytics/page-view-tracker";
 import { createSeoMetadata, localBusinessJsonLd, siteConfig } from "@/lib/seo";
 
 const instrumentSans = Instrument_Sans({ 
@@ -70,11 +71,12 @@ export default function RootLayout({
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
+          <PageViewTracker />
           <Toaster />
           <Analytics />
         </ThemeProvider>
@@ -98,7 +100,7 @@ export default function RootLayout({
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd),
+            __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
           }}
         />
       </body>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, Shield, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { HeroVideoModal } from "@/components/landing/hero-video-modal";
-import { AiSupportChat } from "@/components/landing/ai-support-chat";
+import { WhatsappChatLink } from "@/components/landing/whatsapp-chat-link";
 
 const services = ["heating", "cooling", "plumbing", "boilers"];
 
@@ -189,7 +189,7 @@ export function HeroSection() {
         </div>      </div>
 
       <HeroVideoModal />
-      <AiSupportChat />
+      <WhatsappChatLink />
     </section>
   );
 }

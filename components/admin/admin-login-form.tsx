@@ -41,32 +41,33 @@ export function AdminLoginForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md border border-border bg-background p-6 shadow-xl"
+      className="mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-[#0d1420] p-7 text-slate-100 shadow-2xl shadow-black/30"
     >
       <div className="mb-8 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
           <LockKeyhole className="h-5 w-5" />
         </div>
         <div>
-          <h1 className="text-2xl font-display text-foreground">Admin Panel</h1>
-          <p className="text-sm text-muted-foreground">Sign in to manage availability.</p>
+          <h1 className="text-2xl font-semibold text-white">Admin workspace</h1>
+          <p className="text-sm text-slate-400">Sign in to manage the website.</p>
         </div>
       </div>
 
       <div className="space-y-5">
         <div className="space-y-2">
-          <Label htmlFor="username">Username</Label>
-          <Input id="username" name="username" autoComplete="username" required />
+          <Label htmlFor="username" className="text-slate-300">Username</Label>
+          <Input id="username" name="username" autoComplete="username" required className="border-white/10 bg-white/[0.04]" />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password" className="text-slate-300">Password</Label>
           <Input
             id="password"
             name="password"
             type="password"
             autoComplete="current-password"
             required
+            className="border-white/10 bg-white/[0.04]"
           />
         </div>
 
@@ -76,7 +77,7 @@ export function AdminLoginForm() {
           </p>
         )}
 
-        <Button type="submit" className="h-11 w-full" disabled={isSubmitting}>
+        <Button type="submit" className="h-11 w-full bg-orange-500 text-white hover:bg-orange-600" disabled={isSubmitting}>
           {isSubmitting ? "Signing in..." : "Sign in"}
         </Button>
       </div>

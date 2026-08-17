@@ -37,6 +37,7 @@ type SeoOptions = {
   path?: string;
   keywords?: string[];
   image?: string;
+  imageAlt?: string;
   type?: "website" | "article";
   noIndex?: boolean;
 };
@@ -51,6 +52,7 @@ export function createSeoMetadata({
   path = "/",
   keywords = [],
   image = siteConfig.defaultImage,
+  imageAlt = `${siteConfig.name} logo`,
   type = "website",
   noIndex = false,
 }: SeoOptions): Metadata {
@@ -74,7 +76,7 @@ export function createSeoMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} logo`,
+          alt: imageAlt,
         },
       ],
       locale: "en_GB",

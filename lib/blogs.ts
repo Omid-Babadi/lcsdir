@@ -5,8 +5,13 @@ export type PublishedBlog = {
   _id: string;
   title: string;
   description: string;
+  excerpt: string;
   writtenBy: string;
   slug: string;
+  coverImage: string;
+  coverImageAlt: string;
+  seoTitle: string;
+  metaDescription: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -30,8 +35,13 @@ function serializeBlog(blog: any): PublishedBlog {
     _id: String(blog._id),
     title: blog.title,
     description: blog.description,
+    excerpt: blog.excerpt ? blog.excerpt : String(blog.description).slice(0, 220),
     writtenBy: blog.writtenBy,
     slug: blog.slug,
+    coverImage: blog.coverImage ? blog.coverImage : "",
+    coverImageAlt: blog.coverImageAlt ? blog.coverImageAlt : blog.title,
+    seoTitle: blog.seoTitle ? blog.seoTitle : "",
+    metaDescription: blog.metaDescription ? blog.metaDescription : "",
     createdAt: createdAt.toISOString(),
     updatedAt: updatedAt.toISOString(),
   };

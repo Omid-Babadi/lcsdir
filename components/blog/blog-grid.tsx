@@ -7,8 +7,11 @@ interface BlogGridProps {
     _id: string;
     title: string;
     description: string;
+    excerpt: string;
     writtenBy: string;
     slug: string;
+    coverImage: string;
+    coverImageAlt: string;
     createdAt: string;
   }>;
 }

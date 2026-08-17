@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE, isValidAdminSessionToken } from "@/lib/admin-auth";
+import { canMutateAdminData, isAuthorizedAdminRequest } from "@/lib/admin-api";
 import {
   getAvailabilityMode,
   getEffectiveAvailability,
@@ -7,12 +7,8 @@ import {
   setAvailabilityMode,
 } from "@/lib/availability-store";
 
-function isAuthorized(request: NextRequest) {
-  return isValidAdminSessionToken(request.cookies.get(ADMIN_SESSION_COOKIE)?.value);
-}
-
 export async function GET(request: NextRequest) {
-  if (!isAuthorized(request)) {
+  if (!isAuthorizedAdminRequest(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -25,7 +21,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-  if (!isAuthorized(request)) {
+  if (!canMutateAdminData(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

@@ -11,8 +11,14 @@ const blogSchema = new mongoose.Schema(
     description: {
       type: String,
       required: [true, 'Please provide a description'],
-      maxlength: [5000, 'Description cannot be more than 5000 characters'],
+      maxlength: [50000, 'Article content cannot be more than 50,000 characters'],
       trim: true,
+    },
+    excerpt: {
+      type: String,
+      maxlength: [320, 'Excerpt cannot be more than 320 characters'],
+      trim: true,
+      default: '',
     },
     writtenBy: {
       type: String,
@@ -23,6 +29,31 @@ const blogSchema = new mongoose.Schema(
       type: String,
       unique: true,
       lowercase: true,
+      trim: true,
+      index: true,
+    },
+    coverImage: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    coverImageAlt: {
+      type: String,
+      maxlength: [180, 'Image alt text cannot be more than 180 characters'],
+      trim: true,
+      default: '',
+    },
+    seoTitle: {
+      type: String,
+      maxlength: [70, 'SEO title cannot be more than 70 characters'],
+      trim: true,
+      default: '',
+    },
+    metaDescription: {
+      type: String,
+      maxlength: [170, 'Meta description cannot be more than 170 characters'],
+      trim: true,
+      default: '',
     },
     published: {
       type: Boolean,

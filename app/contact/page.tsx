@@ -1,11 +1,11 @@
 "use client";
 
-import { Navigation } from "@/components/landing/navigation";
+import { Navigation } from "@/components/landing/navigation-v2";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
-import { FooterSection } from "@/components/landing/footer-section";
+import { FooterSection } from "@/components/landing/footer-section-v2";
 import { useToast } from "@/hooks/use-toast";
 
 

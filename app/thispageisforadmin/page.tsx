@@ -1,12 +1,17 @@
+import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { AdminDashboard } from "@/components/admin/admin-dashboard";
 import { AdminLoginForm } from "@/components/admin/admin-login-form";
-import { AvailabilityPanel } from "@/components/admin/availability-panel";
 import { ADMIN_SESSION_COOKIE, isValidAdminSessionToken } from "@/lib/admin-auth";
+import { createSeoMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Admin Panel | London Climate Systems",
-};
+export const metadata: Metadata = createSeoMetadata({
+  title: "Admin Panel",
+  description: "Private London Climate Systems administration.",
+  path: "/thispageisforadmin",
+  noIndex: true,
+});
 
 export default async function AdminPage({
   searchParams,
@@ -21,11 +26,12 @@ export default async function AdminPage({
     redirect("/thispageisforadmin");
   }
 
+  if (isLoggedIn) return <AdminDashboard />;
+
   return (
-    <main className="min-h-screen bg-background px-6 py-12 text-foreground">
-      <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-[1400px] items-center justify-center">
-        {isLoggedIn ? <AvailabilityPanel /> : <AdminLoginForm />}
-      </div>
+    <main className="flex min-h-screen items-center justify-center bg-[#070b12] px-6 py-12 text-foreground">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.12),transparent_34%)]" />
+      <div className="relative w-full"><AdminLoginForm /></div>
     </main>
   );
 }

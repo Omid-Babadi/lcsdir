@@ -42,6 +42,14 @@ const routes: Array<{
   { path: "/services/boiler/pilot-light", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/boiler/warranty", priority: 0.75, changeFrequency: "monthly" },
   { path: "/services/boiler/power-flush", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/installation", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/wet-systems", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/electric", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/repairs", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/controls", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/smart-thermostats", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/services/underfloor-heating/design-consultation", priority: 0.7, changeFrequency: "monthly" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.9, changeFrequency: "weekly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
@@ -50,7 +58,7 @@ const routes: Array<{
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date();
+  const lastModified = new Date("2026-08-17T00:00:00.000Z");
   const blogs = await getPublishedBlogs(500);
 
   const staticRoutes = routes.map((route) => ({

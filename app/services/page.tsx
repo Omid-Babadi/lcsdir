@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Navigation } from "@/components/landing/navigation";
-import { FooterSection } from "@/components/landing/footer-section";
+import { Navigation } from "@/components/landing/navigation-v2";
+import { FooterSection } from "@/components/landing/footer-section-v2";
 import { Droplets, Flame, Wind, Wrench, Gauge, ArrowRight, Phone, CheckCircle } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 

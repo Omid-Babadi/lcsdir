@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Navigation } from "@/components/landing/navigation";
-import { FooterSection } from "@/components/landing/footer-section";
+import { Navigation } from "@/components/landing/navigation-v2";
+import { FooterSection } from "@/components/landing/footer-section-v2";
 import { createSeoMetadata } from "@/lib/seo";
 
 const lastUpdated = "31 May 2026";

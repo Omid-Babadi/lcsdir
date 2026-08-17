@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Navigation } from '@/components/landing/navigation';
-import { FooterSection } from '@/components/landing/footer-section';
-import { createSeoMetadata } from '@/lib/seo';
+import { Navigation } from '@/components/landing/navigation-v2';
+import { FooterSection } from '@/components/landing/footer-section-v2';
+import { absoluteUrl, createSeoMetadata, siteConfig } from '@/lib/seo';
 import { getPublishedBlogBySlug } from '@/lib/blogs';
+import { DEFAULT_BLOG_COVER } from '@/lib/blog-images';
+import { BlogCover } from '@/components/blog/blog-cover';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Phone, UserRound } from 'lucide-react';
@@ -28,15 +30,17 @@ export async function generateMetadata({
   const blog = await getPublishedBlogBySlug(slug);
   const title = blog?.title || titleFromSlug(slug);
   const description =
-    blog?.description?.slice(0, 155) ||
+    blog?.metaDescription || blog?.excerpt || blog?.description?.replace(/\s+/g, " ").slice(0, 155) ||
     `Read London Climate Systems guidance about ${title.toLowerCase()}.`;
   
   return createSeoMetadata({
-    title,
+    title: blog?.seoTitle || title,
     description,
     path: `/blog/${slug}`,
     type: "article",
     keywords: [title, "London Climate Systems blog"],
+    image: blog?.coverImage || DEFAULT_BLOG_COVER,
+    imageAlt: blog?.coverImageAlt || title,
   });
 }
 
@@ -51,9 +55,29 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const publishDate = new Date(blog.createdAt);
   const formattedDate = format(publishDate, 'MMMM d, yyyy');
   const readTime = Math.max(2, Math.ceil(blog.description.split(/\s+/).length / 180));
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: blog.title,
+    description: blog.metaDescription || blog.excerpt,
+    image: absoluteUrl(blog.coverImage || DEFAULT_BLOG_COVER),
+    datePublished: blog.createdAt,
+    dateModified: blog.updatedAt,
+    mainEntityOfPage: absoluteUrl(`/blog/${blog.slug}`),
+    author: { "@type": "Person", name: blog.writtenBy },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      logo: { "@type": "ImageObject", url: absoluteUrl(siteConfig.logo) },
+    },
+  };
 
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }}
+      />
       <Navigation />
       
       <section className="relative pt-28 pb-12 lg:pt-36 lg:pb-16 overflow-hidden">
@@ -97,6 +121,16 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           </article>
         </div>
       </section>
+
+      <div className="mx-auto max-w-[1200px] px-4 pb-12 sm:px-6 lg:px-12 lg:pb-16">
+        <div className="aspect-[16/8] overflow-hidden rounded-[2rem] border border-border bg-muted shadow-[0_30px_80px_-50px_rgba(15,23,42,0.55)]">
+          <BlogCover
+            src={blog.coverImage}
+            alt={blog.coverImageAlt || blog.title}
+            priority
+          />
+        </div>
+      </div>
 
       <section className="pb-20 lg:pb-28">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">

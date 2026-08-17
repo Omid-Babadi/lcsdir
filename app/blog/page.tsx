@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Clock, ShieldCheck } from 'lucide-react';
-import { Navigation } from '@/components/landing/navigation';
-import { FooterSection } from '@/components/landing/footer-section';
+import { Navigation } from '@/components/landing/navigation-v2';
+import { FooterSection } from '@/components/landing/footer-section-v2';
 import { BlogGrid } from '@/components/blog/blog-grid';
+import { BlogCover } from '@/components/blog/blog-cover';
 import { getPublishedBlogs } from '@/lib/blogs';
 
 export default async function BlogPage() {
@@ -72,12 +73,17 @@ export default async function BlogPage() {
                   {featuredBlog.title}
                 </h2>
                 <p className="text-foreground/65 leading-relaxed text-base sm:text-lg max-w-2xl line-clamp-3">
-                  {featuredBlog.description}
+                  {featuredBlog.excerpt || featuredBlog.description}
                 </p>
               </div>
-              <div className="relative min-h-72 bg-cover bg-center bg-no-repeat p-7 sm:p-9 lg:p-10 flex flex-col justify-between overflow-hidden"
-                   style={{ backgroundImage: 'url("https://res.cloudinary.com/daucwpsi8/image/upload/v1781010283/943661f9-d25b-4908-a9fa-95889248eecf_g2ewra.png")' }}>
-                <div className="absolute inset-0 bg-slate-950/55" />
+              <div className="relative flex min-h-72 flex-col justify-between overflow-hidden p-7 sm:p-9 lg:min-h-[440px] lg:p-10">
+                <BlogCover
+                  src={featuredBlog.coverImage}
+                  alt={featuredBlog.coverImageAlt || featuredBlog.title}
+                  priority
+                  className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.025]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/20 to-slate-950/75" />
                 <div className="relative flex items-center justify-between gap-4 text-sm text-white/80">
                   <span>{featuredBlog.writtenBy}</span>
                   <span>

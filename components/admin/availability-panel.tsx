@@ -32,7 +32,7 @@ const options: Array<{
   },
 ];
 
-export function AvailabilityPanel() {
+export function AvailabilityPanel({ embedded = false }: { embedded?: boolean }) {
   const router = useRouter();
   const [mode, setMode] = useState<AvailabilityMode>("automatic");
   const [isAvailable, setIsAvailable] = useState(false);
@@ -89,17 +89,20 @@ export function AvailabilityPanel() {
   }, []);
 
   return (
-    <div className="w-full max-w-3xl border border-border bg-background p-6 shadow-xl">
+    <div className={embedded ? "w-full" : "w-full max-w-3xl border border-border bg-background p-6 shadow-xl"}>
       <div className="mb-8 flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-mono text-muted-foreground">London Climate Systems</p>
-          <h1 className="mt-1 text-3xl font-display text-foreground">Availability</h1>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">Live website status</p>
+          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Availability</h1>
+          <p className="mt-2 text-sm text-muted-foreground">Control the availability message shown to website visitors.</p>
         </div>
 
-        <Button type="button" variant="outline" onClick={logout}>
-          <LogOut className="mr-2 h-4 w-4" />
-          Log out
-        </Button>
+        {!embedded && (
+          <Button type="button" variant="outline" onClick={logout}>
+            <LogOut className="mr-2 h-4 w-4" />
+            Log out
+          </Button>
+        )}
       </div>
 
       <div className="mb-6 flex items-center gap-3 rounded-md border border-border bg-foreground/[0.03] px-4 py-3">
@@ -128,7 +131,7 @@ export function AvailabilityPanel() {
               type="button"
               onClick={() => updateMode(option.mode)}
               disabled={isLoading || isSaving}
-              className={`min-h-36 border p-4 text-left transition-colors ${
+              className={`min-h-40 rounded-2xl border p-5 text-left transition-colors ${
                 isSelected
                   ? "border-primary bg-primary/[0.06]"
                   : "border-border bg-background hover:border-primary/50"

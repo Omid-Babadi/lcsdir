@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Navigation } from "@/components/landing/navigation";
-import { FooterSection } from "@/components/landing/footer-section";
+import { Navigation } from "@/components/landing/navigation-v2";
+import { FooterSection } from "@/components/landing/footer-section-v2";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Flame, Phone, Shield, Wrench, AlertTriangle, FileCheck, Pipette } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
