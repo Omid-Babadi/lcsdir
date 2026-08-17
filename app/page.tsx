@@ -7,19 +7,28 @@ import { GallerySection } from "@/components/landing/gallery-section-v2";
 import { LondonMapSection } from "@/components/landing/london-map-section-v3";
 import { CtaSection } from "@/components/landing/cta-section-v2";
 import { FooterSection } from "@/components/landing/footer-section-v2";
+import { homepageJsonLd } from "@/lib/seo";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
-      <Navigation />
-      <HeroSection />
-      <FeaturesSection />
-      <WhyUsSection />
-      <GallerySection />
-      <LondonMapSection />
-      <MetricsSection />
-      <CtaSection />
-      <FooterSection />
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homepageJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <main className="relative min-h-screen">
+        <Navigation />
+        <HeroSection />
+        <FeaturesSection />
+        <WhyUsSection />
+        <GallerySection />
+        <LondonMapSection />
+        <MetricsSection />
+        <CtaSection />
+        <FooterSection />
+      </main>
+    </>
   );
 }

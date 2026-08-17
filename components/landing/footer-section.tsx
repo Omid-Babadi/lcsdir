@@ -1,7 +1,9 @@
 "use client";
 
-import { ArrowUpRight, Instagram, Mail, MapPin, Phone, ShieldCheck, Youtube } from "lucide-react";
+import { ArrowUpRight, Instagram, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { siteConfig } from "@/lib/seo";
 
 const footerLinks = {
   Services: [
@@ -29,14 +31,14 @@ const footerLinks = {
 
 const socialLinks = [
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/londonclimatesystems/",
-    Icon: Instagram,
+    name: "Google Business Profile",
+    href: siteConfig.social.googleBusinessProfile,
+    Icon: MapPin,
   },
   {
-    name: "YouTube",
-    href: "https://www.youtube.com/@LondonClimateSystemsLTD",
-    Icon: Youtube,
+    name: "Instagram",
+    href: siteConfig.social.instagram,
+    Icon: Instagram,
   },
 ];
 
@@ -115,20 +117,20 @@ export function FooterSection() {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 lg:gap-8">
             {/* Brand Column */}
             <div className="col-span-2">
-              <a href="/" className="inline-flex items-center gap-3 mb-6">
+              <Link href="/" className="inline-flex items-center gap-3 mb-6">
                 <div className="relative w-10 h-10 rounded-lg bg-white p-1 flex items-center justify-center">
                   <Image
-                    src="/logo.png"
-                    alt="London Climate Systems"
+                    src={siteConfig.logo}
+                    alt={siteConfig.name}
                     width={36}
                     height={36}
                     className="object-contain"
                   />
                 </div>
                 <span className="text-xl font-display text-white">
-                  London Climate Systems LTD
+                  {siteConfig.name}
                 </span>
-              </a>
+              </Link>
 
               <p className="text-white/60 leading-relaxed mb-6 max-w-xs text-sm">
                 Professional heating, cooling, and plumbing services across
@@ -138,26 +140,22 @@ export function FooterSection() {
               {/* Contact info */}
               <div className="flex flex-col gap-3 mb-8">
                 <a
-                  href="tel:07473423003"
+                  href={siteConfig.phoneHref}
                   className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  07473 423003
+                  {siteConfig.phoneDisplay}
                 </a>
                 <a
-                  href="mailto:londonclimatesystems@gmail.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
                 >
                   <Mail className="w-3.5 h-3.5" />
-                  londonclimatesystems@gmail.com
+                  {siteConfig.email}
                 </a>
                 <span className="inline-flex items-center gap-2 text-sm text-white/60">
                   <MapPin className="w-3.5 h-3.5" />
-                  71-75 Shelton Street
-                  Covent Garden
-                  London
-                  WC2H 9JQ
-                  United Kingdom
+                  {siteConfig.addressDisplay}
                 </span>
               </div>
 
@@ -206,7 +204,7 @@ export function FooterSection() {
         {/* ── Bottom Bar ── */}
         <div className="py-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/40">
-            &copy; 2026 London Climate Systems LTD. All rights reserved.
+            &copy; 2026 {siteConfig.legalName}. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-white/40">
             <a href="/privacy" className="hover:text-white transition-colors">

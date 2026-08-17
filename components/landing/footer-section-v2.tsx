@@ -4,15 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
+  Globe2,
   Instagram,
   Mail,
   MapPin,
   Phone,
   ShieldCheck,
-  Youtube,
 } from "lucide-react";
 
 import { Reveal } from "@/components/landing/motion-primitives";
+import { siteConfig } from "@/lib/seo";
 
 const footerLinks = [
   {
@@ -49,14 +50,14 @@ const footerLinks = [
 
 const socialLinks = [
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/londonclimatesystems/",
-    Icon: Instagram,
+    name: "Google Business Profile",
+    href: siteConfig.social.googleBusinessProfile,
+    Icon: MapPin,
   },
   {
-    name: "YouTube",
-    href: "https://www.youtube.com/@LondonClimateSystemsLTD",
-    Icon: Youtube,
+    name: "Instagram",
+    href: siteConfig.social.instagram,
+    Icon: Instagram,
   },
 ];
 
@@ -141,8 +142,8 @@ export function FooterSection() {
               <Link href="/" className="group inline-flex items-center gap-3">
                 <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-white p-1.5 transition-transform duration-300 group-hover:rotate-3">
                   <Image
-                    src="/logo.png"
-                    alt="London Climate Systems"
+                    src={siteConfig.logo}
+                    alt={siteConfig.name}
                     width={42}
                     height={42}
                     className="object-contain"
@@ -150,7 +151,7 @@ export function FooterSection() {
                 </span>
                 <span>
                   <strong className="block text-base font-semibold tracking-tight">
-                    London Climate Systems
+                    {siteConfig.name}
                   </strong>
                   <span className="block text-[10px] font-mono uppercase tracking-[0.18em] text-white/35">
                     Heating · Cooling · Plumbing
@@ -210,9 +211,9 @@ export function FooterSection() {
             </div>
 
             <Reveal delay={0.16}>
-              <div className="mt-12 grid gap-3 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.035] p-4 sm:grid-cols-2 sm:p-5">
+              <div className="mt-12 grid gap-3 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.035] p-4 sm:grid-cols-3 sm:p-5">
                 <a
-                  href="tel:07473423003"
+                  href={siteConfig.phoneHref}
                   className="group flex items-center gap-3 rounded-xl p-2 transition-colors hover:bg-white/[0.05]"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-orange-400/10 text-orange-300">
@@ -223,12 +224,12 @@ export function FooterSection() {
                       Call us
                     </span>
                     <span className="text-sm text-white/70 group-hover:text-white">
-                      07473 423003
+                      {siteConfig.phoneDisplay}
                     </span>
                   </span>
                 </a>
                 <a
-                  href="mailto:londonclimatesystems@gmail.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="group flex min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-white/[0.05]"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-sky-300">
@@ -239,11 +240,27 @@ export function FooterSection() {
                       Email
                     </span>
                     <span className="block truncate text-sm text-white/70 group-hover:text-white">
-                      londonclimatesystems@gmail.com
+                      {siteConfig.email}
                     </span>
                   </span>
                 </a>
-                <div className="flex items-start gap-3 rounded-xl p-2 sm:col-span-2">
+                <a
+                  href={siteConfig.url}
+                  className="group flex min-w-0 items-center gap-3 rounded-xl p-2 transition-colors hover:bg-white/[0.05]"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300">
+                    <Globe2 className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-[10px] uppercase tracking-[0.15em] text-white/30">
+                      Website
+                    </span>
+                    <span className="block truncate text-sm text-white/70 group-hover:text-white">
+                      londonclimatesystems.com
+                    </span>
+                  </span>
+                </a>
+                <div className="flex items-start gap-3 rounded-xl p-2 sm:col-span-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300">
                     <MapPin className="h-4 w-4" />
                   </span>
@@ -252,7 +269,7 @@ export function FooterSection() {
                       Registered office
                     </span>
                     <span className="text-sm leading-6 text-white/60">
-                      71–75 Shelton Street, Covent Garden, London, WC2H 9JQ
+                      {siteConfig.addressDisplay}
                     </span>
                   </span>
                 </div>
@@ -262,7 +279,7 @@ export function FooterSection() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-white/[0.08] py-7 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 London Climate Systems LTD. All rights reserved.</p>
+          <p>© 2026 {siteConfig.legalName}. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="transition-colors hover:text-white">
               Privacy

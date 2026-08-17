@@ -7,7 +7,7 @@ import './globals.css'
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/theme-provider";
 import { PageViewTracker } from "@/components/analytics/page-view-tracker";
-import { createSeoMetadata, localBusinessJsonLd, siteConfig } from "@/lib/seo";
+import { createSeoMetadata, siteConfig } from "@/lib/seo";
 
 const instrumentSans = Instrument_Sans({ 
   subsets: ["latin"],
@@ -27,14 +27,13 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   ...createSeoMetadata({
-    title: "London Climate Systems | HVAC & Plumbing",
-    description:
-      "Gas Safe and F-Gas certified London engineers for plumbing, heating, boilers, gas, and air conditioning. Fast service for homes and businesses.",
+    title: "London Climate Systems | Heating, Plumbing & AC",
+    description: siteConfig.description,
     path: "/",
   }),
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "London Climate Systems | HVAC & Plumbing",
+    default: "London Climate Systems | Heating, Plumbing & AC",
     template: "%s | London Climate Systems",
   },
   applicationName: siteConfig.name,
@@ -96,13 +95,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
       </body>
     </html>
   )

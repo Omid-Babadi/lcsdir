@@ -6,7 +6,7 @@ import { createSeoMetadata } from "@/lib/seo";
 export const metadata: Metadata = createSeoMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy policy for London Climate Systems Ltd, explaining how customer and website information is collected, used, and protected.",
+    "Privacy policy for London Climate Systems LTD, explaining how customer and website information is collected, used, and protected.",
   path: "/privacy",
 });
 
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-foreground">1. Introduction</h2>
               <p>
-                London Climate Systems LTD ("we," "us," "our," or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                London Climate Systems LTD (“we,” “us,” “our,” or “Company”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
             </section>
 
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
               <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li><strong>Personal Data:</strong> Name, email address, phone number, address, and other contact information you provide when booking services or contacting us.</li>
-                <li><strong>Service Information:</strong> Details about the services you've requested, including location and service type.</li>
+                <li><strong>Service Information:</strong> Details about the services you’ve requested, including location and service type.</li>
                 <li><strong>Device Information:</strong> Information about your device, including IP address, browser type, and operating system.</li>
                 <li><strong>Usage Data:</strong> Information about how you interact with our website.</li>
               </ul>
@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-semibold text-foreground">9. Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold text-foreground">9. Children’s Privacy</h2>
               <p>
                 Our website is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If we become aware that we have collected information from a child under 13, we will take steps to delete such information.
               </p>
@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-foreground">10. Changes to This Privacy Policy</h2>
               <p>
-                We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by updating the "Last updated" date at the top of this policy. Your continued use of our website following the posting of revised Privacy Policy means you accept and agree to the changes.
+                We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by updating the “Last updated” date at the top of this policy. Your continued use of our website following the posting of revised Privacy Policy means you accept and agree to the changes.
               </p>
             </section>
 

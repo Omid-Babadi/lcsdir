@@ -8,7 +8,7 @@ const lastUpdated = "31 May 2026";
 export const metadata: Metadata = createSeoMetadata({
   title: "Terms and Conditions",
   description:
-    "Terms and conditions for London Climate Systems Ltd plumbing, heating, boiler, gas, air conditioning, and building services.",
+    "Terms and conditions for London Climate Systems LTD plumbing, heating, boiler, gas, air conditioning, and building services.",
   path: "/terms",
 });
 
@@ -22,7 +22,7 @@ export default function TermsPage() {
           <div className="mb-12">
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-primary" />
-              London Climate Systems Ltd
+              London Climate Systems LTD
             </span>
             <h1 className="text-4xl md:text-5xl font-display text-foreground mb-4">
               Terms and Conditions
@@ -38,10 +38,10 @@ export default function TermsPage() {
                 1. Understanding These Terms
               </h2>
               <p>
-                These Terms and Conditions set out the basis on which London Climate Systems Ltd provides air conditioning, ventilation, heating, refrigeration, plumbing, electrical, maintenance, installation, repair, inspection, and associated building services, together with any equipment, materials, parts, or products required to complete those services.
+                These Terms and Conditions set out the basis on which London Climate Systems LTD provides air conditioning, ventilation, heating, refrigeration, plumbing, electrical, maintenance, installation, repair, inspection, and associated building services, together with any equipment, materials, parts, or products required to complete those services.
               </p>
               <p>
-                In these Terms, "we", "us", and "our" means London Climate Systems Ltd, company number 17174118. "You" and "your" means the individual, business, landlord, managing agent, or organisation purchasing services from us.
+                In these Terms, “we”, “us”, and “our” means London Climate Systems LTD, company number 17174118. “You” and “your” means the individual, business, landlord, managing agent, or organisation purchasing services from us.
               </p>
             </section>
 
@@ -67,7 +67,7 @@ export default function TermsPage() {
                 3. Order Process
               </h2>
               <p>
-                Orders may be made by telephone, email, website enquiry, booking form, or another communication method accepted by us. These Terms, together with any quotation, estimate, invoice, or written confirmation issued by us, form the contract between you and London Climate Systems Ltd.
+                Orders may be made by telephone, email, website enquiry, booking form, or another communication method accepted by us. These Terms, together with any quotation, estimate, invoice, or written confirmation issued by us, form the contract between you and London Climate Systems LTD.
               </p>
               <p>
                 For initial services, we will provide details of our labour rates and estimated attendance time before arrival where reasonably possible. The contract becomes binding once you request attendance and accept our rates.
@@ -140,7 +140,7 @@ export default function TermsPage() {
                 Installation workmanship may be covered by written terms provided with the accepted quotation or invoice. This cover does not apply where work has been altered by others, misuse or neglect has occurred, payment has not been made in full, or existing systems are in poor condition.
               </p>
               <p>
-                Manufacturer warranties remain subject to the manufacturer's own terms. We are not responsible for defects in customer-supplied materials or equipment.
+                Manufacturer warranties remain subject to the manufacturer’s own terms. We are not responsible for defects in customer-supplied materials or equipment.
               </p>
             </section>
 
@@ -215,7 +215,7 @@ export default function TermsPage() {
                 14. Contact Details
               </h2>
               <div className="bg-foreground/5 border border-border rounded-lg p-6 mt-4">
-                <p><strong>London Climate Systems Ltd</strong></p>
+                <p><strong>London Climate Systems LTD</strong></p>
                 <p>Company Number: 17174118</p>
                 <p>71-75 Shelton Street</p>
                 <p>Covent Garden, London</p>

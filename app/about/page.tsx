@@ -10,7 +10,6 @@ import {
   Clock,
   Quote,
   ShieldCheck,
-  Wrench,
 } from "lucide-react";
 import { FooterSection } from "@/components/landing/footer-section-v2";
 import { createSeoMetadata } from "@/lib/seo";
@@ -18,7 +17,7 @@ import { createSeoMetadata } from "@/lib/seo";
 export const metadata: Metadata = createSeoMetadata({
   title: "About Us",
   description:
-    "Learn about London Climate Systems Ltd, local Gas Safe and F-Gas registered engineers serving homes and businesses across Greater London.",
+    "Learn about London Climate Systems, local Gas Safe and F-Gas registered engineers serving homes and businesses across Greater London.",
   path: "/about",
   keywords: ["about London Climate Systems", "local engineers London", "Gas Safe F-Gas London"],
 });
@@ -239,7 +238,7 @@ export default function About() {
               </blockquote>
               <figcaption className="mt-10 text-sm text-slate-300">
                 <p className="font-semibold text-white">Masoud Moradi</p>
-                <p className="mt-1 text-primary/70">Founder, London Climate Systems Ltd</p>
+                <p className="mt-1 text-primary/70">Founder, London Climate Systems</p>
               </figcaption>
             </figure>
           </div>

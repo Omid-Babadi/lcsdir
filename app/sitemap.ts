@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { getPublishedBlogs } from "@/lib/blogs";
 
+export const revalidate = 3600;
+
 const routes: Array<{
   path: string;
   priority: number;

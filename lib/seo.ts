@@ -2,23 +2,30 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "London Climate Systems",
-  legalName: "London Climate Systems Ltd",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "https://londonclimatesystems.com",
+  legalName: "London Climate Systems LTD",
+  url: "https://londonclimatesystems.com",
   description:
-    "Gas Safe and F-Gas certified London engineers for plumbing, heating, boilers, gas, and air conditioning. Fast service for homes and businesses.",
-  phone: "07473 423003",
+    "Gas Safe and F-Gas certified engineers for boiler, heating, plumbing, gas, and air conditioning services across Greater London. Book a local engineer.",
+  phone: "+447473423003",
+  phoneDisplay: "07473 423003",
+  phoneHref: "tel:+447473423003",
   email: "londonclimatesystems@gmail.com",
   address: {
-    streetAddress: "71-75 Shelton Street",
+    streetAddress: "71–75 Shelton Street",
     addressLocality: "Covent Garden",
     addressRegion: "London",
     postalCode: "WC2H 9JQ",
     addressCountry: "GB",
   },
+  addressDisplay: "71–75 Shelton Street, Covent Garden, London, WC2H 9JQ",
   logo: "/logo.png",
   defaultImage: "/opengraph-image",
+  organizationId: "https://londonclimatesystems.com/#organization",
+  websiteId: "https://londonclimatesystems.com/#website",
+  social: {
+    googleBusinessProfile: "https://share.google/KmQB6VQUKVpN9tmuW",
+    instagram: "https://www.instagram.com/londonclimatesystems/",
+  },
   keywords: [
     "London Climate Systems",
     "plumber London",
@@ -34,7 +41,7 @@ export const siteConfig = {
 type SeoOptions = {
   title: string;
   description?: string;
-  path?: string;
+  path: string;
   keywords?: string[];
   image?: string;
   imageAlt?: string;
@@ -49,7 +56,7 @@ export function absoluteUrl(path = "/") {
 export function createSeoMetadata({
   title,
   description = siteConfig.description,
-  path = "/",
+  path,
   keywords = [],
   image = siteConfig.defaultImage,
   imageAlt = `${siteConfig.name} logo`,
@@ -107,47 +114,41 @@ export function createSeoMetadata({
   };
 }
 
-export const localBusinessJsonLd = {
+export const homepageJsonLd = {
   "@context": "https://schema.org",
-  "@type": ["HVACBusiness", "Plumber", "LocalBusiness"],
-  name: siteConfig.legalName,
-  url: siteConfig.url,
-  logo: absoluteUrl(siteConfig.logo),
-  image: absoluteUrl(siteConfig.defaultImage),
-  description: siteConfig.description,
-  telephone: siteConfig.phone,
-  email: siteConfig.email,
-  priceRange: "££",
-  areaServed: [
+  "@graph": [
     {
-      "@type": "City",
-      name: "London",
+      "@type": "Organization",
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      legalName: siteConfig.legalName,
+      url: absoluteUrl("/"),
+      description: siteConfig.description,
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
+      logo: absoluteUrl(siteConfig.logo),
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Greater London",
+      },
+      address: {
+        "@type": "PostalAddress",
+        ...siteConfig.address,
+      },
+      sameAs: [
+        siteConfig.social.googleBusinessProfile,
+        siteConfig.social.instagram,
+      ],
     },
     {
-      "@type": "AdministrativeArea",
-      name: "Greater London",
+      "@type": "WebSite",
+      "@id": siteConfig.websiteId,
+      url: absoluteUrl("/"),
+      name: siteConfig.name,
+      publisher: {
+        "@id": siteConfig.organizationId,
+      },
+      inLanguage: "en-GB",
     },
   ],
-  address: {
-    "@type": "PostalAddress",
-    ...siteConfig.address,
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Heating, cooling, plumbing, gas, and boiler services",
-    itemListElement: [
-      "Plumbing installation and repairs",
-      "Heating installation, service, and repairs",
-      "Boiler installation, servicing, and breakdown repairs",
-      "Air conditioning installation, maintenance, and repairs",
-      "Gas safety certificates and gas services",
-    ].map((name) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name,
-        areaServed: "Greater London",
-      },
-    })),
-  },
 };

@@ -62,7 +62,8 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     author: { "@type": "Person", name: blog.writtenBy },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.legalName,
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
       logo: { "@type": "ImageObject", url: absoluteUrl(siteConfig.logo) },
     },
   };

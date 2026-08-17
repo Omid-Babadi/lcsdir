@@ -4,9 +4,10 @@ import { Navigation } from "@/components/landing/navigation-v2";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight, Globe2 } from "lucide-react";
 import { FooterSection } from "@/components/landing/footer-section-v2";
 import { useToast } from "@/hooks/use-toast";
+import { siteConfig } from "@/lib/seo";
 
 
 export default function Contact() {
@@ -66,20 +67,26 @@ export default function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "londonclimatesystems@gmail.com",
+      value: siteConfig.email,
       subtext: "Response within 2 hours",
     },
     {
       icon: Phone,
       label: "Call Us",
-      value: "07473 423003",
+      value: siteConfig.phoneDisplay,
       subtext: "Fast response during business hours",
     },
     {
+      icon: Globe2,
+      label: "Website",
+      value: "londonclimatesystems.com",
+      subtext: "Service information and online booking",
+    },
+    {
       icon: MapPin,
-      label: "Office",
-      value: "71-75 Shelton Street, Covent Garden",
-      subtext: "London, WC2H 9JQ",
+      label: "Registered office",
+      value: `${siteConfig.address.streetAddress}, ${siteConfig.address.addressLocality}`,
+      subtext: `${siteConfig.address.addressRegion}, ${siteConfig.address.postalCode}`,
     },
     {
       icon: Clock,
@@ -132,7 +139,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       description: "",
       urgency: "scheduled",
     });
-  } catch (err) {
+  } catch {
     toast({
       title: "Error",
       description: "Something went wrong. Please try again.",
@@ -186,7 +193,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base text-foreground transition hover:border-primary" asChild>
-                <a href="tel:07473423003">Call 07473 423003</a>
+                <a href={siteConfig.phoneHref}>Call {siteConfig.phoneDisplay}</a>
               </Button>
             </div>
           </div>
@@ -194,7 +201,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           {/* Single Big Card - 90% width, larger size */}
           <div className="mt-16 w-full mx-auto">
             <div className="rounded-[2rem] border border-border bg-card/95 p-8 md:p-10 lg:p-12 shadow-[0_24px_60px_-36px_rgba(15,23,42,0.35)] transition hover:-translate-y-1 hover:shadow-lg">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
                 {contactMethods.map((method) => {
                   const Icon = method.icon;
                   return (
