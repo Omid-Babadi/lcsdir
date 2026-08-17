@@ -32,18 +32,38 @@ export function validateAdminCredentials(username: string, password: string) {
   );
 }
 
+function normalizeOrigin(value?: string | null) {
+  if (!value) return null;
+
+  try {
+    return new URL(value).origin;
+  } catch {
+    return null;
+  }
+}
+
 export function isSameOriginRequest(request: Request) {
   const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
   const fetchSite = request.headers.get("sec-fetch-site");
 
   if (fetchSite && !["same-origin", "same-site", "none"].includes(fetchSite)) {
     return false;
   }
 
-  if (!origin) return process.env.NODE_ENV !== "production";
+  const sourceOrigin = normalizeOrigin(origin) || normalizeOrigin(referer);
+  if (!sourceOrigin) return process.env.NODE_ENV !== "production";
 
   try {
-    return new URL(origin).origin === new URL(request.url).origin;
+    const allowedOrigins = new Set<string>([
+      new URL(request.url).origin,
+      "https://londonclimatesystems.com",
+      "https://www.londonclimatesystems.com",
+    ]);
+    const configuredOrigin = normalizeOrigin(process.env.NEXT_PUBLIC_SITE_URL);
+    if (configuredOrigin) allowedOrigins.add(configuredOrigin);
+
+    return allowedOrigins.has(sourceOrigin);
   } catch {
     return false;
   }
