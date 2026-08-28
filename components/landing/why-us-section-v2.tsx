@@ -58,10 +58,11 @@ const reasons = [
 ];
 
 const credentials = [
-  "Gas Safe registered",
+  "Gas Safe",
+  "G3 Unvented",
+  "LCL Awards",
   "F-Gas certified",
   "City & Guilds",
-  "G3 qualified",
   "MCS certified",
 ];
 

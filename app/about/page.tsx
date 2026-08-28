@@ -281,19 +281,6 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 border-t border-border bg-background">
-        <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-          <div className="grid gap-10 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="rounded-[1.75rem] border border-border bg-muted/50 p-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <p className="text-4xl font-display text-foreground sm:text-5xl">{stat.number}</p>
-                <p className="mt-3 text-sm uppercase tracking-[0.24em] text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 lg:py-32 bg-primary/5">
         <div className="mx-auto max-w-[1400px] px-6 lg:px-12 text-center">
           <h2 className="text-4xl sm:text-5xl font-display text-foreground mb-6">
