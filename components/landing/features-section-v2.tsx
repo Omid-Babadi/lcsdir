@@ -10,10 +10,8 @@ import {
   Snowflake,
 } from "lucide-react";
 
-import { Reveal } from "@/components/landing/motion-primitives";
-
-const carImage =
-  "https://res.cloudinary.com/daucwpsi8/image/upload/c_crop,g_north,h_600,w_941/f_auto,q_auto,w_1400/v1781006179/b365e0c1-e13a-4a2c-b519-c2f2068607c4_tgfqx7.png";
+import { Reveal, SoftFloat } from "@/components/landing/motion-primitives";
+import { useLondonAvailability } from "@/components/landing/use-london-availability";
 
 const services = [
   {
@@ -49,6 +47,8 @@ const services = [
 ];
 
 export function FeaturesSection() {
+  const isAvailable = useLondonAvailability();
+
   return (
     <section id="services" className="relative overflow-hidden py-24 sm:py-28 lg:py-36">
       <div className="pointer-events-none absolute inset-0">
@@ -80,20 +80,35 @@ export function FeaturesSection() {
         <div className="grid gap-5 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
           <Reveal direction="left" className="relative min-h-[510px] overflow-hidden rounded-[2rem] border border-border/70 bg-muted lg:min-h-[680px]">
             <Image
-              src={carImage}
-              alt=""
+              src="https://res.cloudinary.com/daucwpsi8/image/upload/v1781006179/b365e0c1-e13a-4a2c-b519-c2f2068607c4_tgfqx7.png"
+              alt="London Climate Systems engineer at work"
               fill
-              aria-hidden="true"
-              className="scale-110 object-cover opacity-45 blur-2xl"
+              className="object-cover object-top transition-transform duration-1000 hover:scale-[1.025]"
               sizes="(max-width: 1024px) 100vw, 52vw"
             />
-            <Image
-              src={carImage}
-              alt="London Climate Systems service vehicle"
-              fill
-              className="object-contain transition-transform duration-1000 hover:scale-[1.015]"
-              sizes="(max-width: 1024px) 100vw, 52vw"
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/5 to-transparent" />
+
+            <SoftFloat className="absolute right-4 top-4 sm:right-6 sm:top-6" distance={6}>
+              <div className="rounded-2xl border border-white/40 bg-white/90 px-4 py-3 text-slate-950 shadow-xl backdrop-blur-xl dark:bg-slate-950/85 dark:text-white">
+                <div className="flex items-center gap-2 text-sm font-semibold">
+                  <span className="relative flex h-2.5 w-2.5">
+                    {isAvailable && (
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                    )}
+                    <span
+                      className={
+                        "relative inline-flex h-2.5 w-2.5 rounded-full " +
+                        (isAvailable ? "bg-emerald-500" : "bg-rose-500")
+                      }
+                    />
+                  </span>
+                  {isAvailable ? "Engineers available" : "Bookings open"}
+                </div>
+                <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                  London-wide appointments
+                </p>
+              </div>
+            </SoftFloat>
           </Reveal>
 
           <div className="grid gap-4">
