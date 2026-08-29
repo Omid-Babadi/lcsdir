@@ -4,6 +4,7 @@ import { canMutateAdminData, isAuthorizedAdminRequest } from "@/lib/admin-api";
 import { blogInputSchema, slugifyBlogTitle } from "@/lib/blog-validation";
 import connectDB from "@/lib/db/mongodb";
 import Blog from "@/lib/models/Blog";
+import { markdownToPlainText } from "@/lib/markdown";
 
 export const dynamic = "force-dynamic";
 
@@ -51,7 +52,7 @@ export async function POST(request: NextRequest) {
     const blog = await Blog.create({
       ...parsed.data,
       slug,
-      excerpt: parsed.data.excerpt || parsed.data.description.replace(/\s+/g, " ").slice(0, 220),
+      excerpt: parsed.data.excerpt || markdownToPlainText(parsed.data.description).slice(0, 220),
     });
 
     revalidatePath("/blog");

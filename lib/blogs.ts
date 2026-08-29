@@ -1,5 +1,6 @@
 import Blog from "@/lib/models/Blog";
 import connectDB from "@/lib/db/mongodb";
+import { markdownToPlainText } from "@/lib/markdown";
 
 export type PublishedBlog = {
   _id: string;
@@ -33,7 +34,7 @@ function serializeBlog(blog: any): PublishedBlog {
     _id: String(blog._id),
     title: blog.title,
     description: blog.description,
-    excerpt: blog.excerpt ? blog.excerpt : String(blog.description).slice(0, 220),
+    excerpt: blog.excerpt ? blog.excerpt : markdownToPlainText(String(blog.description)).slice(0, 220),
     writtenBy: blog.writtenBy,
     slug: blog.slug,
     seoTitle: blog.seoTitle ? blog.seoTitle : "",

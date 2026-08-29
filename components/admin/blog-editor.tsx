@@ -115,7 +115,18 @@ export function BlogEditor({
             <div className="space-y-5">
               <div className="space-y-2"><Label htmlFor="blog-title" className="text-slate-300">Title</Label><Input id="blog-title" value={form.title} onChange={(event) => update("title", event.target.value)} minLength={5} maxLength={200} required className="border-white/10 bg-white/[0.04]" placeholder="A useful, specific article title" /></div>
               <div className="space-y-2"><div className="flex justify-between"><Label htmlFor="blog-excerpt" className="text-slate-300">Short summary</Label><span className="text-[10px] text-slate-600">{form.excerpt.length}/320</span></div><Textarea id="blog-excerpt" value={form.excerpt} onChange={(event) => update("excerpt", event.target.value)} maxLength={320} rows={3} className="border-white/10 bg-white/[0.04]" placeholder="Used on the blog listing and social previews." /></div>
-              <div className="space-y-2"><div className="flex justify-between"><Label htmlFor="blog-content" className="text-slate-300">Article content</Label><span className="text-[10px] text-slate-600">{form.description.length.toLocaleString()} characters</span></div><Textarea id="blog-content" value={form.description} onChange={(event) => update("description", event.target.value)} minLength={50} maxLength={50000} required rows={18} className="border-white/10 bg-white/[0.04] font-sans leading-7" placeholder="Write the full article here. Use blank lines between paragraphs." /></div>
+              <div className="space-y-2">
+                <div className="flex justify-between"><Label htmlFor="blog-content" className="text-slate-300">Article content</Label><span className="text-[10px] text-slate-600">{form.description.length.toLocaleString()} characters</span></div>
+                <Textarea id="blog-content" value={form.description} onChange={(event) => update("description", event.target.value)} minLength={50} maxLength={50000} required rows={18} className="border-white/10 bg-white/[0.04] font-mono leading-7" placeholder="Write in Markdown. Use **bold**, ## headings, - lists, [links](https://example.com), or a table." />
+                <details className="rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3 text-xs text-slate-400">
+                  <summary className="cursor-pointer font-medium text-slate-300">Formatting help</summary>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div><p className="mb-1 text-slate-500">Bold text</p><code className="text-orange-300">**important words**</code></div>
+                    <div><p className="mb-1 text-slate-500">Heading</p><code className="text-orange-300">## Section title</code></div>
+                    <div className="sm:col-span-2"><p className="mb-1 text-slate-500">Table</p><pre className="overflow-x-auto whitespace-pre text-orange-300">{"| Service | Price |\n| --- | --- |\n| Boiler check | £90 |"}</pre></div>
+                  </div>
+                </details>
+              </div>
             </div>
 
             <aside className="space-y-5">

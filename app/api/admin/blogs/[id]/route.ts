@@ -5,6 +5,7 @@ import { canMutateAdminData } from "@/lib/admin-api";
 import { blogInputSchema, slugifyBlogTitle } from "@/lib/blog-validation";
 import connectDB from "@/lib/db/mongodb";
 import Blog from "@/lib/models/Blog";
+import { markdownToPlainText } from "@/lib/markdown";
 
 type Context = { params: Promise<{ id: string }> };
 
@@ -41,7 +42,7 @@ export async function PUT(request: NextRequest, { params }: Context) {
       {
         ...parsed.data,
         slug,
-        excerpt: parsed.data.excerpt || parsed.data.description.replace(/\s+/g, " ").slice(0, 220),
+        excerpt: parsed.data.excerpt || markdownToPlainText(parsed.data.description).slice(0, 220),
       },
       { new: true, runValidators: true },
     );

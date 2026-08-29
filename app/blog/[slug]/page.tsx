@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Phone, UserRound } from 'lucide-react';
 import { format } from 'date-fns';
+import { BlogMarkdown } from '@/components/blog/blog-markdown';
 
 interface BlogDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -123,9 +124,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <div className="grid lg:grid-cols-[1fr_300px] gap-10 lg:gap-16 items-start">
             <article className="min-w-0">
               <div className="border-y border-border py-10 lg:py-12">
-                <p className="text-lg sm:text-xl leading-8 sm:leading-9 text-foreground/75 whitespace-pre-wrap">
-                  {blog.description}
-                </p>
+                <BlogMarkdown content={blog.description} />
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-3">

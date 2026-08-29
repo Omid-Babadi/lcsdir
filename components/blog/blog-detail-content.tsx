@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { BlogDetailSkeleton } from './blog-detail-loader';
+import { BlogMarkdown } from './blog-markdown';
 
 interface BlogData {
   _id: string;
@@ -109,11 +110,7 @@ export function BlogDetailContent({ slug }: BlogDetailContentProps) {
         </div>
       </header>
 
-      <div className="prose prose-invert max-w-none">
-        <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-          {blog.description}
-        </p>
-      </div>
+      <BlogMarkdown content={blog.description} />
 
       <div className="mt-12 pt-8 border-t border-border/50">
         <Link href="/blog">
