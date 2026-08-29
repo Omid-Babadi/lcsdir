@@ -70,7 +70,7 @@ export default function About() {
     <main className="min-h-screen overflow-x-hidden bg-background">
       <Navigation />
 
-      <section className="relative overflow-hidden pt-24 pb-20 sm:pt-28 lg:pt-32 lg:pb-24">
+      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-32 lg:pb-24">
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.18),_transparent_35%)]" />
         <div className="pointer-events-none absolute right-0 top-16 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(14,165,233,0.14),_transparent_55%)] blur-3xl" />
         <div className="pointer-events-none absolute left-0 bottom-0 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(16,185,129,0.12),_transparent_55%)] blur-3xl" />
