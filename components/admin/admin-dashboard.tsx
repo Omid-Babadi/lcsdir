@@ -8,6 +8,7 @@ import {
   CalendarCheck,
   ExternalLink,
   FileText,
+  KeyRound,
   LayoutDashboard,
   LogOut,
   RadioTower,
@@ -16,16 +17,18 @@ import { AvailabilityPanel } from "@/components/admin/availability-panel";
 import { AdminOverview } from "@/components/admin/admin-overview";
 import { BlogManager } from "@/components/admin/blog-manager";
 import { BookingsPanel } from "@/components/admin/bookings-panel";
+import { McpAccessPanel } from "@/components/admin/mcp-access-panel";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-type Section = "overview" | "blogs" | "bookings" | "availability";
+type Section = "overview" | "blogs" | "bookings" | "availability" | "mcp";
 
 const sections = [
   { id: "overview" as const, label: "Overview", icon: LayoutDashboard },
   { id: "blogs" as const, label: "Articles", icon: FileText },
   { id: "bookings" as const, label: "Bookings", icon: CalendarCheck },
   { id: "availability" as const, label: "Availability", icon: RadioTower },
+  { id: "mcp" as const, label: "Blog MCP", icon: KeyRound },
 ];
 
 export function AdminDashboard() {
@@ -60,7 +63,7 @@ export function AdminDashboard() {
             </Button>
           </div>
 
-          <nav className="mt-5 grid grid-cols-4 gap-2 lg:mt-10 lg:grid-cols-1" aria-label="Admin sections">
+          <nav className="mt-5 grid grid-cols-5 gap-2 lg:mt-10 lg:grid-cols-1" aria-label="Admin sections">
             {sections.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
@@ -102,6 +105,7 @@ export function AdminDashboard() {
             {active === "blogs" && <BlogManager />}
             {active === "bookings" && <BookingsPanel />}
             {active === "availability" && <AvailabilityPanel embedded />}
+            {active === "mcp" && <McpAccessPanel />}
           </div>
         </main>
       </div>

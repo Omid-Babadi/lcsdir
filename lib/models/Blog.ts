@@ -48,6 +48,13 @@ const blogSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    automationKey: {
+      type: String,
+      unique: true,
+      sparse: true,
+      trim: true,
+      select: false,
+    },
   },
   {
     timestamps: true,

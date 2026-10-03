@@ -95,6 +95,11 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="kcQZzNfq+g7kH9K4OfFqKA"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

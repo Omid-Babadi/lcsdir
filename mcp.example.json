@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "lcs-blog-local": {
+      "command": "pnpm.cmd",
+      "args": ["mcp:blog"],
+      "cwd": "C:/absolute/path/to/lcsdir-main"
+    },
+    "lcs-blog-production": {
+      "url": "https://londonclimatesystems.com/api/mcp",
+      "bearer_token_env_var": "BLOG_MCP_API_KEY"
+    }
+  }
+}

@@ -46,7 +46,7 @@ const emptyAnalytics: Analytics = {
 export function AdminOverview({
   onNavigate,
 }: {
-  onNavigate: (section: "overview" | "blogs" | "bookings" | "availability") => void;
+  onNavigate: (section: "overview" | "blogs" | "bookings" | "availability" | "mcp") => void;
 }) {
   const [analytics, setAnalytics] = useState(emptyAnalytics);
   const [blogs, setBlogs] = useState<BlogSummary[]>([]);
