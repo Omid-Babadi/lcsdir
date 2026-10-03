@@ -19,6 +19,10 @@ type BlogRecord = {
   updatedAt: Date | string;
 };
 
+type BlogMcpOptions = {
+  onPublished?: (slug: string) => Promise<void> | void;
+};
+
 function serializeBlog(blog: BlogRecord) {
   return {
     id: String(blog._id),
@@ -88,7 +92,15 @@ async function findAvailableSlug(value: string) {
   return slug;
 }
 
-export function createBlogMcpServer() {
+async function notifyPublished(options: BlogMcpOptions, slug: string) {
+  try {
+    await options.onPublished?.(slug);
+  } catch (error) {
+    console.error(`Could not revalidate the published blog "${slug}":`, error);
+  }
+}
+
+export function createBlogMcpServer(options: BlogMcpOptions = {}) {
   const server = new McpServer(
     { name: "london-climate-systems-blog", version: "1.0.0" },
     {
@@ -211,6 +223,7 @@ export function createBlogMcpServer() {
 
         if (existing) {
           const serialized = serializeBlog(existing);
+          await notifyPublished(options, serialized.slug);
           return {
             structuredContent: { created: false, publicationDate: dailyDate, blog: serialized, url: blogUrl(serialized.slug) },
             content: [
@@ -240,6 +253,7 @@ export function createBlogMcpServer() {
           automationKey,
         });
         const serialized = serializeBlog(blog.toObject() as BlogRecord);
+        await notifyPublished(options, slug);
 
         return {
           structuredContent: { created: true, publicationDate: dailyDate, blog: serialized, url: blogUrl(slug) },

@@ -5,6 +5,8 @@ import { FooterSection } from '@/components/landing/footer-section-v2';
 import { BlogGrid } from '@/components/blog/blog-grid';
 import { getPublishedBlogs } from '@/lib/blogs';
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
   const blogs = await getPublishedBlogs();
   const featuredBlog = blogs[0];

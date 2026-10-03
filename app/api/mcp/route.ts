@@ -1,4 +1,5 @@
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
+import { revalidatePath } from "next/cache";
 import { isAuthorizedMcpRequest } from "@/lib/mcp-auth";
 import { createBlogMcpServer } from "@/mcp/blog-mcp";
 
@@ -31,7 +32,13 @@ async function handleMcpRequest(request: Request) {
     );
   }
 
-  const server = createBlogMcpServer();
+  const server = createBlogMcpServer({
+    onPublished: (slug) => {
+      revalidatePath("/blog");
+      revalidatePath(`/blog/${slug}`);
+      revalidatePath("/sitemap.xml");
+    },
+  });
   const transport = new WebStandardStreamableHTTPServerTransport({
     sessionIdGenerator: undefined,
     enableJsonResponse: true,
