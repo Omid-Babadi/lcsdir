@@ -1,79 +1,12 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 
 import { Reveal } from "@/components/landing/motion-primitives";
 
-function AnimatedCounter({
-  value,
-  prefix = "",
-  suffix = "",
-}: {
-  value: number;
-  prefix?: string;
-  suffix?: string;
-}) {
-  const [count, setCount] = useState(0);
-  const elementRef = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    const element = elementRef.current;
-    if (!element) return;
-
-    let animationFrame = 0;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting || hasAnimated.current) return;
-        hasAnimated.current = true;
-
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          setCount(value);
-          return;
-        }
-
-        const start = performance.now();
-        const duration = 1500;
-
-        const tick = (now: number) => {
-          const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setCount(Math.round(value * eased));
-
-          if (progress < 1) {
-            animationFrame = requestAnimationFrame(tick);
-          }
-        };
-
-        animationFrame = requestAnimationFrame(tick);
-        observer.disconnect();
-      },
-      { threshold: 0.35 }
-    );
-
-    observer.observe(element);
-
-    return () => {
-      observer.disconnect();
-      cancelAnimationFrame(animationFrame);
-    };
-  }, [value]);
-
-  return (
-    <span ref={elementRef}>
-      {prefix}
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
-
 const metrics = [
-  { value: 540, suffix: "+", label: "Jobs completed each year" },
-  { value: 98, suffix: "%", label: "Customer satisfaction" },
-  { value: 15, suffix: " min", label: "Average emergency response" },
-  { value: 12, suffix: "+", label: "Years serving London" },
+  { value: "Greater London", label: "Service coverage" },
+  { value: "Mon–Sat", label: "Appointment availability" },
+  { value: "5", label: "Core service categories" },
+  { value: "2026", label: "Company incorporated" },
 ];
 
 export function MetricsSection() {
@@ -91,18 +24,18 @@ export function MetricsSection() {
             <Reveal>
               <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/20 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em]">
                 <Sparkles className="h-3.5 w-3.5" />
-                Our track record
+                At a glance
               </span>
               <h2 className="max-w-3xl text-4xl font-display leading-[0.96] tracking-tight sm:text-5xl lg:text-6xl">
-                Real work. Real homes.
-                <span className="text-white"> Results that add up.</span>
+                Clear facts.
+                <span className="text-white"> Local service.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.1}>
               <p className="max-w-sm text-sm leading-6 text-slate-900/65 sm:text-base">
-                Experience measured in comfortable homes, reliable systems, and
-                customers who call us again.
+                Practical heating, cooling, plumbing, boiler and gas support for
+                homes, landlords and businesses across Greater London.
               </p>
             </Reveal>
           </div>
@@ -119,11 +52,8 @@ export function MetricsSection() {
                     <ArrowUpRight className="h-4 w-4" />
                   </span>
                   <div>
-                    <p className="text-4xl font-display tracking-tight sm:text-5xl">
-                      <AnimatedCounter
-                        value={metric.value}
-                        suffix={metric.suffix}
-                      />
+                    <p className="text-3xl font-display tracking-tight sm:text-4xl">
+                      {metric.value}
                     </p>
                     <p className="mt-3 max-w-[12rem] text-sm leading-5 text-slate-900/60">
                       {metric.label}

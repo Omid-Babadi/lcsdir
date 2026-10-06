@@ -83,7 +83,7 @@ const serviceCategories = [
     icon: Flame,
     color: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
     items: [
-      { name: "Boiler installation", href: "/services/gas/boiler-installation" },
+      { name: "Boiler installation", href: "/services/boiler/new-installation" },
       { name: "Gas safety certificates", href: "/services/gas/safety-certificates" },
       { name: "Leak detection & repair", href: "/services/gas/leak-detection" },
       { name: "Landlord certificates", href: "/services/gas/landlord-certificates" },

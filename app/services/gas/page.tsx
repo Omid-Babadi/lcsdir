@@ -7,9 +7,10 @@ import { ArrowRight, Flame, Phone, Shield, Wrench, AlertTriangle, FileCheck, Pip
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
-  title: "Gas Services",
-  description: "Gas Safe registered engineers in London. Boiler installations, gas safety certificates, leak detection, cooker installation, and more.",
+  title: "Gas Safe Engineers London | Gas Services",
+  description: "Gas services in London including safety checks, CP12 certificates, leak detection, cooker installation and gas pipework by registered engineers.",
   path: "/services/gas",
+  keywords: ["Gas Safe engineer London", "gas safety certificate London", "CP12 London"],
 });
 
 export default function GasPage() {
@@ -17,7 +18,7 @@ export default function GasPage() {
     {
       title: "Gas Boiler Installation",
       description: "Expert installation of new gas boilers. We work with all major brands and system types — combi, system, and conventional boilers.",
-      href: "/services/gas/boiler-installation",
+      href: "/services/boiler/new-installation",
       icon: Flame,
       bgImage:
         "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596566/0689c7a3-b1b0-40c0-978e-1b16ade4c776_1_cg5mub.png",
@@ -65,7 +66,7 @@ export default function GasPage() {
     {
       title: "Annual Gas Safety Checks",
       description: "Thorough annual inspections of all gas appliances, pipework, and flues. Keep your home safe and your appliances efficient.",
-      href: "/services/gas/annual-checks",
+      href: "/services/gas/safety-certificates",
       icon: Shield,
       bgImage:
         "https://res.cloudinary.com/daucwpsi8/image/upload/v1780596568/72fe25ef-adb6-40cb-a8f4-98f870938313_ra1inl.png",

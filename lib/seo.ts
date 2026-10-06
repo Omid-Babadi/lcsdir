@@ -10,6 +10,10 @@ export const siteConfig = {
   phoneDisplay: "07473 423003",
   phoneHref: "tel:+447473423003",
   email: "londonclimatesystems@gmail.com",
+  companiesHouseNumber: "17174118",
+  companiesHouseUrl:
+    "https://find-and-update.company-information.service.gov.uk/company/17174118",
+  foundingDate: "2026-04-22",
   address: {
     streetAddress: "71–75 Shelton Street",
     addressLocality: "Covent Garden",
@@ -46,6 +50,9 @@ type SeoOptions = {
   image?: string;
   imageAlt?: string;
   type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
   noIndex?: boolean;
 };
 
@@ -61,6 +68,9 @@ export function createSeoMetadata({
   image = siteConfig.defaultImage,
   imageAlt = `${siteConfig.name} logo`,
   type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
   noIndex = false,
 }: SeoOptions): Metadata {
   const url = absoluteUrl(path);
@@ -88,6 +98,9 @@ export function createSeoMetadata({
       ],
       locale: "en_GB",
       type,
+      ...(type === "article"
+        ? { publishedTime, modifiedTime, authors }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
@@ -127,6 +140,25 @@ export const homepageJsonLd = {
       telephone: siteConfig.phone,
       email: siteConfig.email,
       logo: absoluteUrl(siteConfig.logo),
+      foundingDate: siteConfig.foundingDate,
+      founder: {
+        "@type": "Person",
+        name: "Masoud Moradi",
+        url: absoluteUrl("/about"),
+      },
+      identifier: {
+        "@type": "PropertyValue",
+        propertyID: "Companies House",
+        value: siteConfig.companiesHouseNumber,
+        url: siteConfig.companiesHouseUrl,
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: siteConfig.phone,
+        contactType: "customer service",
+        areaServed: "GB-LND",
+        availableLanguage: "English",
+      },
       areaServed: {
         "@type": "AdministrativeArea",
         name: "Greater London",
@@ -136,6 +168,7 @@ export const homepageJsonLd = {
         ...siteConfig.address,
       },
       sameAs: [
+        siteConfig.companiesHouseUrl,
         siteConfig.social.googleBusinessProfile,
         siteConfig.social.instagram,
       ],

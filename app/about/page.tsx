@@ -60,9 +60,9 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "22 April 2026", label: "Reference date" },
-    { number: "12+", label: "Years of industry expertise" },
-    { number: "48 hrs", label: "Target time for detailed estimates" },
+    { number: "22 April 2026", label: "Company incorporated" },
+    { number: "Greater London", label: "Service area" },
+    { number: "Mon–Sat", label: "Appointment availability" },
     { number: "5", label: "Core service areas" },
   ];
 
@@ -86,7 +86,10 @@ export default function About() {
                 Modern heating, cooling and plumbing expertise for London homes.
               </h1>
               <p className="mt-6 max-w-2xl text-xl leading-8 text-foreground/70">
-                On 22 April 2026, we are helping Londoners stay comfortable with fast, transparent engineering backed by Gas Safe and F-Gas registration. From emergency repairs to long-term maintenance, our local team delivers service you can trust.
+                Founded on 22 April 2026, London Climate Systems provides clear,
+                practical engineering support for London properties. From urgent
+                repairs to planned maintenance, we explain the work and agree the
+                scope before starting.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button size="lg" className="group inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition hover:bg-primary/90" asChild>

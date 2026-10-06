@@ -7,9 +7,10 @@ import { ArrowRight, Droplets, CheckCircle2, Phone, Wrench, Siren } from "lucide
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
-  title: "Professional Plumbing Services",
-  description: "Expert plumbing services in London. Plumbing installation, emergency service, and repairs. Certified professionals for dishwashers, water softeners, toilets, sinks, taps, washing machines, electric showers, and more.",
+  title: "London Plumber | Repairs & Emergencies",
+  description: "Book a London plumber for leaks, emergency repairs, bathrooms, taps, toilets, appliances and new pipework. Clear quotes and appointments across Greater London.",
   path: "/services/plumbing",
+  keywords: ["plumber London", "emergency plumber London", "plumbing repairs London"],
 });
 
 export default function PlumbingPage() {

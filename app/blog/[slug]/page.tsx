@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Navigation } from '@/components/landing/navigation-v2';
 import { FooterSection } from '@/components/landing/footer-section-v2';
 import { absoluteUrl, createSeoMetadata, siteConfig } from '@/lib/seo';
-import { getPublishedBlogBySlug } from '@/lib/blogs';
+import { getPublishedBlogBySlug, getRelatedBlogs } from '@/lib/blogs';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, CalendarDays, Clock, Phone, UserRound } from 'lucide-react';
@@ -38,6 +38,9 @@ export async function generateMetadata({
     path: `/blog/${slug}`,
     type: "article",
     keywords: [title, "London Climate Systems blog"],
+    publishedTime: blog?.createdAt,
+    modifiedTime: blog?.updatedAt,
+    authors: blog?.writtenBy ? [blog.writtenBy] : undefined,
   });
 }
 
@@ -49,24 +52,37 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     notFound();
   }
 
+  const relatedBlogs = await getRelatedBlogs(blog);
   const publishDate = new Date(blog.createdAt);
   const formattedDate = format(publishDate, 'MMMM d, yyyy');
   const readTime = Math.max(2, Math.ceil(blog.description.split(/\s+/).length / 180));
+  const authorIsOrganization = blog.writtenBy === siteConfig.name;
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: blog.title,
     description: blog.metaDescription || blog.excerpt,
+    image: [absoluteUrl(siteConfig.defaultImage)],
     datePublished: blog.createdAt,
     dateModified: blog.updatedAt,
-    mainEntityOfPage: absoluteUrl(`/blog/${blog.slug}`),
-    author: { "@type": "Person", name: blog.writtenBy },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl(`/blog/${blog.slug}`),
+    },
+    author: {
+      "@type": authorIsOrganization ? "Organization" : "Person",
+      name: blog.writtenBy,
+      url: authorIsOrganization ? absoluteUrl("/") : absoluteUrl("/about"),
+    },
     publisher: {
       "@type": "Organization",
       "@id": siteConfig.organizationId,
       name: siteConfig.name,
       logo: { "@type": "ImageObject", url: absoluteUrl(siteConfig.logo) },
     },
+    wordCount: blog.description.split(/\s+/).length,
+    isAccessibleForFree: true,
+    inLanguage: "en-GB",
   };
 
   return (
@@ -141,6 +157,36 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
                   </Link>
                 </Button>
               </div>
+
+              {relatedBlogs.length > 0 && (
+                <section className="mt-16 border-t border-border pt-10" aria-labelledby="related-articles">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                    Continue reading
+                  </p>
+                  <h2 id="related-articles" className="mt-2 text-3xl font-display text-foreground">
+                    Related engineer guides
+                  </h2>
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    {relatedBlogs.map((related) => (
+                      <Link
+                        key={related.slug}
+                        href={`/blog/${related.slug}`}
+                        className="group rounded-2xl border border-border bg-card p-5 transition hover:-translate-y-0.5 hover:border-primary/40"
+                      >
+                        <h3 className="font-display text-xl leading-snug text-foreground group-hover:text-primary">
+                          {related.title}
+                        </h3>
+                        <p className="mt-3 line-clamp-2 text-sm leading-6 text-muted-foreground">
+                          {related.excerpt}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                          Read guide <ArrowRight className="size-4" />
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
             </article>
 
             <aside className="lg:sticky lg:top-28">

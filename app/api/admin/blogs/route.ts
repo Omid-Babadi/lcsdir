@@ -40,6 +40,16 @@ export async function POST(request: NextRequest) {
 
   try {
     await connectDB();
+    const sameContent = await Blog.exists({
+      description: parsed.data.description,
+    });
+    if (sameContent) {
+      return NextResponse.json(
+        { error: "An article with identical content already exists." },
+        { status: 409 },
+      );
+    }
+
     const baseSlug = slugifyBlogTitle(parsed.data.slug || parsed.data.title) || "article";
     let slug = baseSlug;
     let suffix = 2;

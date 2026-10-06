@@ -7,9 +7,10 @@ import { ArrowRight, Gauge, Wrench, ThermometerSun, Shield, FileCheck, Zap, Flam
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
-  title: "Boiler Services",
-  description: "Boiler repairs, installations, replacements, servicing and power flushing by Gas Safe registered engineers.",
+  title: "Boiler Repair & Servicing London",
+  description: "Boiler repair, servicing, replacement and new installation in London, including pressure faults, ignition problems and power flushing.",
   path: "/services/boiler",
+  keywords: ["boiler repair London", "boiler service London", "new boiler London"],
 });
 
 export default function BoilerPage() {

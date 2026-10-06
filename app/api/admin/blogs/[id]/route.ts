@@ -29,6 +29,17 @@ export async function PUT(request: NextRequest, { params }: Context) {
 
   try {
     await connectDB();
+    const sameContent = await Blog.exists({
+      description: parsed.data.description,
+      _id: { $ne: id },
+    });
+    if (sameContent) {
+      return NextResponse.json(
+        { error: "Another article already has identical content." },
+        { status: 409 },
+      );
+    }
+
     const slug = slugifyBlogTitle(parsed.data.slug || parsed.data.title) || "article";
     const duplicate = await Blog.exists({ slug, _id: { $ne: id } });
     if (duplicate) {

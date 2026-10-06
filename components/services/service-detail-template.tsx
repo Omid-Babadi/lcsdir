@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Navigation } from "@/components/landing/navigation-v2";
 import { FooterSection } from "@/components/landing/footer-section-v2";
 import { Button } from "@/components/ui/button";
+import { absoluteUrl, siteConfig } from "@/lib/seo";
 import { 
   ArrowRight, 
   Phone, 
@@ -52,8 +53,49 @@ export function ServiceDetailTemplate({
   process,
   faqs,
 }: ServiceDetailProps) {
+  const serviceName = `${title} ${highlight}`.replace(/\s+/g, " ").trim();
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: serviceName,
+        description,
+        serviceType: category,
+        areaServed: {
+          "@type": "AdministrativeArea",
+          name: "Greater London",
+        },
+        provider: {
+          "@type": "Organization",
+          "@id": siteConfig.organizationId,
+          name: siteConfig.name,
+          url: absoluteUrl("/"),
+          telephone: siteConfig.phone,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-background antialiased selection:bg-primary/20 overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Navigation />
 
       {/* --- HERO SECTION --- */}

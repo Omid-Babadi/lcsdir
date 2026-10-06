@@ -59,7 +59,7 @@ export function HeroSection() {
             <div className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
               <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground">
                 <span className="w-6 sm:w-8 h-px gradient-flame" />
-                London&apos;s Trusted Climate Experts · 22 April 2026
+                London heating, cooling &amp; plumbing · Established 2026
               </span>
             </div>
 
@@ -143,7 +143,7 @@ export function HeroSection() {
                 muted
                 loop
                 playsInline
-                preload="auto"
+                preload="metadata"
                 aria-label="London Climate Systems service video"
               />
             </div>

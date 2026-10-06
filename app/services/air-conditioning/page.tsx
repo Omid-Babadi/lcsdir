@@ -7,9 +7,10 @@ import { ArrowRight, Wind, Phone, Wrench, Settings, Zap } from "lucide-react";
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
-  title: "Air Conditioning Services",
-  description: "F-Gas certified air conditioning specialists in London. AC installation, maintenance, and repairs for all systems.",
+  title: "Air Conditioning London | Install & Repair",
+  description: "Air conditioning installation, repair and maintenance in London for homes and businesses, delivered by F-Gas certified engineers.",
   path: "/services/air-conditioning",
+  keywords: ["air conditioning London", "AC installation London", "AC repair London"],
 });
 
 export default function AirConditioningPage() {

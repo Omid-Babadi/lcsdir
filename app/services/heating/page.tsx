@@ -7,9 +7,10 @@ import { ArrowRight, Flame, Phone, Wrench, Siren, ThermometerSun, Shield } from 
 import { createSeoMetadata } from "@/lib/seo";
 
 export const metadata = createSeoMetadata({
-  title: "Heating & Boiler Services",
-  description: "Expert heating services in London. Boiler repairs, installations, power flushing and servicing from Gas Safe registered engineers.",
+  title: "Heating Engineers London | Repair & Service",
+  description: "London heating engineers for central heating repairs, installation, servicing, radiators and urgent no-heat faults across Greater London.",
   path: "/services/heating",
+  keywords: ["heating engineer London", "central heating repair London"],
 });
 
 export default function HeatingPage() {

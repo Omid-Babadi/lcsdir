@@ -226,13 +226,25 @@ export function LondonScrollSequence() {
     window.addEventListener("scroll", updateScrollProgress, { passive: true });
     window.addEventListener("resize", updateScrollProgress, { passive: true });
 
-    startLoading();
+    // The sequence sits well below the fold. Loading all 118 frames during the
+    // initial page view competes with the hero and delays useful mobile work,
+    // so begin shortly before a visitor reaches this section.
+    const loadObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        loadObserver.disconnect();
+        void startLoading();
+      },
+      { rootMargin: "800px 0px" },
+    );
+    loadObserver.observe(container);
     updateScrollProgress();
     animationFrame = window.requestAnimationFrame(render);
 
     return () => {
       cancelled = true;
       window.cancelAnimationFrame(animationFrame);
+      loadObserver.disconnect();
       resizeObserver.disconnect();
       window.removeEventListener("scroll", updateScrollProgress);
       window.removeEventListener("resize", updateScrollProgress);

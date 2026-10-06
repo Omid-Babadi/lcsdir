@@ -26,13 +26,11 @@ const routes: Array<{
   { path: "/services/air-conditioning/installation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/air-conditioning/repairs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/gas", priority: 0.9, changeFrequency: "monthly" },
-  { path: "/services/gas/boiler-installation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/gas/cooker-installation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/gas/fire-installation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/gas/safety-certificates", priority: 0.85, changeFrequency: "monthly" },
   { path: "/services/gas/leak-detection", priority: 0.85, changeFrequency: "monthly" },
   { path: "/services/gas/pipe-installation", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/services/gas/annual-checks", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services/gas/landlord-certificates", priority: 0.85, changeFrequency: "monthly" },
   { path: "/services/boiler", priority: 0.9, changeFrequency: "monthly" },
   { path: "/services/boiler/breakdown-repairs", priority: 0.85, changeFrequency: "monthly" },
@@ -60,12 +58,10 @@ const routes: Array<{
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date("2026-08-17T00:00:00.000Z");
   const blogs = await getPublishedBlogs(500);
 
   const staticRoutes = routes.map((route) => ({
     url: absoluteUrl(route.path),
-    lastModified,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
